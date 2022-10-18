@@ -75,7 +75,7 @@ const MobileNav = () => {
           className="fixed h-full w-full cursor-auto focus:outline-none"
           onClick={onToggleNav}
         ></button>
-        <nav className="fixed mt-8 h-fit">
+        <nav className="fixed mt-8 h-fit" onClick={onToggleNav}>
           <div className="tracking-widest text-gray-900 dark:text-gray-100 flex flex-wrap flex-col justify-center items-center w-screen">
             <li className="inline-flex w-full justify-center items-center py-6">
               <Link href="/">
