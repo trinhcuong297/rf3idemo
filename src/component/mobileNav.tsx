@@ -75,7 +75,7 @@ const MobileNav = () => {
           className="fixed h-full w-full cursor-auto focus:outline-none"
           onClick={onToggleNav}
         ></button>
-        <nav className="fixed mt-8 h-full">
+        <nav className="fixed mt-8 h-fit">
           <div className="tracking-widest text-gray-900 dark:text-gray-100 flex flex-wrap flex-col justify-center items-center w-screen">
             <li className="inline-flex w-full justify-center items-center py-6">
               <Link href="/">
@@ -222,6 +222,7 @@ const MobileNav = () => {
                 <a className="text-gray-800 text-lg inline w-max">Contact Us</a>
               </Link>
             </li>
+            <button onClick={onToggleNav}>Close</button>
           </div>
         </nav>
       </div>
