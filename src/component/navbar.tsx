@@ -187,7 +187,7 @@ export default function Navbar() {
             </div>
 
             <li className="inline-flex w-full justify-center items-center">
-              <Link href="/ContactUs">
+              <Link href="/Contact">
                 <a className="text-gray-800 text-lg inline w-max">Contact Us</a>
               </Link>
             </li>

@@ -218,7 +218,7 @@ const MobileNav = () => {
               </Transition>
             </Menu>
             <li className="inline-flex w-full justify-center items-center py-6">
-              <Link href="/contact">
+              <Link href="/Contact">
                 <a className="text-gray-800 text-lg inline w-max">Contact Us</a>
               </Link>
             </li>
