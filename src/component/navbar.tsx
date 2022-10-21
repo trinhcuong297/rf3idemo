@@ -12,18 +12,18 @@ import MobileNav from './mobileNav';
 
 export default function Navbar() {
   const AboutUsList = [
-    ['Introduction', '/link'],
-    ['Researcher Leader', '/link'],
-    ['Our Member', '/member'],
-    ['Alumi', '/alumi'],
+    ['Introduction', '/Introduction/intro'],
+    ['Researcher Leader', '/Introduction/leader'],
+    ['Our Member', '/Introduction/member'],
+    ['Alumi', '/Introduction/alumi'],
   ];
   const PublicationList = [
-    ['RF Team', '/rf'],
-    ['ES Team', '/es'],
+    ['RF Team', '/RFteam'],
+    ['ES Team', '/ESteam'],
   ];
   const ProductList = [
-    ['RF Team', '/rf'],
-    ['ES Team', '/es'],
+    ['RF Team', '/RFteam'],
+    ['ES Team', '/ESteam'],
   ];
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
