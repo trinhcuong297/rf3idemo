@@ -79,7 +79,9 @@ const MobileNav = () => {
           <div className="tracking-widest text-gray-900 dark:text-gray-100 flex flex-wrap flex-col justify-center items-center w-screen">
             <li className="inline-flex w-full justify-center items-center py-6">
               <Link href="/">
-                <a className="text-gray-800 text-lg">Home</a>
+                <a className="text-gray-800 text-lg" onClick={onToggleNav}>
+                  Home
+                </a>
               </Link>
             </li>
             <Menu as="div" className="relative inline-block text-left py-6">
@@ -116,6 +118,7 @@ const MobileNav = () => {
                                   : 'text-gray-700',
                                 'block px-4 py-2 text-sm'
                               )}
+                              onClick={onToggleNav}
                             >
                               {item[0]}
                             </a>
@@ -161,6 +164,7 @@ const MobileNav = () => {
                                   : 'text-gray-700',
                                 'block px-4 py-2 text-sm'
                               )}
+                              onClick={onToggleNav}
                             >
                               {item[0]}
                             </a>
@@ -206,6 +210,7 @@ const MobileNav = () => {
                                   : 'text-gray-700',
                                 'block px-4 py-2 text-sm'
                               )}
+                              onClick={onToggleNav}
                             >
                               {item[0]}
                             </a>
@@ -219,7 +224,12 @@ const MobileNav = () => {
             </Menu>
             <li className="inline-flex w-full justify-center items-center py-6">
               <Link href="/Contact">
-                <a className="text-gray-800 text-lg inline w-max">Contact Us</a>
+                <a
+                  className="text-gray-800 text-lg inline w-max"
+                  onClick={onToggleNav}
+                >
+                  Contact Us
+                </a>
               </Link>
             </li>
           </div>
