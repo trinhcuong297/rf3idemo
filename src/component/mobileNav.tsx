@@ -27,12 +27,12 @@ const MobileNav = () => {
     ['Alumi', '/alumi'],
   ];
   const PublicationList = [
-    ['RF Team', '/rf'],
-    ['ES Team', '/es'],
+    ['RF Team', '/RFteam'],
+    ['ES Team', '/ESteam'],
   ];
   const ProductList = [
-    ['RF Team', '/rf'],
-    ['ES Team', '/es'],
+    ['RF Team', '/RFteam'],
+    ['ES Team', '/ESteam'],
   ];
 
   return (
