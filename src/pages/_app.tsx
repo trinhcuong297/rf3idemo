@@ -6,8 +6,12 @@ import { Footer } from '../templates/Footer';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
-    <Navbar />
-    <Component {...pageProps} />
+    <div className="w-screen fixed top-0 lg:min-h-24 z-10">
+      <Navbar />
+    </div>
+    <div className="mt-28">
+      <Component {...pageProps} />
+    </div>
     <Footer />
   </>
 );
