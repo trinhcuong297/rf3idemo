@@ -8,23 +8,10 @@ import { Background } from '../background/Background';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from '../templates/Logo';
+import { AboutUsList, ProductList, PublicationList } from './Data/navbarData';
 import MobileNav from './mobileNav';
 
 export default function Navbar() {
-  const AboutUsList = [
-    ['Introduction', '/Introduction/intro'],
-    ['Researcher Leader', '/Introduction/leader'],
-    ['Our Member', '/Introduction/member'],
-    ['Alumi', '/Introduction/alumi'],
-  ];
-  const PublicationList = [
-    ['RF Team', '/RFteam'],
-    ['ES Team', '/ESteam'],
-  ];
-  const ProductList = [
-    ['RF Team', '/RFteam'],
-    ['ES Team', '/ESteam'],
-  ];
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);

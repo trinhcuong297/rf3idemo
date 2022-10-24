@@ -1,3 +1,5 @@
+import { setTimeout } from 'timers';
+
 import React, { useState } from 'react';
 
 import { FaRegEnvelope, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
@@ -46,6 +48,9 @@ const ContactForm: React.FC = () => {
 
   const sucSub = () => {
     setSuccessSubmit(true);
+    setTimeout(() => {
+      setSuccessSubmit(false);
+    }, 3000);
   };
 
   return (
@@ -71,17 +76,19 @@ const ContactForm: React.FC = () => {
           <GridInputs>
             <Input
               name="name"
-              label="Name"
+              label="Name*"
               type="text"
               placeholder="Group RF3i"
               style={{ outline: 'none' }}
+              required
             />
             <Input
               name="email"
-              label="Email"
+              label="Email*"
               type="email"
               placeholder="labrf3i@gmail.com"
               style={{ outline: 'none' }}
+              required
             />
             <Input
               name="phone"
@@ -103,13 +110,17 @@ const ContactForm: React.FC = () => {
           </GridInputs>
           <Input
             name="message"
-            label="Message"
+            label="Message*"
             type="text"
             placeholder="Hi RF3i!"
             style={{ outline: 'none' }}
+            required
           />
 
-          <Button type="submit" style={{ background: '#473' }}>
+          <Button
+            type="submit"
+            style={{ background: '#473', marginTop: '20px' }}
+          >
             Send to us <FaPaperPlane />
           </Button>
         </form>

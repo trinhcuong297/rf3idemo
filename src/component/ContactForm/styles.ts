@@ -107,7 +107,7 @@ export const BoxSuccess = styled.div<{ active: boolean }>`
   ${media.lessThan('medium')`
     border-radius: 8px 8px 0 0;
     svg {
-      width: 100px;
+      width: 80px;
       height: 100px;
     }
 

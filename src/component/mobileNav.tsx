@@ -5,6 +5,8 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import classNames from 'classnames';
 import Link from 'next/link';
 
+import { AboutUsList, ProductList, PublicationList } from './Data/navbarData';
+
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
 
@@ -19,21 +21,6 @@ const MobileNav = () => {
       return !status;
     });
   };
-
-  const AboutUsList = [
-    ['Introduction', '/link'],
-    ['Researcher Leader', '/link'],
-    ['Our Member', '/member'],
-    ['Alumi', '/alumi'],
-  ];
-  const PublicationList = [
-    ['RF Team', '/RFteam'],
-    ['ES Team', '/ESteam'],
-  ];
-  const ProductList = [
-    ['RF Team', '/RFteam'],
-    ['ES Team', '/ESteam'],
-  ];
 
   return (
     <div className="md:hidden">

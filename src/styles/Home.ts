@@ -4,9 +4,6 @@ import media from 'styled-media-query';
 export const Container = styled.main`
   display: flex;
   width: 100%;
-  height: 100vh;
-
-  padding: 40px;
 
   ${media.lessThan('medium')`
     height: 100%;
@@ -21,9 +18,8 @@ export const Content = styled.section`
 
   width: 100%;
   max-width: 1200px;
-  height: 580px;
+  height: 550px;
 
-  margin: auto;
   border-radius: 12px;
   background: transparent;
   box-shadow: 3px 3px 25px 6px rgba(0, 0, 0, 0.2);

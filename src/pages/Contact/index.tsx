@@ -11,8 +11,8 @@ const ContactUs: React.FC = () => (
     <Head>
       <title>RF3i - Contact Us</title>
     </Head>
-    <Container className="bg-gray-100">
-      <Content>
+    <Container className="bg-gray-100 flex justify-center h-max">
+      <Content className="w-max">
         <ContactForm />
         <ContactInformation />
       </Content>
