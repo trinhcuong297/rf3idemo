@@ -49,7 +49,7 @@ export const Container = styled.div<ContainerProps>`
 
       width: 0;
       height: 2px;
-      background: #473;
+      background: #0705a8;
       transition: 1s;
     }
   }
@@ -58,7 +58,7 @@ export const Container = styled.div<ContainerProps>`
     props.isFocus &&
     css`
       label {
-        color: #473;
+        color: #0705a8;
       }
       span::after {
         width: 100%;

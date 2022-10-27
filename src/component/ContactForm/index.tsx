@@ -58,14 +58,14 @@ const ContactForm: React.FC = () => {
       {/* {loading && <Loading />} */}
 
       <Title>
-        <h1 className="text-green-600 text-3xl">SEND RF3I A MESSAGE</h1>
+        <h1 className="text-sky-900 text-3xl">Mail to RF3i</h1>
         <div>
           <TitleLines>
             <span />
             <span />
             <span />
           </TitleLines>
-          <FaRegEnvelope color={'#473'} />
+          <FaRegEnvelope color={'#1e3a8a'} />
         </div>
       </Title>
       {!successSubmit && (
@@ -119,7 +119,7 @@ const ContactForm: React.FC = () => {
 
           <Button
             type="submit"
-            style={{ background: '#473', marginTop: '20px' }}
+            style={{ background: '#1e3a8a', marginTop: '20px' }}
           >
             Send to us <FaPaperPlane />
           </Button>

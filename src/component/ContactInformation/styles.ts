@@ -4,7 +4,7 @@ import media from 'styled-media-query';
 export const Container = styled.div`
   color: #e0dce6;
 
-  background: #473;
+  background: #1e3a8a;
   border-radius: 0 12px 12px 0;
 
   width: 35%;

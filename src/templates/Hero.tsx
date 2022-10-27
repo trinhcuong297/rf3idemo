@@ -12,12 +12,12 @@ const Hero = () => (
         title={
           <>
             {'Radio Frequency Lab \n'}
-            <span className="text-primary-500">RF3i</span>
+            <span className="text-blue-800">RF3i</span>
           </>
         }
         description="Research for Radio Frequency, Embedded System,..."
         button={
-          <Link href="">
+          <Link href="/Contact">
             <a>
               <Button xl>Say Hello to Us</Button>
             </a>

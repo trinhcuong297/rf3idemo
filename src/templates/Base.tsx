@@ -1,6 +1,5 @@
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
-import { Banner } from './Banner';
 import { Hero } from './Hero';
 import { VerticalFeatures } from './VerticalFeatures';
 
@@ -9,7 +8,7 @@ const Base = () => (
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
     <VerticalFeatures />
-    <Banner />
+    {/* <Banner /> */}
   </div>
 );
 

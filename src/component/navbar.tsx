@@ -32,12 +32,14 @@ export default function Navbar() {
   };
   return (
     <Background color="bg-gray-100">
-      <Section yPadding="py-8">
+      <Section yPadding="py-1">
         <div className="hidden md:block">
           <NavbarTwoColumns logo={<Logo xl />}>
             <li className="inline-flex w-full justify-center items-center">
               <Link href="/">
-                <a className="text-gray-800 text-lg">Home</a>
+                <a className="text-gray-800 text-lg hover:text-blue-900">
+                  Home
+                </a>
               </Link>
             </li>
 
@@ -47,7 +49,7 @@ export default function Navbar() {
               onMouseLeave={onToggle}
             >
               <div>
-                <button className="aboutus inline-flex inline w-max text-gray-800 text-lg justify-center items-center rounded-md px-4 py-2 font-medium hover:bg-gray-50 ">
+                <button className="aboutus inline-flex inline w-max text-gray-800 text-lg hover:text-blue-900 justify-center items-center rounded-md px-4 py-2 font-medium hover:bg-gray-50 ">
                   About us
                   <ChevronDownIcon
                     className="mr-1 ml-1 h-5 w-5"
@@ -91,7 +93,7 @@ export default function Navbar() {
               onMouseLeave={onToggle2}
             >
               <div>
-                <button className="inline-flex inline w-max text-gray-800 text-lg justify-center items-center rounded-md px-4 py-2 font-medium hover:bg-gray-50 ">
+                <button className="inline-flex inline w-max text-gray-800 text-lg hover:text-blue-900 justify-center items-center rounded-md px-4 py-2 font-medium hover:bg-gray-50 ">
                   Publication
                   <ChevronDownIcon
                     className="mr-1 ml-1 h-5 w-5"
@@ -135,7 +137,7 @@ export default function Navbar() {
               onMouseLeave={onToggle3}
             >
               <div>
-                <button className="inline-flex inline w-max text-gray-800 text-lg justify-center items-center rounded-md px-4 py-2 font-medium hover:bg-gray-50 ">
+                <button className="inline-flex inline w-max text-gray-800 text-lg hover:text-blue-900 justify-center items-center rounded-md px-4 py-2 font-medium hover:bg-gray-50 ">
                   Product
                   <ChevronDownIcon
                     className="mr-1 ml-1 h-5 w-5"
@@ -175,7 +177,9 @@ export default function Navbar() {
 
             <li className="inline-flex w-full justify-center items-center">
               <Link href="/Contact">
-                <a className="text-gray-800 text-lg inline w-max">Contact Us</a>
+                <a className="text-gray-800 text-lg hover:text-blue-900 inline w-max">
+                  Contact Us
+                </a>
               </Link>
             </li>
           </NavbarTwoColumns>

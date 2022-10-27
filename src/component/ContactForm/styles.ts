@@ -43,7 +43,7 @@ export const Loading = styled.span`
     background: transparent;
 
     border-top: 2px solid transparent;
-    border-left: 2px solid #473;
+    border-left: 2px solid #1e3a8a;
     border-bottom: 2px solid transparent;
     border-right: 2px solid transparent;
 
@@ -73,7 +73,7 @@ export const BoxSuccess = styled.div<{ active: boolean }>`
   opacity: 0;
   margin: auto;
   visibility: hidden;
-  background: #473;
+  background: #1e3a8a;
   border-radius: 12px 0 0 12px;
 
   position: absolute;
@@ -144,7 +144,7 @@ export const Title = styled.div`
   svg {
     width: 30px;
     height: 30px;
-    color: #473;
+    color: #1e3a8a;
   }
 
   > div {
@@ -177,7 +177,7 @@ export const TitleLines = styled.div`
     display: block;
     height: 2px;
 
-    background: #473;
+    background: #1e3a8a;
 
     & + span {
       margin-top: 4px;
@@ -240,7 +240,7 @@ export const Button = styled.button`
   justify-content: center;
 
   margin: auto auto 0;
-  background: #473;
+  background: #1e3a8a;
   font-size: 20px;
   color: #fff;
   width: 400px;
@@ -261,7 +261,7 @@ export const Button = styled.button`
 
   &:hover {
     cursor: pointer;
-    background: #473;
+    background: #1e3a8a;
   }
 
   ${media.lessThan('medium')`
