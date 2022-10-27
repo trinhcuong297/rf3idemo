@@ -4,7 +4,6 @@ import { Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
-import { Background } from '../background/Background';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from '../templates/Logo';
@@ -31,8 +30,8 @@ export default function Navbar() {
     });
   };
   return (
-    <Background color="bg-gray-100">
-      <Section yPadding="py-1">
+    <>
+      <Section yPadding="py-4 pt-5">
         <div className="hidden md:block">
           <NavbarTwoColumns logo={<Logo xl />}>
             <li className="inline-flex w-full justify-center items-center">
@@ -190,6 +189,6 @@ export default function Navbar() {
           </NavbarTwoColumns>
         </div>
       </Section>
-    </Background>
+    </>
   );
 }

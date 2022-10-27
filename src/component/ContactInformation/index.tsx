@@ -36,10 +36,10 @@ const ContactInformation: React.FC = () => (
     </Content>
     <SocialMedias>
       <Link href={'https://www.facebook.com/rf3ilab.hust'}>
-        <FaFacebookF />
+        <FaFacebookF className="mr-6 hover:text-white cursor-pointer" />
       </Link>
       <Link href="/">
-        <FaWifi />
+        <FaWifi className="mr-6 hover:text-white cursor-pointer" />
       </Link>
     </SocialMedias>
   </Container>
