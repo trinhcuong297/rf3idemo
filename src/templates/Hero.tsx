@@ -1,9 +1,5 @@
 import { useState } from 'react';
 
-import Link from 'next/link';
-
-import { Button } from '../button/Button';
-import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 
 const Hero = () => {
@@ -28,7 +24,7 @@ const Hero = () => {
     >
       <div className="backdrop-brightness-[0.4] s h-[90vh]">
         <Section yPadding="pt-32 pb-32 ">
-          <HeroOneButton
+          {/* <HeroOneButton
             title={
               <>
                 <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
@@ -45,7 +41,7 @@ const Hero = () => {
                 </a>
               </Link>
             }
-          />
+          /> */}
         </Section>
       </div>
     </div>
