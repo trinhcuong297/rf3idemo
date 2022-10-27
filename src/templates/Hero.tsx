@@ -1,5 +1,9 @@
 import { useState } from 'react';
 
+import Link from 'next/link';
+
+import { Button } from '../button/Button';
+import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 
 const Hero = () => {
@@ -20,17 +24,17 @@ const Hero = () => {
   return (
     <div
       style={{ backgroundImage: `url(${a[layer]})` }}
-      className="bg-contain bg-no-repeat bg-center"
+      className="bg-contain bg-no-repeat bg-right"
     >
-      <div className="backdrop-brightness-[0.4] s h-[90vh]">
-        <Section yPadding="pt-32 pb-32 ">
-          {/* <HeroOneButton
+      <div className=" s h-[90vh]">
+        <Section yPadding="pt-32 pb-32 ml-0">
+          <HeroOneButton
             title={
               <>
                 <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                   {'Radio Frequency Lab \n'}
                 </span>
-                <span className="text-gray-100">RF3i</span>
+                <span className="text-blue-800">RF3i</span>
               </>
             }
             description="Research for Radio Frequency, Embedded System,..."
@@ -41,7 +45,7 @@ const Hero = () => {
                 </a>
               </Link>
             }
-          /> */}
+          />
         </Section>
       </div>
     </div>
