@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const RFteam = (data: Data) => {
-  const show = 4;
+  const show = 3;
   const dataLength = data.data.length;
   const numberPage = Math.ceil(dataLength / show);
   const arrayGoto = Array(numberPage).fill(0);
@@ -17,9 +17,10 @@ const RFteam = (data: Data) => {
   function prevPage() {
     if (page - show > 0) setPage(() => page - show);
   }
-  // function gotoPage (go:number) {
-  //   setPage(()=>(go-1)*show+1)
-  // }
+  function gotoPage(go: number) {
+    setPage(() => go * show + 1);
+  }
+  const thisPage = (page - 1) / show;
   return (
     <>
       <Head>
@@ -102,11 +103,22 @@ const RFteam = (data: Data) => {
               {/* Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" */}
 
               {arrayGoto.map((item, index) => {
+                if (index === thisPage) {
+                  return (
+                    <button
+                      onClick={() => gotoPage(index)}
+                      key={index + item}
+                      className="relative z-10 inline-flex items-center z-10 border border-indigo-500 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-600 focus:z-20"
+                    >
+                      {index + 1}
+                    </button>
+                  );
+                }
                 return (
                   <button
-                    // onClick={gotoPage}
+                    onClick={() => gotoPage(index)}
                     key={index + item}
-                    className="relative z-10 inline-flex items-center z-10 border border-indigo-500 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-600 focus:z-20"
+                    className="relative z-10 inline-flex items-center z-10 border bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-600 focus:z-20"
                   >
                     {index + 1}
                   </button>
