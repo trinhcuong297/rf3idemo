@@ -6,6 +6,7 @@ import {
   FaFacebookF,
   FaMailBulk,
   FaWifi,
+  FaYoutube,
 } from 'react-icons/fa';
 
 import { Container, Content, ContentRow, SocialMedias } from './styles';
@@ -37,6 +38,9 @@ const ContactInformation: React.FC = () => (
     <SocialMedias>
       <Link href={'https://www.facebook.com/rf3ilab.hust'}>
         <FaFacebookF className="mr-6 hover:text-white cursor-pointer" />
+      </Link>
+      <Link href={'https://www.youtube.com/channel/UCYUFzZSRl9lHbqxXROqCbWA'}>
+        <FaYoutube className="mr-6 hover:text-white cursor-pointer" />
       </Link>
       <Link href="/">
         <FaWifi className="mr-6 hover:text-white cursor-pointer" />

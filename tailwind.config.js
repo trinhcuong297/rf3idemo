@@ -41,6 +41,16 @@ module.exports = {
       lineHeight: {
         hero: '4.5rem',
       },
+      keyframes: {
+        wiggle: {
+          '0%, 10%, 20%': { transform: 'rotate(-3deg)' },
+          '5%, 15%': { transform: 'rotate(3deg)' },
+          '22% 99%': { transform: 'rotate(0deg)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 3s ease-in-out infinite',
+      },
     },
   },
   variants: {},
