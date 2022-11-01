@@ -1,4 +1,5 @@
-import { MegaphoneIcon } from '@heroicons/react/24/outline';
+import { ArrowLongRightIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const callouts = [
   {
@@ -45,9 +46,12 @@ export default function HightlightNews() {
           </div>
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {callouts.map((callout) => (
-              <div key={callout.name} className="group relative flex md:block">
+              <div
+                key={callout.name}
+                className="group relative flex md:block hover:scale-[1.05] transition"
+              >
                 <div>
-                  <div className="relative h-[10rem] w-[10rem] overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1 md:h-[20rem] md:w-full">
+                  <div className="relative h-[10rem] w-[10rem] overflow-hidden rounded-lg bg-white sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1 md:h-[20rem] md:w-full">
                     <img
                       src={callout.imageSrc}
                       alt={callout.imageAlt}
@@ -69,6 +73,13 @@ export default function HightlightNews() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="w-full flex flex-row-reverse text-indigo-600 items-center">
+            <ArrowLongRightIcon
+              className="mx-4 h-6 w-6 text-blue-600"
+              aria-hidden="true"
+            />
+            <Link href="News/all">Show all</Link>
           </div>
         </div>
       </div>
