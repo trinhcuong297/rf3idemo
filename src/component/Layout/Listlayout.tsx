@@ -35,7 +35,7 @@ const ListLayout = ({ data, linkto, title }: any) => {
           return (
             <div key={tex.id} className="m-5 cursor-pointer">
               <Link href={`/${linkto}/${tex.id}`}>
-                <div className="flex items-center rounded-xl bg-white p-4 shadow-lg">
+                <div className="flex items-center rounded-xl bg-white p-4 shadow-sm">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-orange-100 bg-orange-50">
                     {tex.author ? (
                       <img src={tex.author} />

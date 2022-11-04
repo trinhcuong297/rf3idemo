@@ -11,7 +11,8 @@
       {
         "singleQuote": true
       }
-    ]
+    ],
+    "global-require": 0  
   },
   "overrides": [
     // Configuration for TypeScript files
