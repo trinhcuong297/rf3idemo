@@ -1,4 +1,4 @@
-import { ArrowLongRightIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
+import { ArrowLongRightIcon, MinusIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 const callouts = [
@@ -35,14 +35,18 @@ export default function HightlightNews() {
     <div className="bg-gray-200">
       <div className="mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
         <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-          <div className="flex items-center">
-            <MegaphoneIcon
-              className="animate-wiggle mx-4 h-10 w-10 text-blue-600"
+          <div className="flex items-center justify-center">
+            <MinusIcon
+              className="text-indigo-400 mx-4 h-10 w-10"
               aria-hidden="true"
             />
-            <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-indigo-400 to-blue-600">
+            <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-gray-800 to-blue-800">
               News
             </h2>
+            <MinusIcon
+              className="text-indigo-600 mx-4 h-10 w-10"
+              aria-hidden="true"
+            />
           </div>
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {callouts.map((callout) => (

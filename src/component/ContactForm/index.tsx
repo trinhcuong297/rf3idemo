@@ -75,6 +75,7 @@ const ContactForm: React.FC = () => {
         >
           <GridInputs>
             <Input
+              className="bg-white"
               name="name"
               label="Name*"
               type="text"
@@ -83,6 +84,7 @@ const ContactForm: React.FC = () => {
               required
             />
             <Input
+              className="bg-white"
               name="email"
               label="Email*"
               type="email"
@@ -91,6 +93,7 @@ const ContactForm: React.FC = () => {
               required
             />
             <Input
+              className="bg-white"
               name="phone"
               label="Phone number"
               type="text"
@@ -101,6 +104,7 @@ const ContactForm: React.FC = () => {
               style={{ outline: 'none' }}
             />
             <Input
+              className="bg-white"
               name="company"
               label="Company"
               type="text"
@@ -109,6 +113,7 @@ const ContactForm: React.FC = () => {
             />
           </GridInputs>
           <Input
+            className="bg-white"
             name="message"
             label="Message*"
             type="text"

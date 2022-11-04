@@ -12,7 +12,8 @@
         "singleQuote": true
       }
     ],
-    "global-require": 0  
+    "global-require": 0 ,
+    "react/no-unescaped-entities": 0 
   },
   "overrides": [
     // Configuration for TypeScript files

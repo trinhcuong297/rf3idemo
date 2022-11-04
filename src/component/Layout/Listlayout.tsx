@@ -90,7 +90,7 @@ const ListLayout = ({ data, linkto, title }: any) => {
             Next
           </button>
         </div>
-        <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between px-6 md:px-20">
           <div>
             <p className="text-sm text-gray-700">
               Showing <span className="font-medium">{page}</span> to{' '}
