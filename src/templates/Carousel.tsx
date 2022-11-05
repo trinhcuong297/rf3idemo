@@ -3,7 +3,7 @@ import React from 'react';
 function Cauro() {
   return (
     <>
-      <div className="lg:px-6 xl:px-0 px-6 md:mx-24 pb-4 md:mb-8">
+      <div className="lg:px-6 xl:px-0 px-6 md:mx-24 pb-4 md:mb-8 h-[85vh]">
         <div className="mx-auto container relative z-0 px-4 xl:px-0">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-3/5 pb-4">
