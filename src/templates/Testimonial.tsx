@@ -3,7 +3,7 @@ import { MinusIcon } from '@heroicons/react/20/solid';
 export default function Testimonial() {
   return (
     <>
-      <div className="flex items-center justify-center mt-6">
+      <div className="flex items-center justify-center mt-6 hidden">
         <MinusIcon
           className="text-indigo-400 mx-4 h-10 w-10"
           aria-hidden="true"
@@ -16,7 +16,7 @@ export default function Testimonial() {
           aria-hidden="true"
         />
       </div>
-      <div className="w-fit h-max md:h-auto m-auto items-center overflow-hidden hidden md:flex">
+      <div className="w-fit h-max md:h-auto m-auto items-center overflow-hidden hidden">
         {/* <img class="h-full" src="https://cdn.tuk.dev/assets/components/111220/Hero4/Rectangle.png" alt="Device"/> */}
         {/* <img className="md:absolute md:w-1/2 md:-ml-28" src="https://cdn.tuk.dev/assets/components/111220/Hero4/Device - Macbook Pro.png" /> */}
         <div className="carousel carousel-center mx w-[60rem] h-[25rem] lg:h-[30rem] space-x-4 rounded-[4rem] bg-gray-100 rounded-box flex items-center">
