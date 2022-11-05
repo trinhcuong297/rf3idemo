@@ -1,8 +1,8 @@
 export const AboutUsList = [
-  ['Introduction', '/link'],
-  ['Researcher Leader', '/link'],
-  ['Our Member', '/member'],
-  ['Alumi', '/alumi'],
+  ['Introduction', '/AboutUs#intro'],
+  ['Researcher Leader', '/AboutUs#researchLeader'],
+  ['Our Member', '/AboutUs#ourMember'],
+  ['Alumi', '/AboutUs#Alumni'],
 ];
 export const PublicationList = [
   ['RF Team', '/RFteam'],

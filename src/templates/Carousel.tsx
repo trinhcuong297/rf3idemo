@@ -18,7 +18,7 @@ function Cauro() {
                 {/* <button className="hover:opacity-90 bg-indigo-700 py-3 px-10 lg:py-7 lg:px-20 rounded-full text-white text-sm md:text-lg f-f-p">Learn More</button> */}
               </div>
             </div>
-            <div className="w-fit h-max md:h-auto m-auto items-center overflow-hidden hidden md:flex">
+            <div className="w-fit h-max md:h-auto m-auto items-center overflow-hidden flex ">
               {/* <img class="h-full" src="https://cdn.tuk.dev/assets/components/111220/Hero4/Rectangle.png" alt="Device"/> */}
               {/* <img className="md:absolute md:w-1/2 md:-ml-28" src="https://cdn.tuk.dev/assets/components/111220/Hero4/Device - Macbook Pro.png" /> */}
               <div className="carousel carousel-center w-full h-[25rem] lg:h-[30rem] space-x-4 rounded-[4rem] bg-gray-100 rounded-box flex items-center">
