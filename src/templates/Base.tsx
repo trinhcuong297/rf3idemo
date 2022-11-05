@@ -4,7 +4,7 @@ import { AppConfig } from '../utils/AppConfig';
 import Activ from './Activity';
 import Cauro from './Carousel';
 import Testimonial from './Testimonial';
-import { VerticalFeatures } from './VerticalFeatures';
+import { Timeline } from './Timeline';
 
 const Base = () => (
   <div className="antialiased text-gray-600">
@@ -14,7 +14,7 @@ const Base = () => (
     <HightlightNews />
     <Activ />
     {/* <Event/> */}
-    <VerticalFeatures />
+    <Timeline />
     {/* <Team/> */}
     <Testimonial />
     {/* <Banner /> */}

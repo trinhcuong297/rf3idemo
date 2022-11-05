@@ -1,4 +1,4 @@
-const VerticalFeatures = () => (
+const Timeline = () => (
   <div className="bg-gray-200">
     <section className="text-gray-700">
       <div className="container max-w-5xl px-4 py-12 mx-auto">
@@ -80,4 +80,4 @@ const VerticalFeatures = () => (
   </div>
 );
 
-export { VerticalFeatures };
+export { Timeline };
