@@ -3,7 +3,7 @@ import { MinusIcon } from '@heroicons/react/24/outline';
 export default function AboutUs() {
   return (
     <>
-      <div className="space-y-12 text-gray-800 px-20 scroll-smooth">
+      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth">
         <section className="">
           {/* <div className="container flex flex-col items-center px-4 py-8 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
 			<h1 className="text-4xl font-bold leading-none sm:text-5xl">Quisquam necessita vel
