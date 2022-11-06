@@ -1,162 +1,107 @@
-import { MinusIcon } from '@heroicons/react/20/solid';
+import React from 'react';
+
+import { SparklesIcon } from '@heroicons/react/20/solid';
 
 export default function Testimonial() {
   return (
     <>
-      <div className="flex items-center justify-center mt-6 hidden">
-        <MinusIcon
-          className="text-indigo-400 mx-4 h-10 w-10"
+      <div className="flex items-center justify-center mt-8 lg:mt-12">
+        <SparklesIcon
+          className="text-red-400 mx-4 h-10 w-10"
           aria-hidden="true"
         />
-        <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-gray-800 to-blue-800">
+        <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-red-400 to-blue-600">
           Testimonial
         </h2>
-        <MinusIcon
+        <SparklesIcon
           className="text-indigo-600 mx-4 h-10 w-10"
           aria-hidden="true"
         />
       </div>
-      <div className="w-fit h-max md:h-auto m-auto items-center overflow-hidden hidden">
-        {/* <img class="h-full" src="https://cdn.tuk.dev/assets/components/111220/Hero4/Rectangle.png" alt="Device"/> */}
-        {/* <img className="md:absolute md:w-1/2 md:-ml-28" src="https://cdn.tuk.dev/assets/components/111220/Hero4/Device - Macbook Pro.png" /> */}
-        <div className="carousel carousel-center mx w-[60rem] h-[25rem] lg:h-[30rem] space-x-4 rounded-[4rem] bg-gray-100 rounded-box flex items-center">
-          <div className="carousel-item">
-            <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-              <div className="container max-w-xl mx-auto">
-                <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                  <img
-                    src="https://source.unsplash.com/random/100x100?4"
-                    alt=""
-                    className="w-20 h-20 rounded-full dark:bg-gray-500"
-                  />
-                  <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                    Good team!
-                  </blockquote>
-                  <div className="text-center dark:text-gray-400">
-                    <p>Leroy Jenkins</p>
-                    <p>CEO of Company Co.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div className="carousel-item">
-            <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-              <div className="container max-w-xl mx-auto">
-                <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                  <img
-                    src="https://source.unsplash.com/random/100x100?4"
-                    alt=""
-                    className="w-20 h-20 rounded-full dark:bg-gray-500"
-                  />
-                  <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                    Good team!
-                  </blockquote>
-                  <div className="text-center dark:text-gray-400">
-                    <p>Leroy Jenkins</p>
-                    <p>CEO of Company Co.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div className="carousel-item">
-            <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-              <div className="container max-w-xl mx-auto">
-                <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                  <img
-                    src="https://source.unsplash.com/random/100x100?4"
-                    alt=""
-                    className="w-20 h-20 rounded-full dark:bg-gray-500"
-                  />
-                  <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                    Good team!
-                  </blockquote>
-                  <div className="text-center dark:text-gray-400">
-                    <p>Leroy Jenkins</p>
-                    <p>CEO of Company Co.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          {/* <div className="carousel-item">
-                  <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-                    <div className="container max-w-xl mx-auto">
-                      <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                        <img
-                          src="https://source.unsplash.com/random/100x100?4"
-                          alt=""
-                          className="w-20 h-20 rounded-full dark:bg-gray-500"
-                        />
-                        <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                          Good team!
-                        </blockquote>
-                        <div className="text-center dark:text-gray-400">
-                          <p>Leroy Jenkins</p>
-                          <p>CEO of Company Co.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div><div className="carousel-item">
-                  <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-                    <div className="container max-w-xl mx-auto">
-                      <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                        <img
-                          src="https://source.unsplash.com/random/100x100?4"
-                          alt=""
-                          className="w-20 h-20 rounded-full dark:bg-gray-500"
-                        />
-                        <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                          Good team!
-                        </blockquote>
-                        <div className="text-center dark:text-gray-400">
-                          <p>Leroy Jenkins</p>
-                          <p>CEO of Company Co.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div><div className="carousel-item">
-                  <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-                    <div className="container max-w-xl mx-auto">
-                      <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                        <img
-                          src="https://source.unsplash.com/random/100x100?4"
-                          alt=""
-                          className="w-20 h-20 rounded-full dark:bg-gray-500"
-                        />
-                        <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                          Good team!
-                        </blockquote>
-                        <div className="text-center dark:text-gray-400">
-                          <p>Leroy Jenkins</p>
-                          <p>CEO of Company Co.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div><div className="carousel-item">
-                  <section className="p-6 drop-shadow-2xl mt-4 lg:col-span-2 lg:row-span-2">
-                    <div className="container max-w-xl mx-auto">
-                      <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
-                        <img
-                          src="https://source.unsplash.com/random/100x100?4"
-                          alt=""
-                          className="w-20 h-20 rounded-full dark:bg-gray-500"
-                        />
-                        <blockquote className="max-w-lg text-lg italic font-medium text-center">
-                          Good team!
-                        </blockquote>
-                        <div className="text-center dark:text-gray-400">
-                          <p>Leroy Jenkins</p>
-                          <p>CEO of Company Co.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+      <div>
+        <div className="lg:px-20 md:px-6 px-4 pb-12 lg:pb-20">
+          {/* <div className="flex flex-col items-center justify-center">
+                    <h1 className="lg:text-4xl text-3xl font-bold text-center text-gray-800">Hear from our clients</h1>
+                    <p className="text-base leading-6 mt-4 text-center text-gray-600 2xl:w-2/5 ">Hear from our engineers</p>
                 </div> */}
+          <div className="w-full lg:flex items-center gap-6 mt-10">
+            <div className="lg:w-1/2">
+              <div className="bg-white border rounded-md border-gray-200 relative sm:p-10 p-6">
+                <div>
+                  <img
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonials-4-svg1.svg"
+                    alt="commas"
+                  />
+                </div>
+                <p className="text-base leading-6 text-gray-600 mt-4">
+                  When our designs need an expert opinion or approval, I know I
+                  can rely on your agency Thank you for all your help-I will be
+                  recommending you to everyone
+                </p>
+                <div className="absolute bottom-0 -mb-4 ml-10">
+                  <img
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonials-4-svg2.svg"
+                    alt="sharp"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center mt-7">
+                <div className="w-12 h-12 border border-indigo-700 rounded-full flex items-center justify-center">
+                  <img
+                    src="https://i.ibb.co/R6WQhYj/Mask-Group.png"
+                    className="w-10 h-10 rounded-full"
+                    alt="profile"
+                  />
+                </div>
+                <div className="flex flex-col items-start ml-4">
+                  <p className="text-base font-semibold leading-4 text-gray-800">
+                    Alisha Cooper
+                  </p>
+                  <p className="text-base leading-4 mt-2 text-center text-gray-600">
+                    Developer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 lg:mt-0 mt-16">
+              <div className="bg-white border rounded-md border-gray-200 relative sm:p-10 p-6">
+                <div>
+                  <img
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonials-4-svg1.svg"
+                    alt="commas"
+                  />
+                </div>
+                <p className="text-base leading-6 text-gray-600 mt-4">
+                  When our designs need an expert opinion or approval, I know I
+                  can rely on your agency Thank you for all your help-I will be
+                  recommending you to everyone
+                </p>
+                <div className="absolute bottom-0 -mb-4 ml-10">
+                  <img
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonials-4-svg2.svg"
+                    alt="sharp"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center mt-7">
+                <div className="w-12 h-12 border border-indigo-700 rounded-full flex items-center justify-center">
+                  <img
+                    src="https://i.ibb.co/C6bwf12/Mask-Group.png"
+                    className="w-10 h-10 rounded-full"
+                    alt="profile"
+                  />
+                </div>
+                <div className="flex flex-col items-start ml-4">
+                  <p className="text-base font-semibold leading-4 text-gray-800">
+                    Henry Jack
+                  </p>
+                  <p className="text-base leading-4 mt-2 text-center text-gray-600">
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

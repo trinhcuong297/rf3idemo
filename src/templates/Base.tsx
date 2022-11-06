@@ -10,14 +10,10 @@ const Base = () => (
   <div className="antialiased text-gray-600">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Cauro />
-    {/* <Hero /> */}
     <HightlightNews />
     <Activ />
-    {/* <Event/> */}
     <Timeline />
-    {/* <Team/> */}
     <Testimonial />
-    {/* <Banner /> */}
   </div>
 );
 
