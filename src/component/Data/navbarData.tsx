@@ -9,6 +9,6 @@ export const PublicationList = [
   ['ES Team', '/ESteam'],
 ];
 export const ProductList = [
-  ['RF Team', '/RFteam'],
-  ['ES Team', '/ESteam'],
+  ['RF Team', '/RFteam/product'],
+  ['ES Team', '/ESteam/product'],
 ];

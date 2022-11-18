@@ -1,10 +1,33 @@
 import React from 'react';
 
+import { useRouter } from 'next/router';
+
 function Cauro() {
+  const router = useRouter();
   return (
     <>
-      <div className="lg:px-6 xl:px-0 px-6 md:mx-24 pb-4 md:mb-8 h-[85vh]">
-        <div className="mx-auto container relative z-0 px-4 xl:px-0">
+      <div className="h-screen bg-gray-200">
+        <div
+          className="hero min-h-screen absolute top-0"
+          style={{
+            backgroundImage: `url("${router.basePath}/assets/images/bg-cover.png")`,
+          }}
+        >
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="">
+              <h1 className="mb-5 text-[6rem] text-inline underline decoration-sky-500 font-bold">
+                RF3I Group
+              </h1>
+              <p className="mb-5">
+                Radio Frequency Instrumentation and Industrial Informatics
+              </p>
+              {/* <button className="btn btn-primary">Get Started</button> */}
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto container relative z-0 px-4 xl:px-0 hidden">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-3/5 pb-4">
               <h1 className="text-4xl lg:text-6xl xl:text-8xl font-black text-indigo-900 text-center md:text-left tracking-tighter f-f-i md:w-7/12 leading-tight text-heading-color">
