@@ -31,7 +31,7 @@ export default function Navbar() {
   };
   return (
     <>
-      <Section yPadding="bg-gray-100/60">
+      <Section yPadding="bg-gray-100/80">
         <div className="hidden md:block">
           <NavbarTwoColumns logo={<Logo xl />}>
             <li className="inline-flex w-full justify-center items-center">
