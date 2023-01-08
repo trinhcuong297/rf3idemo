@@ -1,194 +1,120 @@
-import { Fragment, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import { Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
+import smoothscroll from 'smoothscroll-polyfill';
 
-import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from '../templates/Logo';
-import { AboutUsList, ProductList, PublicationList } from './Data/navbarData';
-import MobileNav from './mobileNav';
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
-  const onToggle = () => {
-    setShow((status) => {
-      return !status;
-    });
-  };
-  const onToggle2 = () => {
-    setShow2((status) => {
-      return !status;
-    });
-  };
-  const onToggle3 = () => {
-    setShow3((status) => {
-      return !status;
-    });
-  };
+  const [toggleNav, setToggleNav] = useState(false);
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+    const handleWindowScroll = () => {
+      if (window.scrollY > 50) setShow(true);
+      else setShow(false);
+    };
+
+    window.addEventListener('scroll', handleWindowScroll);
+    return () => window.removeEventListener('scroll', handleWindowScroll);
+  }, []);
+
   return (
     <>
-      <Section yPadding="bg-gray-100/80">
-        <div className="hidden md:block">
-          <NavbarTwoColumns logo={<Logo xl />}>
-            <li className="inline-flex w-full justify-center items-center">
-              <Link href="/">
-                <a className="text-gray-800 text-lg hover:text-blue-900 hover:underline-offset-8 transition hover:underline">
-                  Home
-                </a>
-              </Link>
-            </li>
-
-            <div
-              className="relative inline-block text-left"
-              onMouseEnter={onToggle}
-              onMouseLeave={onToggle}
+      <nav
+        id="header"
+        className={`${
+          show ? 'bg-gray-100 backdrop-blur' : ''
+        } fixed w-full z-30 top-0 text-white`}
+      >
+        <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+          <div className="pl-4 flex items-center">
+            <Link href={'/'}>
+              <p className="flex justify-center items-center">
+                <Logo xl />
+              </p>
+            </Link>
+          </div>
+          <div className="block lg:hidden pr-4">
+            <button
+              onClick={() => {
+                setToggleNav(!toggleNav);
+              }}
+              id="nav-toggle"
+              className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
             >
-              <div>
-                <button className="aboutus inline-flex inline w-max text-gray-800 text-lg hover:text-blue-900 hover:underline-offset-8 transition hover:underline justify-center items-center rounded-md px-4 py-2 font-medium ">
-                  About us
-                  <ChevronDownIcon
-                    className="mr-1 ml-1 h-5 w-5"
-                    aria-hidden="true"
-                  />
-                </button>
-              </div>
-
-              <Transition
-                as={Fragment}
-                show={show}
-                enter="transition ease-out duration-50"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
+              <svg
+                className="fill-current h-6 w-6"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div className="absolute right-0 z-10 pt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {AboutUsList.map((item, index) => {
-                      return (
-                        <div key={index}>
-                          <a
-                            href={item[1]}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                          >
-                            {item[0]}
-                          </a>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </Transition>
-            </div>
-
-            <div
-              className="relative inline-block text-left"
-              onMouseEnter={onToggle2}
-              onMouseLeave={onToggle2}
-            >
-              <div>
-                <button className="inline-flex inline w-max text-gray-800 text-lg hover:text-blue-900 hover:underline-offset-8 transition hover:underline justify-center items-center rounded-md px-4 py-2 font-medium ">
-                  Publication
-                  <ChevronDownIcon
-                    className="mr-1 ml-1 h-5 w-5"
-                    aria-hidden="true"
-                  />
-                </button>
-              </div>
-
-              <Transition
-                as={Fragment}
-                show={show2}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <div className="absolute right-0 z-10 pt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {PublicationList.map((item, index) => {
-                      return (
-                        <div key={index}>
-                          <a
-                            href={item[1]}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                          >
-                            {item[0]}
-                          </a>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </Transition>
-            </div>
-
-            <div
-              className="relative inline-block text-left"
-              onMouseEnter={onToggle3}
-              onMouseLeave={onToggle3}
-            >
-              <div>
-                <button className="inline-flex inline w-max text-gray-800 text-lg hover:text-blue-900 hover:underline-offset-8 transition hover:underline justify-center items-center rounded-md px-4 py-2 font-medium ">
-                  Product
-                  <ChevronDownIcon
-                    className="mr-1 ml-1 h-5 w-5"
-                    aria-hidden="true"
-                  />
-                </button>
-              </div>
-
-              <Transition
-                as={Fragment}
-                show={show3}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <div className="absolute right-0 z-10 pt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {ProductList.map((item, index) => {
-                      return (
-                        <div key={index}>
-                          <a
-                            href={item[1]}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                          >
-                            {item[0]}
-                          </a>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </Transition>
-            </div>
-
-            <li className="inline-flex w-full justify-center items-center">
-              <Link href="/Contact">
-                <a className="text-gray-800 text-lg hover:text-blue-900 hover:underline-offset-8 transition hover:underline inline w-max">
-                  Contact Us
-                </a>
-              </Link>
-            </li>
-          </NavbarTwoColumns>
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              </svg>
+            </button>
+          </div>
+          <div
+            className={`${
+              toggleNav ? '' : 'hidden'
+            } w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20`}
+            id="nav-content"
+          >
+            <ul className="list-reset lg:flex justify-end flex-1 items-center">
+              <li className="mr-3">
+                <Link href={''}>
+                  <p
+                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                  >
+                    Home
+                  </p>
+                </Link>
+              </li>
+              <li className="mr-3">
+                <Link href={''}>
+                  <p
+                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                  >
+                    About us
+                  </p>
+                </Link>
+              </li>
+              <li className="mr-3">
+                <Link href={''}>
+                  <p
+                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                  >
+                    Publication
+                  </p>
+                </Link>
+              </li>
+              <li className="mr-3">
+                <Link href={''}>
+                  <p
+                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                  >
+                    Product
+                  </p>
+                </Link>
+              </li>
+              <li className="mr-3">
+                <Link href="/Contact">
+                  <p
+                    className={`${
+                      show
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-100'
+                        : ' bg-white text-black'
+                    } mx-auto lg:mx-0 text-lg font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out`}
+                  >
+                    Contact us
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="md:hidden">
-          <NavbarTwoColumns logo={<Logo xl />}>
-            <MobileNav />
-          </NavbarTwoColumns>
-        </div>
-      </Section>
+        <hr className="border-b border-gray-100 opacity-25 my-0 py-0 drop-shadow-md" />
+      </nav>
     </>
   );
 }
