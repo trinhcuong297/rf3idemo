@@ -1,4 +1,4 @@
-import { Base } from './Home/MainHome';
+import { Base } from '../Home/MainHome';
 
 const Index = () => <Base />;
 

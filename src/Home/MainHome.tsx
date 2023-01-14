@@ -1,5 +1,5 @@
-import { Meta } from '../../layout/Meta';
-import { AppConfig } from '../../utils/AppConfig';
+import { Meta } from '../layout/Meta';
+import { AppConfig } from '../utils/AppConfig';
 import Activ from './Activity';
 import Hero from './Hero';
 import HightlightNews from './HightLightPost';

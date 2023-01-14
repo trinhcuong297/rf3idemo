@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 
 import Navbar from '../component/navbar';
 import '../styles/global.css';
-import { Footer } from './Home/Footer';
+import { Footer } from '../Home/Footer';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>

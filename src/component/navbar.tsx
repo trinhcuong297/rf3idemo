@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 // import smoothscroll from 'smoothscroll-polyfill';
 
-import { Logo } from '../pages/Home/Logo';
+import { Logo } from '../Home/Logo';
 
 export default function Navbar() {
   // const [show, setShow] = useState(false);
