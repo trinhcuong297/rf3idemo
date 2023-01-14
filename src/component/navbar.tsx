@@ -1,34 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import Link from 'next/link';
-import smoothscroll from 'smoothscroll-polyfill';
+// import smoothscroll from 'smoothscroll-polyfill';
 
-import { Logo } from '../templates/Logo';
+import { Logo } from '../pages/Home/Logo';
 
 export default function Navbar() {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const [toggleNav, setToggleNav] = useState(false);
 
-  useEffect(() => {
-    smoothscroll.polyfill();
-    const handleWindowScroll = () => {
-      if (window.scrollY > 50) setShow(true);
-      else setShow(false);
-    };
+  // useEffect(() => {
+  //   smoothscroll.polyfill();
+  //   const handleWindowScroll = () => {
+  //     if (window.scrollY > 50) setShow(true);
+  //     else setShow(false);
+  //   };
 
-    window.addEventListener('scroll', handleWindowScroll);
-    return () => window.removeEventListener('scroll', handleWindowScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleWindowScroll);
+  //   return () => window.removeEventListener('scroll', handleWindowScroll);
+  // }, []);
 
   return (
     <>
       <nav
         id="header"
         className={`${
-          show ? 'bg-gray-100 backdrop-blur' : ''
+          true ? 'bg-gray-100' : ''
         } fixed w-full z-30 top-0 text-white`}
       >
-        <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
           <div className="pl-4 flex items-center">
             <Link href={'/'}>
               <p className="flex justify-center items-center">
@@ -62,36 +62,36 @@ export default function Navbar() {
           >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="mr-3">
-                <Link href={''}>
+                <Link href={'/'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
                     Home
                   </p>
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={''}>
+                <Link href={'/AboutUs'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
                     About us
                   </p>
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={''}>
+                <Link href={'/ESteam/index'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
                     Publication
                   </p>
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={''}>
+                <Link href={'/ESteam/product'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-lg font-medium no-underline hover:underline underline-offset-8`}
+                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
                     Product
                   </p>
@@ -101,10 +101,10 @@ export default function Navbar() {
                 <Link href="/Contact">
                   <p
                     className={`${
-                      show
+                      true
                         ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-100'
                         : ' bg-white text-black'
-                    } mx-auto lg:mx-0 text-lg font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out`}
+                    } mx-auto cursor-pointer lg:mx-0 text-md font-bold rounded-full mt-4 lg:mt-0 py-2 px-4 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out`}
                   >
                     Contact us
                   </p>
@@ -113,7 +113,7 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
-        <hr className="border-b border-gray-100 opacity-25 my-0 py-0 drop-shadow-md" />
+        {/* <hr className="border-b border-gray-100 opacity-25 my-0 py-0 drop-shadow-md" /> */}
       </nav>
     </>
   );

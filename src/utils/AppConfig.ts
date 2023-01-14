@@ -1,6 +1,8 @@
 export const AppConfig = {
-  site_name: 'RF3i',
-  title: 'RF3i',
-  description: 'Demo for RF3i site',
+  site_name:
+    'RF3i Lab - Radio Frequency Instrumentation and Industrial Informatics',
+  title:
+    'RF3i Lab - Radio Frequency Instrumentation and Industrial Informatics',
+  description: 'RF3i site',
   locale: 'en',
 };
