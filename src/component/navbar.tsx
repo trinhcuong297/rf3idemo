@@ -110,6 +110,11 @@ export default function Navbar() {
                   </p>
                 </Link>
               </li>
+              <label className="swap swap-rotate">
+                <input type="checkbox" />
+                <div className="swap-on">ON</div>
+                <div className="swap-off">OFF</div>
+              </label>
             </ul>
           </div>
         </div>
