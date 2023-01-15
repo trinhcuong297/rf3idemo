@@ -71,6 +71,15 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="mr-3">
+                <Link href={'/'}>
+                  <p
+                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                  >
+                    New
+                  </p>
+                </Link>
+              </li>
+              <li className="mr-3">
                 <Link href={'/AboutUs'}>
                   <p
                     className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
