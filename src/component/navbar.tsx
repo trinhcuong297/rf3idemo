@@ -61,6 +61,21 @@ export default function Navbar() {
             id="nav-content"
           >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
+              <div
+                className="search-form flex items-center space-x-4 px-6 mx-auto max-w-screen-xl md:px-8 lg:px-12
+                transform duration-500 transition-all"
+              >
+                <div className="">
+                  {/* <input
+                      className="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
+                      type="text" placeholder="Animal name or keyword..." /> */}
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="input input-bordered outline-0 bg-gray-100 border-transparent focus:outline-none focus:border-gray-200 focus:bg-white w-full max-w-xs"
+                  />
+                </div>
+              </div>
               <li className="mr-3">
                 <Link href={'/'}>
                   <p
@@ -71,11 +86,11 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={'/'}>
+                <Link href={'/News'}>
                   <p
                     className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
-                    New
+                    News
                   </p>
                 </Link>
               </li>
@@ -93,7 +108,7 @@ export default function Navbar() {
                   <p
                     className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
-                    RF3i Alumi
+                    Alumi
                   </p>
                 </Link>
               </li>
@@ -130,8 +145,18 @@ export default function Navbar() {
               </li>
               <label className="swap swap-rotate">
                 <input type="checkbox" />
-                <div className="cursor-pointer swap-on">EN</div>
-                <div className="cursor-pointer swap-off">VI</div>
+                <div className="cursor-pointer swap-on">
+                  <img
+                    src="https://img.icons8.com/clouds/512/vietnam--v2.png"
+                    className="w-10 h-10"
+                  ></img>
+                </div>
+                <div className="cursor-pointer swap-off">
+                  <img
+                    src="https://img.icons8.com/clouds/2x/great-britain.png"
+                    className="w-10 h-10"
+                  ></img>
+                </div>
               </label>
             </ul>
           </div>

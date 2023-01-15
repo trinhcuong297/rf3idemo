@@ -55,7 +55,7 @@ export default function Activ() {
             className="mx-4 h-6 w-6 text-blue-600"
             aria-hidden="true"
           />
-          <Link href="News/all">Show all</Link>
+          <Link href="/News">Show all</Link>
         </div>
       </section>
     </div>
