@@ -112,8 +112,8 @@ export default function Navbar() {
               </li>
               <label className="swap swap-rotate">
                 <input type="checkbox" />
-                <div className="swap-on">ON</div>
-                <div className="swap-off">OFF</div>
+                <div className="cursor-pointer swap-on">EN</div>
+                <div className="cursor-pointer swap-off">VI</div>
               </label>
             </ul>
           </div>
