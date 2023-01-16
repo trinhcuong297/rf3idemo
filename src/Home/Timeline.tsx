@@ -10,6 +10,7 @@ export default function Timeline() {
     id?: String | null | undefined;
     title?: String | null | undefined;
     event_time?: String | null | undefined;
+    html_content?: String | null | undefined;
   }
 
   useEffect(() => {
@@ -107,7 +108,7 @@ export default function Timeline() {
                       <time className="text-xs tracking-wide uppercase text-gray-800">
                         {param.event_time}
                       </time>
-                      <p className="mt-3">{param.title}</p>
+                      <p className="mt-3">{param.html_content}</p>
                     </div>
                   );
                 })}

@@ -60,19 +60,19 @@ export default function Navbar() {
             } w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20`}
             id="nav-content"
           >
-            <ul className="list-reset lg:flex justify-end flex-1 items-center">
+            <ul className="lg:flex justify-end w-full items-center">
               <div
-                className="search-form flex items-center space-x-4 mx-auto max-w-screen-xl px-2
+                className="search-form flex items-center w-max mx-auto
                 transform duration-500 transition-all"
               >
-                <div className="">
+                <div className="w-full">
                   {/* <input
                       className="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
                       type="text" placeholder="Animal name or keyword..." /> */}
                   <input
                     type="text"
                     placeholder="Search..."
-                    className="input input-bordered outline-0 bg-gray-100 border-transparent focus:outline-none focus:border-gray-200 focus:shadow-md focus:bg-white w-full max-w-xs"
+                    className="input w-full input-bordered outline-0 bg-gray-100 border-blue-200 focus:outline-none focus:border-gray-200 focus:shadow-md focus:bg-white w-full"
                   />
                 </div>
               </div>

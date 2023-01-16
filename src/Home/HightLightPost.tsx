@@ -12,11 +12,12 @@ export default function HightlightNews() {
     image_title_url?: String | null | undefined;
     title?: String | null | undefined;
     sub_title?: String | null | undefined;
+    created_time?: String | null | undefined;
   }
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/home/news/main?limit=3`)
+    fetch(`${process.env.RF3i_API}/rf3i-api/home/news/main?limit=4`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
@@ -27,7 +28,7 @@ export default function HightlightNews() {
   if (isLoading)
     return (
       <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-6">
+        <h3 className="flex items-center my-2">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -52,7 +53,7 @@ export default function HightlightNews() {
   if (!data)
     return (
       <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-6">
+        <h3 className="flex items-center my-2">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -71,7 +72,7 @@ export default function HightlightNews() {
     <div className="bg-gray-200">
       <div className="mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
         <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-          <h3 className="flex items-center my-6">
+          <h3 className="flex items-center my-2">
             <span
               aria-hidden="true"
               className="flex-grow bg-blue-200 rounded h-0.5"
@@ -85,7 +86,7 @@ export default function HightlightNews() {
             ></span>
           </h3>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mx-8 sm:mx-4 xl:mx-auto justify-center mt-8">
-            <div className="flex flex-col px-2 pt-2 bg-gray-100 rounded-xl shadow-xl w-full md:max-w-xl overflow-hidden">
+            <div className="flex flex-col px-2 pt-2 bg-gray-100 rounded-xl shadow-xl w-full md:max-w-xl overflow-hidden h-fit">
               <div className="flex-1 items-center mx-auto mt-2">
                 <img
                   src={`${data[0] ? data[0].image_title_url : ''}`}
@@ -96,11 +97,11 @@ export default function HightlightNews() {
               <div className="flex-1 px-4 sm:px-4 pt-3">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-500 text-justify">
-                    Monday Feb 23, 2022
+                    {`${data[0] ? data[0].created_time : ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[0] ? data[0].id : ''}`}>
-                  <h3 className=" text-black text-xl sm:text-2xl font-bold mt-2">{`${
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">{`${
                     data[0] ? data[0].title : ''
                   }`}</h3>
                 </Link>
@@ -117,14 +118,14 @@ export default function HightlightNews() {
               </div>
             </div>
             <div className="flex flex-col px-2 w-full md:max-w-xl space-y-4">
-              <div className="px-4 sm:px-8 pt-6 rounded-2xl w-full md:max-w-xl overflow-hidden">
+              <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    Monday Feb 23, 2022
+                    {`${data[1] ? data[1].created_time : ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[1] ? data[1].id : ''}`}>
-                  <h3 className=" text-black text-xl sm:text-2xl font-bold mt-2">
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
                     {data[1] ? data[1].title : ''}
                   </h3>
                 </Link>
@@ -138,21 +139,21 @@ export default function HightlightNews() {
                     </button>
                   </Link>
                 </div>
-                <h3 className="flex items-center my-6">
+                <h3 className="flex items-center my-2">
                   <span
                     aria-hidden="true"
                     className="flex-grow bg-blue-200 rounded h-0.5"
                   ></span>
                 </h3>
               </div>
-              <div className="px-4 sm:px-8 pt-6 rounded-2xl w-full md:max-w-xl overflow-hidden">
+              <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    Monday Feb 23, 2022
+                    {`${data[2] ? data[2].created_time : ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[2] ? data[2].id : ''}`}>
-                  <h3 className=" text-black text-xl sm:text-2xl font-bold mt-2">
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
                     {data[2] ? data[2].title : ''}
                   </h3>
                 </Link>
@@ -166,7 +167,35 @@ export default function HightlightNews() {
                     </button>
                   </Link>
                 </div>
-                <h3 className="flex items-center my-6">
+                <h3 className="flex items-center my-2">
+                  <span
+                    aria-hidden="true"
+                    className="flex-grow bg-blue-200 rounded h-0.5"
+                  ></span>
+                </h3>
+              </div>
+              <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
+                <div className="flex flex-col sm:flex-row justify-between ">
+                  <small className="text-sm text-gray-600 text-justify">
+                    {`${data[3] ? data[3].created_time : ''}`}
+                  </small>
+                </div>
+                <Link href={`/News/${data[3] ? data[3].id : ''}`}>
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
+                    {data[3] ? data[3].title : ''}
+                  </h3>
+                </Link>
+                <p className="mt-6 text-gray-700 text-justify">
+                  {data[3] ? data[3].sub_title : ''}
+                </p>
+                <div className="flex items-center justify-end -mr-12 -mb-5">
+                  <Link href={`/News/${data[3] ? data[3].id : ''}`}>
+                    <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
+                      Read more&rarr; <br />.
+                    </button>
+                  </Link>
+                </div>
+                <h3 className="flex items-center my-2">
                   <span
                     aria-hidden="true"
                     className="flex-grow bg-blue-200 rounded h-0.5"
@@ -197,6 +226,7 @@ export function AllNews() {
     image_title_url?: String | null | undefined;
     title?: String | null | undefined;
     sub_title?: String | null | undefined;
+    created_time?: String | null | undefined;
   }
 
   useEffect(() => {
@@ -212,7 +242,7 @@ export function AllNews() {
   if (isLoading)
     return (
       <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-6">
+        <h3 className="flex items-center my-2">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -237,7 +267,7 @@ export function AllNews() {
   if (!data)
     return (
       <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-6">
+        <h3 className="flex items-center my-2">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -256,7 +286,7 @@ export function AllNews() {
     <div className="bg-gray-200">
       <div className="mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
         <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-          <h3 className="flex items-center my-6">
+          <h3 className="flex items-center my-2">
             <span
               aria-hidden="true"
               className="flex-grow bg-blue-200 rounded h-0.5"
@@ -270,7 +300,7 @@ export function AllNews() {
             ></span>
           </h3>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mx-8 sm:mx-4 xl:mx-auto justify-center mt-8">
-            <div className="flex flex-col px-2 pt-2 bg-gray-100 rounded-xl shadow-xl w-full md:max-w-xl overflow-hidden">
+            <div className="flex flex-col px-2 pt-2 bg-gray-100 rounded-xl shadow-xl w-full md:max-w-xl overflow-hidden h-fit">
               <div className="flex-1 items-center mx-auto mt-2">
                 <img
                   src={`${data[0] ? data[0].image_title_url : ''}`}
@@ -281,11 +311,11 @@ export function AllNews() {
               <div className="flex-1 px-4 sm:px-4 pt-3">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-500 text-justify">
-                    Monday Feb 23, 2022
+                    {`${data[0] ? data[0].created_time : ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[0] ? data[0].id : ''}`}>
-                  <h3 className=" text-black text-xl sm:text-2xl font-bold mt-2">{`${
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">{`${
                     data[0] ? data[0].title : ''
                   }`}</h3>
                 </Link>
@@ -305,11 +335,11 @@ export function AllNews() {
               <div className="px-4 sm:px-8 pt-6 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    Monday Feb 23, 2022
+                    {`${data[1] ? data[1].created_time : ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[1] ? data[1].id : ''}`}>
-                  <h3 className=" text-black text-xl sm:text-2xl font-bold mt-2">
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
                     {data[1] ? data[1].title : ''}
                   </h3>
                 </Link>
@@ -323,7 +353,7 @@ export function AllNews() {
                     </button>
                   </Link>
                 </div>
-                <h3 className="flex items-center my-6">
+                <h3 className="flex items-center my-2">
                   <span
                     aria-hidden="true"
                     className="flex-grow bg-blue-200 rounded h-0.5"
@@ -333,11 +363,11 @@ export function AllNews() {
               <div className="px-4 sm:px-8 pt-6 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    Monday Feb 23, 2022
+                    {`${data[2] ? data[2].created_time : ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[2] ? data[2].id : ''}`}>
-                  <h3 className=" text-black text-xl sm:text-2xl font-bold mt-2">
+                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
                     {data[2] ? data[2].title : ''}
                   </h3>
                 </Link>
@@ -351,7 +381,7 @@ export function AllNews() {
                     </button>
                   </Link>
                 </div>
-                <h3 className="flex items-center my-6">
+                <h3 className="flex items-center my-2">
                   <span
                     aria-hidden="true"
                     className="flex-grow bg-blue-200 rounded h-0.5"
