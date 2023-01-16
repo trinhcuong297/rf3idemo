@@ -62,7 +62,7 @@ export default function Navbar() {
           >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <div
-                className="search-form flex items-center space-x-4 px-6 mx-auto max-w-screen-xl md:px-8 lg:px-12
+                className="search-form flex items-center space-x-4 mx-auto max-w-screen-xl px-2
                 transform duration-500 transition-all"
               >
                 <div className="">
