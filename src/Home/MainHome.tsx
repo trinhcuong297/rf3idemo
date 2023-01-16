@@ -3,8 +3,7 @@ import { AppConfig } from '../utils/AppConfig';
 import Activ from './Activity';
 import Hero from './Hero';
 import HightlightNews from './HightLightPost';
-import Testimonial from './Testimonial';
-import { Timeline } from './Timeline';
+import Timeline from './Timeline';
 
 const Base = () => (
   <div className="antialiased text-gray-600">
@@ -13,7 +12,7 @@ const Base = () => (
     <HightlightNews />
     <Activ />
     <Timeline />
-    <Testimonial />
+    {/* <Testimonial /> */}
   </div>
 );
 
