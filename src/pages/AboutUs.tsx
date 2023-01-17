@@ -8,7 +8,7 @@ export default function AboutUs() {
       <Head>
         <title>RF3i - Infomation</title>
       </Head>
-      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth">
+      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth mb-8">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-12 px-4 text-center">
             <div className="w-full max-w-2xl text-left">
@@ -115,7 +115,7 @@ export default function AboutUs() {
 
         <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
           <div className="flex items-center justify-center mt-6">
-            <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-gray-900 to-gray-900">
+            <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
               Our Member
             </h2>
           </div>
