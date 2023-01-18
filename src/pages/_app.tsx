@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import NextNProgress from 'nextjs-progressbar';
 
 import Navbar from '../component/navbar';
 import '../styles/global.css';
@@ -6,6 +7,7 @@ import { Footer } from '../Home/Footer';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
+    <NextNProgress />
     <div className="bg-gray-100">
       <div className="z-10 fixed w-screen top-0">
         <Navbar />
