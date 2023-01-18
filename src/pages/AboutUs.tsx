@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import ActiveMember from '../AboutUs/AboutUs';
 import ResearchLeader from '../AboutUs/ResearchLeader';
 
 export default function AboutUs() {
@@ -113,83 +114,7 @@ export default function AboutUs() {
           <ResearchLeader />
         </section>
 
-        <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
-          <div className="flex items-center justify-center mt-6">
-            <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-              Our Member
-            </h2>
-          </div>
-          <div className="container flex flex-col items-center justify-center px-4 mx-auto space-y-8 sm:px-10 ">
-            <div className="flex flex-row flex-wrap-reverse justify-center">
-              <div className="flex flex-col justify-center m-8 text-center">
-                <img
-                  alt=""
-                  className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full bg-gray-500"
-                  src="https://source.unsplash.com/100x100/?portrait?0"
-                />
-                <p className="text-xl font-semibold leading-tight">
-                  Leroy Jenkins
-                </p>
-                <p className="text-gray-600">Visual Designer</p>
-              </div>
-              <div className="flex flex-col justify-center m-8 text-center">
-                <img
-                  alt=""
-                  className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full bg-gray-500"
-                  src="https://source.unsplash.com/100x100/?portrait?1"
-                />
-                <p className="text-xl font-semibold leading-tight">
-                  Leroy Jenkins
-                </p>
-                <p className="text-gray-600">Visual Designer</p>
-              </div>
-              <div className="flex flex-col justify-center m-8 text-center">
-                <img
-                  alt=""
-                  className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full bg-gray-500"
-                  src="https://source.unsplash.com/100x100/?portrait?2"
-                />
-                <p className="text-xl font-semibold leading-tight">
-                  Leroy Jenkins
-                </p>
-                <p className="text-gray-600">Visual Designer</p>
-              </div>
-              <div className="flex flex-col justify-center m-8 text-center">
-                <img
-                  alt=""
-                  className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full bg-gray-500"
-                  src="https://source.unsplash.com/100x100/?portrait?3"
-                />
-                <p className="text-xl font-semibold leading-tight">
-                  Leroy Jenkins
-                </p>
-                <p className="text-gray-600">Visual Designer</p>
-              </div>
-              <div className="flex flex-col justify-center m-8 text-center">
-                <img
-                  alt=""
-                  className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full bg-gray-500"
-                  src="https://source.unsplash.com/100x100/?portrait?4"
-                />
-                <p className="text-xl font-semibold leading-tight">
-                  Leroy Jenkins
-                </p>
-                <p className="text-gray-600">Visual Designer</p>
-              </div>
-              <div className="flex flex-col justify-center m-8 text-center">
-                <img
-                  alt=""
-                  className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full bg-gray-500"
-                  src="https://source.unsplash.com/100x100/?portrait?5"
-                />
-                <p className="text-xl font-semibold leading-tight">
-                  Leroy Jenkins
-                </p>
-                <p className="text-gray-600">Visual Designer</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ActiveMember />
       </div>
     </>
   );
