@@ -1,9 +1,9 @@
 import { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 
-import Navbar from '../component/navbar';
-import '../styles/global.css';
 import { Footer } from '../Home/Footer';
+import Navbar from '../Navbar/navbar';
+import '../styles/global.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>

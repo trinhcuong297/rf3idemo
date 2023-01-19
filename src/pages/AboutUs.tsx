@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import ActiveMember from '../AboutUs/AboutUs';
 import ResearchLeader from '../AboutUs/ResearchLeader';
@@ -23,9 +24,11 @@ export default function AboutUs() {
                 thạc sĩ , kỹ sư và các sinh viên thuộc ngành kỹ thuật đo và tin
                 học công nghiệp.
               </p>
-              <button className=" my-6 py-2 px-8 border-2 rounded-full hover:text-gray-200 hover:bg-gradient-to-r from-blue-400 to-cyan-600 border-blue-500">
-                Join us
-              </button>
+              <Link href={'/Contact'}>
+                <button className=" my-6 py-2 px-8 border-2 rounded-full hover:text-gray-200 hover:bg-gradient-to-r from-blue-400 to-cyan-600 border-blue-500">
+                  Join us
+                </button>
+              </Link>
             </div>
           </section>
           <hr className="border border-gray-300" />

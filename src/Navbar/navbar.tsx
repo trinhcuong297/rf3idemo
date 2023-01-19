@@ -104,7 +104,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={'/AboutUs'}>
+                <Link href={'/Alumi'}>
                   <p
                     className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
@@ -113,7 +113,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={'/ESteam/index'}>
+                <Link href={'/Publication'}>
                   <p
                     className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
@@ -122,7 +122,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={'/ESteam/product'}>
+                <Link href={'/Product'}>
                   <p
                     className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
                   >
