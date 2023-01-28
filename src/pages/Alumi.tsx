@@ -17,9 +17,7 @@ export default function Alumi() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `${process.env.RF3i_API}/rf3i-api/about-us/active-member?page=1&size=5`
-    )
+    fetch(`${process.env.RF3i_API}/rf3i-api/about-us/alumni?page=1&size=5`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
@@ -32,7 +30,7 @@ export default function Alumi() {
       <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
         <div className="flex items-center justify-center mt-6">
           <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-            RF3i Alumi
+            RF3i Alumni
           </h2>
         </div>
         <p className="w-full flex justify-center items-center">
@@ -49,7 +47,7 @@ export default function Alumi() {
       <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
         <div className="flex items-center justify-center mt-6">
           <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-            RF3i Alumi
+            RF3i Alumni
           </h2>
         </div>
       </section>
@@ -57,14 +55,14 @@ export default function Alumi() {
   return (
     <>
       <Head>
-        <title>RF3i - Alumi</title>
+        <title>RF3i - Alumni</title>
       </Head>
       <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-12 px-4 text-center">
             <div className="w-full max-w-2xl text-left">
               <h1 className="text-5xl leading-tight font-bold bg-gradient-to-r from-blue-600 to-cyan-300 text-transparent bg-clip-text">
-                RF3i Alumi
+                RF3i Alumni
               </h1>
             </div>
           </section>
