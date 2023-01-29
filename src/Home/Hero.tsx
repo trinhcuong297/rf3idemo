@@ -88,7 +88,7 @@ function Hero() {
                 <div className="sm:max-w-5xl pt-2 rounded-xl mx-4 sm:mx-8 md:mx-auto">
                   <div className="sm:py-6 px-8 sm:24 flex flex-wrap items-center">
                     <div className="w-1/3 sm:w-1/3 flex justify-center items-center inset-0 transform cursor-pointer hover:scale-75 transition duration-300 contrast-75 hover:contrast-100 drop-shadow-xl ">
-                      <Link href={'https://facebook.com'}>
+                      <Link href={'https://www.facebook.com/rf3ilab.hust'}>
                         <img
                           className="focus:outline-none w-8 sm:w-8"
                           src="https://cdn-icons-png.flaticon.com/512/1400/1400477.png"
