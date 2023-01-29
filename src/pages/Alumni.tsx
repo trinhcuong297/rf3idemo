@@ -12,7 +12,8 @@ export default function Alumni() {
     course_number?: String | null | undefined;
     class?: String | null | undefined;
     avatar_url?: String | null | undefined;
-    type?: String | null | undefined;
+    current_job?: String | null | undefined;
+    company?: String | null | undefined;
   }
 
   useEffect(() => {
@@ -95,11 +96,11 @@ export default function Alumni() {
                       <h1 className="text-lg font-semibold text-gray-800 sm:text-xl">
                         {param.full_name}
                       </h1>
-                      <p className="text-sm text-gray-500 md:text-base">
-                        K{param.course_number}
-                      </p>
                       <p className="text-sm text-gray-800 md:text-base">
                         {param.class} - K{param.course_number}
+                      </p>
+                      <p className="text-sm text-gray-800 md:text-base">
+                        {param.current_job} tại {param.company}
                       </p>
                     </div>
                   </div>
