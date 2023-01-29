@@ -99,7 +99,7 @@ export default function Alumni() {
                         K{param.course_number}
                       </p>
                       <p className="text-sm text-gray-800 md:text-base">
-                        {param.class}
+                        {param.class} - K{param.course_number}
                       </p>
                     </div>
                   </div>
