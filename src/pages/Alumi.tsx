@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 
-export default function Alumi() {
+export default function Alumni() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
 
