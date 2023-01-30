@@ -1,37 +1,36 @@
 import React from 'react';
 
-import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(
-    `${process.env.RF3i_API}/rf3i-api/home/product/all?page=1&size=5`
-  );
-  const resdev = await res.json();
-  const result: String[] = resdev.data;
-  const paths = result.map((tex: any) => {
-    return {
-      params: {
-        id: tex.id.toString(),
-      },
-    };
-  });
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const res = await fetch(
+//     `${process.env.RF3i_API}/rf3i-api/home/product/all?page=1&size=5`
+//   );
+//   const resdev = await res.json();
+//   const result: String[] = resdev.data;
+//   const paths = result.map((tex: any) => {
+//     return {
+//       params: {
+//         id: tex.id.toString(),
+//       },
+//     };
+//   });
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const { id } = context.params;
-  const res = await fetch(
-    `${process.env.RF3i_API}/rf3i-api/home/product/detail?product_id=${id}`
-  );
-  const result = await res.json();
-  return {
-    props: { result },
-  };
-};
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+// export const getStaticProps: GetStaticProps = async (context: any) => {
+//   const { id } = context.params;
+//   const res = await fetch(
+//     `${process.env.RF3i_API}/rf3i-api/home/product/detail?product_id=${id}`
+//   );
+//   const result = await res.json();
+//   return {
+//     props: { result },
+//   };
+// };
 
 export default function ProductDetail() {
   // const { Data } = result.result;
