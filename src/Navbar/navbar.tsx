@@ -143,7 +143,7 @@ export default function Navbar() {
                   </p>
                 </Link>
               </li>
-              <label className="swap swap-rotate">
+              {/* <label className="swap swap-rotate">
                 <input type="checkbox" />
                 <div className="cursor-pointer swap-on">
                   <img
@@ -157,7 +157,7 @@ export default function Navbar() {
                     className="w-10 h-10"
                   ></img>
                 </div>
-              </label>
+              </label> */}
             </ul>
           </div>
         </div>
