@@ -71,7 +71,7 @@ export default function HightlightNews() {
   return (
     <div className="bg-gray-200">
       <div className="mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
+        <div className="mx-auto max-w-2xl py-6 sm:py-12 lg:max-w-none lg:py-8">
           <h3 className="flex items-center my-2">
             <span
               aria-hidden="true"
@@ -117,7 +117,7 @@ export default function HightlightNews() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col px-2 w-full md:max-w-xl space-y-4">
+            <div className="flex flex-col px-2 w-full md:max-w-xl">
               <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
@@ -129,7 +129,7 @@ export default function HightlightNews() {
                     {data[1] ? data[1].title : ''}
                   </h3>
                 </Link>
-                <p className="mt-6 text-gray-700 text-justify">
+                <p className="mt-2 text-gray-700 text-justify">
                   {data[1] ? data[1].sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
@@ -157,7 +157,7 @@ export default function HightlightNews() {
                     {data[2] ? data[2].title : ''}
                   </h3>
                 </Link>
-                <p className="mt-6 text-gray-700 text-justify">
+                <p className="mt-2 text-gray-700 text-justify">
                   {data[2] ? data[2].sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
@@ -185,7 +185,7 @@ export default function HightlightNews() {
                     {data[3] ? data[3].title : ''}
                   </h3>
                 </Link>
-                <p className="mt-6 text-gray-700 text-justify">
+                <p className="mt-2 text-gray-700 text-justify">
                   {data[3] ? data[3].sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">

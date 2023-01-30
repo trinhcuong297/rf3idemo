@@ -24,36 +24,49 @@ export default function Publication() {
             <div className="mt-6 overflow-x-auto">
               <table className="w-full border border-collapse table-auto">
                 <thead className="">
-                  <tr className="text-base font-bold text-left bg-gray-50">
-                    <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500">
+                  <tr className="text-base font-bold text-left bg-gray-50 grid grid-cols-12">
+                    <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500 col-span-6">
                       Title
                     </th>
-                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-sky-500 sm:text-left">
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-sky-500 sm:text-left col-span-3">
                       Public by
                     </th>
-                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left">
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-2">
                       Public time
+                    </th>
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-1">
+                      Dowload
                     </th>
                   </tr>
                 </thead>
                 <tbody className="text-sm font-normal text-gray-700">
-                  <tr className="py-10 border-b border-gray-200 hover:bg-gray-100">
-                    <td className="flex flex-row items-center px-4 py-4">
+                  <tr className="py-1 border-b border-gray-200 hover:bg-gray-100 grid grid-cols-12">
+                    <td className="flex flex-row items-center px-4 col-span-6">
                       <div className="flex mr-4">
                         <Link href={'/'}>
-                          <p className="cursor-pointer relative block py-4 text-md">
+                          <p className="cursor-pointer relative blocktext-md">
                             abc
                           </p>
                         </Link>
                       </div>
                     </td>
-                    <td className=" sm:text-left px-4">
+                    <td className="flex flex-row items-center sm:text-left px-4 col-span-3">
                       <div className="flex-1 pl-1 sm:text-left">
                         <div className="font-medium">Barbara Curtis</div>
                       </div>
                     </td>
-                    <td className="px-4 py-4 text-center sm:text-left">
+                    <td className="flex flex-row items-center px-4 text-center sm:text-left col-span-2">
                       Just Now
+                    </td>
+                    <td className="px-4 text-center sm:text-left col-span-1">
+                      <Link href={'https://icons8.com/icon/set/link/clouds'}>
+                        <a target="_blank" rel="noopener noreferrer">
+                          <img
+                            src="https://img.icons8.com/clouds/2x/external-link.png"
+                            className="w-10 h-10 cursor-pointer"
+                          />
+                        </a>
+                      </Link>
                     </td>
                   </tr>
                 </tbody>

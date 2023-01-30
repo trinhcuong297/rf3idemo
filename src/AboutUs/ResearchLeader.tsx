@@ -158,24 +158,28 @@ const ResearchLeader = () => {
           <div className="flex w-full">
             <div className="grid flex-grow card p-4 place-items-center">
               <Link href={`https://seee.hust.edu.vn/lmthuy`}>
-                <button className="text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
-                  <img
-                    src="https://img.icons8.com/ios-glyphs/2x/university-campus.png"
-                    className="w-8"
-                  />
-                  Check in SEEE HUST
-                </button>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
+                    <img
+                      src="https://img.icons8.com/ios-glyphs/2x/university-campus.png"
+                      className="w-8"
+                    />
+                    Check in SEEE HUST
+                  </button>
+                </a>
               </Link>
             </div>
             <div className="grid flex-grow card place-items-center">
               <Link href={`${data.search_metadata?.google_scholar_author_url}`}>
-                <button className="text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
-                  <img
-                    src="https://img.icons8.com/material-outlined/2x/google-scholar.png"
-                    className="w-8"
-                  />
-                  Check in Google Schoolar
-                </button>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
+                    <img
+                      src="https://img.icons8.com/material-outlined/2x/google-scholar.png"
+                      className="w-8"
+                    />
+                    Check in Google Schoolar
+                  </button>
+                </a>
               </Link>
             </div>
           </div>
