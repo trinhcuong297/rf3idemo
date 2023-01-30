@@ -58,20 +58,6 @@ export default function Product() {
       <div className="bg-gray-200">
         <div className="mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
           <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-            <h3 className="flex items-center my-2">
-              <span
-                aria-hidden="true"
-                className="flex-grow bg-blue-200 rounded h-0.5"
-              ></span>
-              <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-                Product
-              </span>
-              <span
-                aria-hidden="true"
-                className="flex-grow bg-blue-200 rounded h-0.5"
-              ></span>
-            </h3>
-
             <div className="w-full py-7 px-5">
               {data.map((param, index) => {
                 return (

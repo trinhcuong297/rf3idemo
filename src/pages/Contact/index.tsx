@@ -2,6 +2,8 @@ import React from 'react';
 
 import Head from 'next/head';
 
+import ContactForm from '../../ContactUs/Form';
+
 const ContactUs: React.FC = () => (
   <>
     <Head>
@@ -77,44 +79,8 @@ const ContactUs: React.FC = () => (
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
               <div className="relative rounded-lg bg-gray-100 p-8 shadow-xl sm:p-12">
-                <form>
-                  <div className="mb-6">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <input
-                      type="text"
-                      placeholder="Your Phone"
-                      className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <textarea
-                      rows={6}
-                      placeholder="Your Message"
-                      className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
-                    ></textarea>
-                  </div>
-                  <div>
-                    <button
-                      type="submit"
-                      className="bg-gradient-to-l from-cyan-500 to-blue-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
+                <ContactForm />
+
                 <div>
                   <span className="absolute -top-20 -right-20 z-[1]">
                     <img
