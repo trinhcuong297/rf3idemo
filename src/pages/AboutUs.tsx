@@ -43,10 +43,7 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Antena
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptate quo dolorem, ducimus suscipit consequatur unde.
-                </p>
+                <p className="text-gray-500 leading-relaxed"></p>
               </div>
               <div className="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0 md:border-l">
                 <img
@@ -57,17 +54,14 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Embedded
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptate quo dolorem, ducimus suscipit consequatur unde.
-                </p>
+                <p className="text-gray-500 leading-relaxed"></p>
               </div>
             </div>
           </section>
           <hr className="border border-gray-300" />
           <section className="py-8 px-4">
-            <div className="flex flex-wrap -mx-4 -mb-6">
-              <div className="lg:w-1/3 px-4 mb-6">
+            <div className="flex flex-wrap -mx-4 mb-6">
+              <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center">
                 <img
                   className="w-20 mb-2"
                   src="https://img.icons8.com/clouds/2x/electronics.png"
@@ -76,12 +70,9 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Hardware
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptate quo dolorem, ducimus suscipit consequatur unde.
-                </p>
+                <p className="text-gray-500 leading-relaxed"></p>
               </div>
-              <div className="lg:w-1/3 px-4 mb-6 ">
+              <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center ">
                 <img
                   className="w-20 mb-2"
                   src="https://img.icons8.com/clouds/2x/code-fork.png"
@@ -90,12 +81,9 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Firmware
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptate quo dolorem, ducimus suscipit consequatur unde.
-                </p>
+                <p className="text-gray-500 leading-relaxed"></p>
               </div>
-              <div className="lg:w-1/3 px-4 mb-6">
+              <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center">
                 <img
                   className="w-20 mb-2"
                   src="https://img.icons8.com/clouds/2x/code.png"
@@ -104,12 +92,10 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Software
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptate quo dolorem, ducimus suscipit consequatur unde.
-                </p>
+                <p className="text-gray-500 leading-relaxed"></p>
               </div>
             </div>
+            <hr className="border border-gray-300" />
           </section>
         </div>
 

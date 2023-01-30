@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Head from 'next/head';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(
@@ -36,6 +37,9 @@ export default function NewsDetail(result: any) {
   const { data } = result.result;
   return (
     <>
+      <Head>
+        <title>News - {data.title}</title>
+      </Head>
       <div className="p-5 mx-auto sm:p-10 md:p-16">
         <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
           <img
