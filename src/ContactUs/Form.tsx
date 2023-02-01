@@ -1,16 +1,25 @@
+import { useState } from 'react';
+
 export default function ContactForm() {
+  const [data, setData] = useState({
+    Name: '',
+    Email: '',
+    Phone_number: '',
+    Message: '',
+  });
+  const [status, setStatus] = useState(0);
   // Handles the submit event on form submit.
   const handleSubmit = async (event: any) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
     // Get data from the form.
-    const data = {
-      name: event.target.first?.value,
-      email: event.target.second?.value,
-      phone: event.target.third?.value,
-      message: event.target.last?.value,
-    };
+    // const data = {
+    //   name: event.target.first?.value,
+    //   email: event.target.second?.value,
+    //   phone: event.target.third?.value,
+    //   message: event.target.last?.value,
+    // };
 
     // Send the data to the server in JSON format.
     const JSONdata = JSON.stringify(data);
@@ -36,7 +45,11 @@ export default function ContactForm() {
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
     const result = await response.json();
-    alert(`Is this your full name: ${result.message}`);
+    // alert(`Is this your full name: ${result.message}`);
+    setStatus(result ? 1 : 2);
+    setTimeout(() => {
+      setStatus(0);
+    }, 5000);
   };
   return (
     // We pass the event to the handleSubmit() function on submit.
@@ -45,6 +58,9 @@ export default function ContactForm() {
         <input
           type="text"
           placeholder="Your Name"
+          onChange={(e) => {
+            setData({ ...data, Name: e.target.value });
+          }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         />
       </div>
@@ -52,6 +68,9 @@ export default function ContactForm() {
         <input
           type="email"
           placeholder="Your Email"
+          onChange={(e) => {
+            setData({ ...data, Email: e.target.value });
+          }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         />
       </div>
@@ -59,6 +78,9 @@ export default function ContactForm() {
         <input
           type="text"
           placeholder="Your Phone"
+          onChange={(e) => {
+            setData({ ...data, Phone_number: e.target.value });
+          }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         />
       </div>
@@ -66,16 +88,65 @@ export default function ContactForm() {
         <textarea
           rows={6}
           placeholder="Your Message"
+          onChange={(e) => {
+            setData({ ...data, Message: e.target.value });
+          }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         ></textarea>
       </div>
-      <div>
+      <div className="flex">
         <button
           type="submit"
-          className="bg-gradient-to-l from-cyan-500 to-blue-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90"
+          className={`${
+            status === 0 ? 'w-full' : 'w-0 hidden'
+          } duration-200 transition h-16 bg-gradient-to-l from-cyan-500 to-blue-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90`}
         >
           Send Message
         </button>
+        <div
+          className={`${
+            status === 1 ? 'w-full' : 'w-0 hidden'
+          } duration-200 transition h-16 alert alert-success shadow-lg`}
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current flex-shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>Success! Thank for your respond!</span>
+          </div>
+        </div>
+        <div
+          className={`${
+            status === 2 ? 'w-full' : 'w-0 hidden'
+          } duration-200 transition h-16 alert alert-error shadow-lg`}
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current flex-shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>Error!Please try again!</span>
+          </div>
+        </div>
       </div>
     </form>
   );
