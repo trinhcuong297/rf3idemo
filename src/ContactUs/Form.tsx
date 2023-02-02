@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 export default function ContactForm() {
   const [data, setData] = useState({
-    Name: '',
-    Email: '',
-    Phone_number: '',
-    Message: '',
+    name: '',
+    email: '',
+    phone_number: '',
+    message: '',
   });
   const [status, setStatus] = useState(0);
   // Handles the submit event on form submit.
@@ -59,7 +59,7 @@ export default function ContactForm() {
           type="text"
           placeholder="Your Name"
           onChange={(e) => {
-            setData({ ...data, Name: e.target.value });
+            setData({ ...data, name: e.target.value });
           }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         />
@@ -69,7 +69,7 @@ export default function ContactForm() {
           type="email"
           placeholder="Your Email"
           onChange={(e) => {
-            setData({ ...data, Email: e.target.value });
+            setData({ ...data, email: e.target.value });
           }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         />
@@ -79,7 +79,7 @@ export default function ContactForm() {
           type="text"
           placeholder="Your Phone"
           onChange={(e) => {
-            setData({ ...data, Phone_number: e.target.value });
+            setData({ ...data, phone_number: e.target.value });
           }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         />
@@ -89,7 +89,7 @@ export default function ContactForm() {
           rows={6}
           placeholder="Your Message"
           onChange={(e) => {
-            setData({ ...data, Message: e.target.value });
+            setData({ ...data, message: e.target.value });
           }}
           className="text-gray-700 bg-gray-100 border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
         ></textarea>
