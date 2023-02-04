@@ -105,11 +105,11 @@ export default function Publication() {
                     >
                       <tr className="py-1 border-b border-gray-200 hover:bg-gray-100 grid grid-cols-12">
                         <td className="flex flex-row items-center px-4 py-2 col-span-4">
-                          <p className="cursor-pointer">{param.title}</p>
+                          <p className="font-medium">{param.title}</p>
                         </td>
                         <td className="flex flex-row items-center sm:text-left px-4 col-span-3">
                           <div className="flex-1 sm:text-left">
-                            <div className="font-medium">{param.authors}</div>
+                            <div className="">{param.authors}</div>
                           </div>
                         </td>
                         <td className="flex flex-row items-center px-4 text-center sm:text-left col-span-2">
