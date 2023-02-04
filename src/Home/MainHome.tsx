@@ -1,4 +1,4 @@
-import { Meta } from '../layout/Meta';
+import { Meta } from '../Layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import Activ from './Activity';
 import Hero from './Hero';
