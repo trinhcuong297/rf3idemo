@@ -18,7 +18,7 @@ export default function Alumni() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/about-us/alumni?page=1&size=5`)
+    fetch(`${process.env.RF3i_API}/rf3i-api/about-us/alumni?page=1&size=9`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.data);
