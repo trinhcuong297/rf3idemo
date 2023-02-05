@@ -5,6 +5,8 @@ import Head from 'next/head';
 export default function Alumni() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const [show, setShow] = useState(6);
+  const disp = 6;
 
   interface Data {
     id?: String | null | undefined;
@@ -70,11 +72,11 @@ export default function Alumni() {
           </section>
           <hr className="border border-blue-300" />
           <section className="py-8 px-4">
-            <div className="flex flex-wrap -mx-4 -mb-6">
+            <div className="flex flex-wrap">
               {data.map((param, index) => {
-                return (
+                return index < show ? (
                   <div
-                    className="max-w-screen-md px-10 py-6 mx-4 mt-20 bg-white rounded-lg shadow md:mx-auto border-1 lg:w-1/3 px-4 mb-6"
+                    className="max-w-screen-md px-10 py-6 mx-4 mt-20 md:mx-auto border-1 lg:w-1/3 px-4 mb-6"
                     key={index}
                   >
                     <div className="flex flex-col items-start justify-center w-full m-auto sm:flex-row">
@@ -104,10 +106,36 @@ export default function Alumni() {
                       </p>
                     </div>
                   </div>
+                ) : (
+                  <></>
                 );
               })}
             </div>
           </section>
+          <div className="w-full flex justify-center pb-4">
+            <button
+              className="flex flex-col items-center"
+              onClick={() => {
+                setShow(show + disp > data.length ? data.length : show + disp);
+              }}
+            >
+              <p>Load more</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="my-2 animate-bounce w-10 h-10"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </>

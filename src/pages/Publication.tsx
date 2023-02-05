@@ -6,6 +6,8 @@ import Link from 'next/link';
 export default function Publication() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const [show, setShow] = useState(1);
+  const disp = 4;
 
   interface Data {
     title?: String | null | undefined;
@@ -97,11 +99,12 @@ export default function Publication() {
                   </tr>
                 </thead>
 
-                {data.map((param, key) => {
-                  return (
+                {data.map((param, index) => {
+                  return index >= (show - 1) * disp &&
+                    index < (show - 1) * disp + disp ? (
                     <tbody
                       className="text-sm font-normal text-gray-700"
-                      key={key}
+                      key={index}
                     >
                       <tr className="py-1 border-b border-gray-200 hover:bg-gray-100 grid grid-cols-12">
                         <td className="flex flex-row items-center px-4 py-2 col-span-4">
@@ -130,23 +133,42 @@ export default function Publication() {
                         </td>
                       </tr>
                     </tbody>
+                  ) : (
+                    <></>
                   );
                 })}
               </table>
             </div>
             <div className="flex flex-col items-center w-full px-4 py-2 space-y-2 text-sm text-gray-500 sm:justify-between sm:space-y-0 sm:flex-row">
-              {/* <p className="flex">
-                Showing&nbsp;<span className="font-bold"> 1 to 4 </span>&nbsp;of
-                8 entries
-              </p> */}
-              {/* <div className="flex items-center justify-between space-x-2">
-      <a href="#" className="hover:text-gray-600">Previous</a>
-      <div className="flex flex-row space-x-1">
-        <div className="flex px-2 py-px text-white bg-blue-400 border border-blue-400 rounded-md">1</div>
-        <div className="flex px-2 py-px border border-blue-400 hover:bg-blue-400 hover:text-white rounded-md">2</div>
-      </div>
-      <a href="#" className="hover:text-gray-600">Next</a>
-    </div> */}
+              <p className="flex">
+                Showing&nbsp;
+                <span className="font-bold">
+                  {' '}
+                  {(show - 1) * disp + 1} to {(show - 1) * disp + disp}{' '}
+                </span>
+                &nbsp;of
+                {data.length} entries
+              </p>
+              <div className="flex items-center justify-between space-x-2">
+                <button
+                  onClick={() => {
+                    setShow(show === 1 ? 1 : show - 1);
+                  }}
+                  className="hover:text-gray-600"
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={() => {
+                    setShow(
+                      (show - 1) * disp + disp < data.length ? show + 1 : show
+                    );
+                  }}
+                  className="hover:text-gray-600"
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>
