@@ -83,20 +83,23 @@ export default function Publication() {
             <div className="mt-6 overflow-x-auto">
               <table className="w-full border border-collapse table-auto">
                 <thead className="">
-                  <tr className="text-base font-bold text-left bg-gray-50 grid grid-cols-12">
-                    <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500 col-span-4">
+                  <tr className="text-base font-bold text-left bg-gray-50 grid grid-cols-24">
+                    <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500 col-span-1">
+                      Id
+                    </th>
+                    <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500 col-span-8">
                       Title
                     </th>
-                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-sky-500 sm:text-left col-span-3">
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-sky-500 sm:text-left col-span-6">
                       Author
                     </th>
-                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-2">
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-4">
                       Published in
                     </th>
-                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-2">
-                      Published Date
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-3">
+                      Date
                     </th>
-                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-1">
+                    <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-2">
                       Download
                     </th>
                   </tr>
@@ -108,22 +111,25 @@ export default function Publication() {
                       className="text-sm font-normal text-gray-700"
                       key={index}
                     >
-                      <tr className="py-1 border-b border-gray-200 hover:bg-gray-100 grid grid-cols-12">
-                        <td className="flex flex-row items-center px-4 py-2 col-span-4">
+                      <tr className="py-1 border-b border-gray-200 hover:bg-gray-100 grid grid-cols-24">
+                        <td className="flex flex-row items-center px-4 py-2 col-span-1">
+                          <p className="font-medium">{index + 1}</p>
+                        </td>
+                        <td className="flex flex-row items-center px-4 py-2 col-span-8">
                           <p className="font-medium">{param.title}</p>
                         </td>
-                        <td className="flex flex-row items-center sm:text-left px-4 col-span-3">
+                        <td className="flex flex-row items-center sm:text-left px-4 col-span-6">
                           <div className="flex-1 sm:text-left">
                             <div className="">{param.authors}</div>
                           </div>
                         </td>
-                        <td className="flex flex-row items-center px-4 text-center sm:text-left col-span-2">
+                        <td className="flex flex-row items-center px-4 text-center sm:text-left col-span-4">
                           {param.published_in}
                         </td>
-                        <td className="flex flex-row items-center px-4 text-center sm:text-left col-span-2">
+                        <td className="flex flex-row items-center px-4 text-center sm:text-left col-span-3">
                           {param.published_date}
                         </td>
-                        <td className="flex items-center px-4 text-center sm:text-left col-span-1">
+                        <td className="flex items-center px-4 text-center sm:text-left col-span-2">
                           <Link href={`${param.url}`}>
                             <a target="_blank" rel="noopener noreferrer">
                               <img

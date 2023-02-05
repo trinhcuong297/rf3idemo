@@ -14,6 +14,13 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        24: 'repeat(24, minmax(0, 1fr))',
+
+        // Complex site-specific column configuration
+        footer: '200px minmax(900px, 1fr) 100px',
+      },
       colors: {
         primary: {
           100: '#E6F6FE',
