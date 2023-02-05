@@ -74,7 +74,7 @@ export default function Alumni() {
               {data.map((param, index) => {
                 return (
                   <div
-                    className="max-w-screen-md px-10 py-6 mx-4 mt-20 bg-white rounded-lg shadow md:mx-auto border-1 lg:w-1/3 px-4 mb-6"
+                    className="max-w-screen-md px-10 py-6 mx-4 mt-20 bg-white rounded-lg shadow ml-2 mr-2 border-1 lg:w-1/3 px-4 mb-6"
                     key={index}
                   >
                     <div className="flex flex-col items-start justify-center w-full m-auto sm:flex-row">
@@ -97,10 +97,10 @@ export default function Alumni() {
                         {param.full_name}
                       </h1>
                       <p className="text-sm text-gray-800 md:text-base">
-                        {param.class} - K{param.course_number}
+                        {param.class} - Course {param.course_number}
                       </p>
                       <p className="text-sm text-gray-800 md:text-base">
-                        {param.current_job} tại {param.company}
+                        {param.current_job} at {param.company}
                       </p>
                     </div>
                   </div>
