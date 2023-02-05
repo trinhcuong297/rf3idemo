@@ -19,6 +19,7 @@ const ResearchLeader = () => {
       email?: string | undefined;
       website?: string | undefined;
       thumbnail?: string | undefined;
+      research_leader_avatar_url?: string | undefined;
       interests?: [
         {
           title?: string | undefined;
@@ -127,7 +128,7 @@ const ResearchLeader = () => {
         <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
           <div className="flex flex-col max-w-md p-6 text-gray-800">
             <img
-              src={data.author ? data.author.thumbnail : ''}
+              src={data.author ? data.author.research_leader_avatar_url : ''}
               alt=""
               className="flex-shrink-0 object-cover h-64 rounded-sm sm:h-96 aspect-square mask mask-hexagon rounded-lg mb-4"
             />
