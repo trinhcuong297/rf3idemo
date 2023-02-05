@@ -45,9 +45,9 @@ const ContactUs: React.FC = () => (
                       Our Location
                     </h4>
                     <p className="text-gray-700 text-base">
-                      P328 - C1
+                      Room 328 - Building C1
                       <br />
-                      Ha Noi University of Science and Technology
+                      Hanoi University of Science and Technology
                     </p>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ const ContactUs: React.FC = () => (
                     <h4 className="text-gray-800 mb-1 text-xl font-bold">
                       Phone Number
                     </h4>
-                    <p className="text-gray-700 text-base">(+84)</p>
+                    <p className="text-gray-700 text-base">024 3869 6233</p>
                   </div>
                 </div>
                 <div className="mb-8 flex w-full max-w-[370px]">
@@ -70,9 +70,7 @@ const ContactUs: React.FC = () => (
                     <h4 className="text-gray-800 mb-1 text-xl font-bold">
                       Email Address
                     </h4>
-                    <p className="text-gray-700 text-base">
-                      rfgroup3i.hust@gmail.com
-                    </p>
+                    <p className="text-gray-700 text-base">labrf3i@gmail.com</p>
                   </div>
                 </div>
               </div>
