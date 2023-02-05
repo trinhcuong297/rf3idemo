@@ -7,7 +7,8 @@ export default function Publication() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
   const [show, setShow] = useState(1);
-  const disp = 4;
+  const [totalPage, setTotalPage] = useState(0);
+  // const [totalData, setTotalData] = useState(0);
 
   interface Data {
     title?: String | null | undefined;
@@ -21,15 +22,17 @@ export default function Publication() {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `${process.env.RF3i_API}/rf3i-api/publication/all-publication?page=1&size=8`
+      `${process.env.RF3i_API}/rf3i-api/publication/all-publication?page=${show}&size=8`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.data);
-        setData(data.data);
+        setTotalPage(data.data.totalPage);
+        // setTotalData(data.data.totalData);
+        setData(data.data.data);
+        console.log(data);
         setLoading(false);
       });
-  }, []);
+  }, [show]);
 
   if (isLoading)
     return (
@@ -100,8 +103,7 @@ export default function Publication() {
                 </thead>
 
                 {data.map((param, index) => {
-                  return index >= (show - 1) * disp &&
-                    index < (show - 1) * disp + disp ? (
+                  return (
                     <tbody
                       className="text-sm font-normal text-gray-700"
                       key={index}
@@ -133,8 +135,6 @@ export default function Publication() {
                         </td>
                       </tr>
                     </tbody>
-                  ) : (
-                    <></>
                   );
                 })}
               </table>
@@ -143,11 +143,11 @@ export default function Publication() {
               <p className="flex">
                 Showing&nbsp;
                 <span className="font-bold">
-                  {' '}
-                  {(show - 1) * disp + 1} to {(show - 1) * disp + disp}{' '}
+                  page {show}{' '}
+                  {/* {(show - 1) * 8 + 1} to {(show - 1) * 8 + 8}{' '} */}
                 </span>
-                &nbsp;of
-                {data.length} entries
+                {/* &nbsp;of */}
+                {/* {totalData} entries */}
               </p>
               <div className="flex items-center justify-between space-x-2">
                 <button
@@ -160,9 +160,7 @@ export default function Publication() {
                 </button>
                 <button
                   onClick={() => {
-                    setShow(
-                      (show - 1) * disp + disp < data.length ? show + 1 : show
-                    );
+                    setShow(show < totalPage ? show + 1 : show);
                   }}
                   className="hover:text-gray-600"
                 >
