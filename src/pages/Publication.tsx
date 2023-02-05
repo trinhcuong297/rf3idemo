@@ -100,7 +100,7 @@ export default function Publication() {
                       Date
                     </th>
                     <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-2">
-                      Download
+                      Link
                     </th>
                   </tr>
                 </thead>
