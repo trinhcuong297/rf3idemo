@@ -18,11 +18,12 @@ export default function Publication() {
     published_date?: String | null | undefined;
     url?: String | null | undefined;
   }
+  const size = 8;
 
   useEffect(() => {
     setLoading(true);
     fetch(
-      `${process.env.RF3i_API}/rf3i-api/publication/all-publication?page=${show}&size=8`
+      `${process.env.RF3i_API}/rf3i-api/publication/all-publication?page=${show}&size=${size}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -113,7 +114,9 @@ export default function Publication() {
                     >
                       <tr className="py-1 border-b border-gray-200 hover:bg-gray-100 grid grid-cols-24">
                         <td className="flex flex-row items-center px-4 py-2 col-span-1">
-                          <p className="font-medium">{index + 1}</p>
+                          <p className="font-medium">
+                            {(show - 1) * size + index + 1}
+                          </p>
                         </td>
                         <td className="flex flex-row items-center px-4 py-2 col-span-8">
                           <p className="font-medium">{param.title}</p>
