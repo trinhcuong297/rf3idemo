@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
 import Link from 'next/link';
-// import smoothscroll from 'smoothscroll-polyfill';
+import { useRouter } from 'next/router';
 
 import { Logo } from '../Home/Logo';
 
 export default function Navbar() {
   // const [show, setShow] = useState(false);
+  const router = useRouter().asPath;
+  console.log(router);
   const [toggleNav, setToggleNav] = useState(false);
 
   // useEffect(() => {
@@ -79,7 +81,9 @@ export default function Navbar() {
               <li className="mr-3">
                 <Link href={'/'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                    className={`${
+                      router === '/' ? 'underline' : ''
+                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
                   >
                     Home
                   </p>
@@ -88,7 +92,9 @@ export default function Navbar() {
               <li className="mr-3">
                 <Link href={'/News'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                    className={`${
+                      router === '/News' ? 'underline' : ''
+                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
                   >
                     News
                   </p>
@@ -97,7 +103,9 @@ export default function Navbar() {
               <li className="mr-3">
                 <Link href={'/AboutUs'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                    className={`${
+                      router === '/AboutUs' ? 'underline' : ''
+                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
                   >
                     About us
                   </p>
@@ -106,7 +114,9 @@ export default function Navbar() {
               <li className="mr-3">
                 <Link href={'/Alumni'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                    className={`${
+                      router === '/Alumni' ? 'underline' : ''
+                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
                   >
                     Alumni
                   </p>
@@ -115,7 +125,9 @@ export default function Navbar() {
               <li className="mr-3">
                 <Link href={'/Publication'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                    className={`${
+                      router === '/Publication' ? 'underline' : ''
+                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
                   >
                     Publication
                   </p>
@@ -124,7 +136,9 @@ export default function Navbar() {
               <li className="mr-3">
                 <Link href={'/Product'}>
                   <p
-                    className={`cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium no-underline hover:underline underline-offset-8`}
+                    className={`${
+                      router === '/Product' ? 'underline' : ''
+                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
                   >
                     Product
                   </p>
