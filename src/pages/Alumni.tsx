@@ -24,7 +24,7 @@ export default function Alumni() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.data);
-        setData(data.data);
+        setData(data.data.data);
         setLoading(false);
       });
   }, []);

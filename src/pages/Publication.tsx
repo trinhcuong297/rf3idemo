@@ -149,7 +149,7 @@ export default function Publication() {
               <p className="flex">
                 Showing&nbsp;
                 <span className="font-bold">
-                  page {show}{' '}
+                  page {show} of {totalPage}
                   {/* {(show - 1) * 8 + 1} to {(show - 1) * 8 + 8}{' '} */}
                 </span>
                 {/* &nbsp;of */}

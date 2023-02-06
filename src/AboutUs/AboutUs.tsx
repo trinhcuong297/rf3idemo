@@ -20,7 +20,7 @@ const ActiveMember = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setData(data.data);
+        setData(data.data.data);
         setLoading(false);
       });
   }, []);
