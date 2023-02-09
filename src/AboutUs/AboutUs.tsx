@@ -46,7 +46,9 @@ const ActiveMember = () => {
         ) : (
           <div className="container flex items-center justify-between px-4 mx-auto sm:px-10 animate-pulse">
             <button
-              className="btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700"
+              className={`${
+                show > 1 ? '' : 'btn-disabled'
+              }btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
               onClick={() => {
                 setShow(show > 1 ? show - 1 : show);
               }}
@@ -94,7 +96,7 @@ const ActiveMember = () => {
             </div>
             <button
               className={`${
-                show < totalPage ? '' : 'disable'
+                show < totalPage ? '' : 'btn-disabled'
               } btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
               onClick={() => {
                 setShow(show < totalPage ? show + 1 : show);
@@ -140,7 +142,9 @@ const ActiveMember = () => {
         </div>
         <div className="container flex items-center justify-between px-4 mx-auto sm:px-10 ">
           <button
-            className="btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700"
+            className={`${
+              show > 1 ? '' : 'btn-disabled'
+            }btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
             onClick={() => {
               setShow(show > 1 ? show - 1 : show);
             }}
@@ -188,7 +192,7 @@ const ActiveMember = () => {
           </div>
           <button
             className={`${
-              show < totalPage ? '' : 'disable'
+              show < totalPage ? '' : 'btn-disabled'
             } btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
             onClick={() => {
               setShow(show < totalPage ? show + 1 : show);

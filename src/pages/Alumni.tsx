@@ -62,7 +62,9 @@ export default function Alumni() {
 
           <div className="w-full flex items-center justify-between">
             <button
-              className="btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700"
+              className={`${
+                show > 1 ? '' : 'btn-disabled'
+              } btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
               onClick={() => {
                 setShow(show > 1 ? show - 1 : show);
               }}
@@ -133,7 +135,9 @@ export default function Alumni() {
               )}
             </section>
             <button
-              className="btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700"
+              className={`${
+                show < totalPage ? '' : 'btn-disabled'
+              } btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
               onClick={() => {
                 setShow(show < totalPage ? show + 1 : show);
               }}
@@ -186,7 +190,9 @@ export default function Alumni() {
 
           <div className="w-full flex items-center justify-between">
             <button
-              className="btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700"
+              className={`${
+                show > 1 ? '' : 'btn-disabled'
+              } btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
               onClick={() => {
                 setShow(show > 1 ? show - 1 : show);
               }}
@@ -246,7 +252,9 @@ export default function Alumni() {
               </div>
             </section>
             <button
-              className="btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700"
+              className={`${
+                show < totalPage ? '' : 'btn-disabled'
+              } btn btn-circle btn-outline btn-neutral hover:bg-blue-100 text-gray-700`}
               onClick={() => {
                 setShow(show < totalPage ? show + 1 : show);
               }}
