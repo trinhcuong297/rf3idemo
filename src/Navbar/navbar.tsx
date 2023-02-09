@@ -8,7 +8,6 @@ import { Logo } from '../Home/Logo';
 export default function Navbar() {
   // const [show, setShow] = useState(false);
   const router = useRouter().asPath;
-  console.log(router);
   const [toggleNav, setToggleNav] = useState(false);
 
   // useEffect(() => {
