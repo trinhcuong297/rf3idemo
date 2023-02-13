@@ -30,7 +30,8 @@
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.3.6",
     "styled-jsx-plugin-postcss": "^4.0.1",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "tw-elements": "^1.0.0-alpha13"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.0.9",

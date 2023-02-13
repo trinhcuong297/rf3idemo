@@ -29,9 +29,9 @@ const ActiveMember = () => {
 
   if (isLoading)
     return (
-      <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
-        <div className="flex items-center justify-center mt-6">
-          <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
+      <section id="ourMember" className="">
+        <div className="flex items-center justify-center">
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
             Our Member
           </h2>
         </div>
@@ -121,22 +121,12 @@ const ActiveMember = () => {
         )}
       </section>
     );
-  if (!data)
-    return (
-      <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
-        <div className="flex items-center justify-center mt-6">
-          <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-            Our Member
-          </h2>
-        </div>
-      </section>
-    );
 
   return (
     <>
-      <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
-        <div className="flex items-center justify-center mt-6">
-          <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
+      <section id="ourMember" className="">
+        <div className="flex items-center justify-center">
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
             Our Member
           </h2>
         </div>

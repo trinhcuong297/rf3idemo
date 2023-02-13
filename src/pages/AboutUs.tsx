@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import ActiveMember from '../AboutUs/AboutUs';
+import Alumni from '../AboutUs/Alumni';
 import ResearchLeader from '../AboutUs/ResearchLeader';
 
 export default function AboutUs() {
@@ -104,6 +105,7 @@ export default function AboutUs() {
         </section>
 
         <ActiveMember />
+        <Alumni />
       </div>
     </>
   );

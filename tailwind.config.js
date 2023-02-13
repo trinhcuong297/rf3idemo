@@ -1,5 +1,8 @@
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/tw-elements/dist/js/**/*.js',
+  ],
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -61,5 +64,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui'), require('tw-elements/dist/plugin')],
 };
