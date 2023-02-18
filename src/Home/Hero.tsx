@@ -2,9 +2,12 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import Caurosel from './Caurosel/Caurosel';
+
 function Hero() {
   return (
     <>
+      <Caurosel />
       <section className="h-screen flex flex-col-reverse justify-center items-center">
         <div className="h-[3.5rem] w-full"></div>
         <div className="mx-auto max-w-screen-xl px-4 py-4 md:py-4 sm:px-6 lg:px-8">
