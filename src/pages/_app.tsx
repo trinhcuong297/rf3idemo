@@ -1,21 +1,11 @@
-import { useEffect } from 'react';
-
 import { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 
-import 'tw-elements';
 import { Footer } from '../Home/Footer';
 import Navbar from '../Navbar/navbar';
 import '../styles/global.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    const use = async () => {
-      // @ts-ignore
-      (await import('tw-elements')).default;
-    };
-    use();
-  }, []);
   return (
     <>
       <NextNProgress options={{ showSpinner: false }} />
