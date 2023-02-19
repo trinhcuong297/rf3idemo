@@ -111,17 +111,6 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="mr-3">
-                <Link href={'/Alumni'}>
-                  <p
-                    className={`${
-                      router === '/Alumni' ? 'underline' : ''
-                    } cursor-pointer inline-block py-2 px-4 text-md text-gray-700 hover:text-black font-medium hover:underline underline-offset-8`}
-                  >
-                    Alumni
-                  </p>
-                </Link>
-              </li>
-              <li className="mr-3">
                 <Link href={'/Publication'}>
                   <p
                     className={`${
