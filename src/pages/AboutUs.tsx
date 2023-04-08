@@ -11,7 +11,7 @@ export default function AboutUs() {
       <Head>
         <title>RF3i - Infomation</title>
       </Head>
-      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth mb-8">
+      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth pt-12">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-12 px-4 text-center">
             <div className="w-full max-w-2xl text-left">
@@ -100,7 +100,7 @@ export default function AboutUs() {
           </section>
         </div>
 
-        <section className="py-8 " id="researchLeader">
+        <section className=" " id="researchLeader">
           <ResearchLeader />
         </section>
 

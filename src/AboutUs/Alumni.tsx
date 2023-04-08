@@ -29,37 +29,25 @@ export default function Alumni() {
         setLoading(false);
       });
   }, [show]);
-
-  // if (isLoading)
-  //   return (
-  //     <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
-  //       <div className="flex items-center justify-center mt-6">
-  //         <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-  //           RF3i Alumni
-  //         </h2>
-  //       </div>
-  //       <p className="w-full flex justify-center items-center">
-  //         <div className="relative w-20 h-20 animate-pulse rounded-full bg-gradient-to-r from-purple-400 via-blue-500 to-red-400 ">
-  //           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-gray-200 rounded-full border-2 border-white">
-  //             <img src="https://img.icons8.com/clouds/2x/group.png" alt="" />
-  //           </div>
-  //         </div>
-  //       </p>
-  //     </section>
-  //   );
   if (isLoading)
     return (
       <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-4 px-4 text-center">
-            <div className="w-full max-w-2xl text-left">
-              <h1 className="text-5xl leading-tight font-bold bg-gradient-to-r from-blue-600 to-cyan-300 text-transparent bg-clip-text">
-                RF3i Alumni
-              </h1>
-            </div>
+            <h3 className="flex items-center my-2 px-48">
+              <span
+                aria-hidden="true"
+                className="flex-grow bg-blue-200 rounded h-0.5"
+              ></span>
+              <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
+                Alumni
+              </span>
+              <span
+                aria-hidden="true"
+                className="flex-grow bg-blue-200 rounded h-0.5"
+              ></span>
+            </h3>
           </section>
-          <hr className="border border-blue-300" />
-
           <div className="w-full flex items-center justify-between">
             <button
               className={`${
@@ -180,13 +168,20 @@ export default function Alumni() {
       <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-4 px-4 text-center">
-            <div className="w-full max-w-2xl text-left">
-              <h1 className="text-5xl leading-tight font-bold bg-gradient-to-r from-blue-600 to-cyan-300 text-transparent bg-clip-text">
-                RF3i Alumni
-              </h1>
-            </div>
+            <h3 className="flex items-center my-2 px-48">
+              <span
+                aria-hidden="true"
+                className="flex-grow bg-blue-200 rounded h-0.5"
+              ></span>
+              <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
+                Alumni
+              </span>
+              <span
+                aria-hidden="true"
+                className="flex-grow bg-blue-200 rounded h-0.5"
+              ></span>
+            </h3>
           </section>
-          <hr className="border border-blue-300" />
 
           <div className="w-full flex items-center justify-between">
             <button

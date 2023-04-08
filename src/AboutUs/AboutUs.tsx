@@ -30,11 +30,19 @@ const ActiveMember = () => {
   if (isLoading)
     return (
       <section id="ourMember" className="">
-        <div className="flex items-center justify-center">
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
+        <h3 className="flex items-center px-48 my-2">
+          <span
+            aria-hidden="true"
+            className="flex-grow bg-blue-200 rounded h-0.5"
+          ></span>
+          <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
             Our Member
-          </h2>
-        </div>
+          </span>
+          <span
+            aria-hidden="true"
+            className="flex-grow bg-blue-200 rounded h-0.5"
+          ></span>
+        </h3>
         {!data ? (
           <p className="w-full flex justify-center items-center">
             <div className="relative w-20 h-20 animate-pulse rounded-full bg-gradient-to-r from-purple-400 via-blue-500 to-red-400 ">
@@ -125,11 +133,19 @@ const ActiveMember = () => {
   return (
     <>
       <section id="ourMember" className="">
-        <div className="flex items-center justify-center">
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
+        <h3 className="flex items-center my-2 px-48">
+          <span
+            aria-hidden="true"
+            className="flex-grow bg-blue-200 rounded h-0.5"
+          ></span>
+          <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
             Our Member
-          </h2>
-        </div>
+          </span>
+          <span
+            aria-hidden="true"
+            className="flex-grow bg-blue-200 rounded h-0.5"
+          ></span>
+        </h3>
         <div className="container flex items-center justify-between px-4 mx-auto sm:px-10 ">
           <button
             className={`${

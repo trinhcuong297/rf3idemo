@@ -64,8 +64,8 @@ const ResearchLeader = () => {
 
   if (isLoading)
     return (
-      <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-2">
+      <div className="mx-auto max-w-2xl py-8 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
+        <h3 className="flex items-center my-2 px-48">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -93,7 +93,7 @@ const ResearchLeader = () => {
   if (!data)
     return (
       <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-2">
+        <h3 className="flex items-center my-2 px-48">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -111,7 +111,7 @@ const ResearchLeader = () => {
 
   return (
     <>
-      <h3 className="flex items-center my-2">
+      <h3 className="flex items-center my-2 px-48">
         <span
           aria-hidden="true"
           className="flex-grow bg-blue-200 rounded h-0.5"
@@ -124,7 +124,7 @@ const ResearchLeader = () => {
           className="flex-grow bg-blue-200 rounded h-0.5"
         ></span>
       </h3>
-      <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
+      <div className="md:flex items-start justify-center py-8 2xl:px-20 md:px-6 px-4">
         <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
           <div className="flex flex-col max-w-md p-6 text-gray-800">
             <img
@@ -331,12 +331,6 @@ const ResearchLeader = () => {
           </div>
         </div>
       </div>
-      <h3 className="flex items-center my-2">
-        <span
-          aria-hidden="true"
-          className="flex-grow bg-blue-200 rounded h-0.5"
-        ></span>
-      </h3>
     </>
   );
 };
