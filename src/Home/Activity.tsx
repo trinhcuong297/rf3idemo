@@ -50,7 +50,7 @@ export default function Activ() {
     );
   if (!data)
     return (
-      <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
+      <div className="mx-auto max-w-2xl py-2 sm:py-4 lg:max-w-none lg:py-8 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
         <h3 className="flex items-center my-2">
           <span
             aria-hidden="true"

@@ -25,8 +25,8 @@ export default function Timeline() {
 
   if (isLoading)
     return (
-      <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-        <h3 className="flex items-center my-6">
+      <div className="mx-auto max-w-2xl py-4 sm:py-6 lg:max-w-none lg:py-8 mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
+        <h3 className="flex items-center my-2">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -70,9 +70,9 @@ export default function Timeline() {
       </div>
     );
   return (
-    <div className="bg-gray-200 pt-8 h-min-screen">
-      <div className="flex items-center justify-center mt-6">
-        <h3 className="flex items-center my-6 w-full mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
+    <div className="bg-gray-200 pt-4 h-min-screen">
+      <div className="flex items-center justify-center mt-2">
+        <h3 className="flex items-center my-2 w-full mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
           <span
             aria-hidden="true"
             className="flex-grow bg-blue-200 rounded h-0.5"
@@ -87,7 +87,7 @@ export default function Timeline() {
         </h3>
       </div>
       <section className="text-gray-700">
-        <div className="container max-w-5xl px-4 py-12 mx-auto">
+        <div className="container max-w-5xl px-4 py-8 mx-auto">
           <div className="grid gap-4 mx-4 grid-cols-12">
             <div className="col-span-12 hidden md:flex md:pl-8 md:col-span-3">
               <div className="text-center text-left mb-14 before:block before:w-24 before:h-1 before:mb-5 before:rounded-md before:mx-auto before:mx-0 before:bg-blue-300">

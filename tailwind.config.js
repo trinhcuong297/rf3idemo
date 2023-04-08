@@ -13,7 +13,11 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
     },
+
     extend: {
+      fontFamily: {
+        Alka: ['Alkatra', 'sans-serif'],
+      },
       gridTemplateColumns: {
         // Simple 16 column grid
         24: 'repeat(24, minmax(0, 1fr))',
@@ -54,9 +58,14 @@ module.exports = {
           '5%, 15%': { transform: 'rotate(3deg)' },
           '22% 99%': { transform: 'rotate(0deg)' },
         },
+        showUp: {
+          '0%': { margin: '0px' },
+          '100%': { margin: '0 10px' },
+        },
       },
       animation: {
         wiggle: 'wiggle 3s ease-in-out infinite',
+        showUp: 'showUp 2s linear',
       },
     },
   },

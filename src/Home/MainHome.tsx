@@ -12,7 +12,6 @@ const Base = () => (
     <HightlightNews />
     <Activ />
     <Timeline />
-    {/* <Testimonial /> */}
   </div>
 );
 

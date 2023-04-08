@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@600&display=swap');
+
 @tailwind base;
 
 @tailwind components;
@@ -5,7 +7,7 @@
 @tailwind utilities;
 
 @layer components {
-  .sidebar{
-    transition:all .4s ease-in-out;
+  .sidebar {
+    transition: all .4s ease-in-out;
   }
 }
