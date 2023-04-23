@@ -101,12 +101,12 @@ export default function HightlightNews() {
                   </small>
                 </div>
                 <Link href={`/News/${data[0] ? data[0].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">{`${
+                  <h3 className="cursor-pointer text-black text-xl sm:text-1xl font-bold mt-2 text-justify">{`${
                     data[0] ? data[0].title : ''
                   }`}</h3>
                 </Link>
                 <p className="mt-6 text-gray-700 text-justify">{`${
-                  data[0] ? data[0].sub_title : ''
+                  data[0]?.sub_title ? data[0]?.sub_title?.slice(0, 115) + ' ...' : ''
                 }`}</p>
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[0] ? data[0].id : ''}`}>
@@ -121,16 +121,16 @@ export default function HightlightNews() {
               <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    {`${data[1] ? data[1].created_time : ''}`}
+                    {`${data[1]?.created_time || ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[1] ? data[1].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
-                    {data[1] ? data[1].title : ''}
+                  <h3 className="cursor-pointer text-black text-xl sm:text-1xl font-bold mt-2 text-justify">
+                    {data[1]?.title || ''}
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[1] ? data[1].sub_title : ''}
+                  {data[1]?.sub_title ? data[1]?.sub_title?.slice(0, 115) + ' ...' : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[1] ? data[1].id : ''}`}>
@@ -149,19 +149,19 @@ export default function HightlightNews() {
               <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    {`${data[2] ? data[2].created_time : ''}`}
+                    {`${data[2]?.created_time || ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[2] ? data[2].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
-                    {data[2] ? data[2].title : ''}
+                  <h3 className="cursor-pointer text-black text-xl sm:text-1xl font-bold mt-2 text-justify">
+                    {data[2]?.title || ''}
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[2] ? data[2].sub_title : ''}
+                  {data[2]?.sub_title ? data[2]?.sub_title?.slice(0, 115) + ' ...' : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
-                  <Link href={`/News/${data[2] ? data[2].id : ''}`}>
+                  <Link href={`/News/${data[2]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
                       Read more&rarr; <br />.
                     </button>
@@ -177,19 +177,19 @@ export default function HightlightNews() {
               <div className="px-4 sm:px-8 pt-2 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    {`${data[3] ? data[3].created_time : ''}`}
+                    {`${data[3]?.created_time || ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[3] ? data[3].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
-                    {data[3] ? data[3].title : ''}
+                  <h3 className="cursor-pointer text-black text-xl sm:text-1xl font-bold mt-2 text-justify">
+                    {data[3]?.title || ''}
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[3] ? data[3].sub_title : ''}
+                  {data[3]?.sub_title ? data[3]?.sub_title?.slice(0, 115) + ' ...' : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
-                  <Link href={`/News/${data[3] ? data[3].id : ''}`}>
+                  <Link href={`/News/${data[3]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
                       Read more&rarr; <br />.
                     </button>
