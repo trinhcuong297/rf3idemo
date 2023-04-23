@@ -303,7 +303,7 @@ export function AllNews() {
             <div className="flex flex-col px-2 pt-2 bg-gray-100 rounded-xl shadow-xl w-full md:max-w-xl overflow-hidden h-fit">
               <div className="flex-1 items-center mx-auto mt-2">
                 <img
-                  src={`${data[0] ? data[0].image_title_url : ''}`}
+                  src={`${data[0]?.image_title_url || ''}`}
                   alt="Photo by charlesdeluvio on Unsplash"
                   className="rounded-xl"
                 />
@@ -311,45 +311,45 @@ export function AllNews() {
               <div className="flex-1 px-4 sm:px-4 pt-3">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-500 text-justify">
-                    {`${data[0] ? data[0].created_time : ''}`}
+                    {`${data[0]?.created_time || ''}`}
                   </small>
                 </div>
                 <Link href={`/News/${data[0] ? data[0].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">{`${
-                    data[0] ? data[0].title : ''
+                  <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">{`${
+                    data[0]?.title || ''
                   }`}</h3>
                 </Link>
-                <p className="mt-6 text-gray-700 text-justify">{`${
-                  data[0] ? data[0].sub_title : ''
+                <p className="mt-5 text-gray-700 text-justify">{`${
+                  data[0]?.sub_title ? data[0]?.sub_title?.slice(0, 115) + ' ...' : ''
                 }`}</p>
-                <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
-                  <Link href={`/News/${data[0] ? data[0].id : ''}`}>
+                <div className="flex pt-6 items-center justify-end -mr-12 -mb-2">
+                  <Link href={`/News/${data[0]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more&rarr; <br />.
+                      Read more &rarr; <br />.
                     </button>
                   </Link>
                 </div>
               </div>
             </div>
             <div className="flex flex-col px-2 w-full md:max-w-xl space-y-4">
-              <div className="px-4 sm:px-8 pt-6 rounded-2xl w-full md:max-w-xl overflow-hidden">
+              <div className="px-4 sm:px-8 pt-1 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    {`${data[1] ? data[1].created_time : ''}`}
+                    {`${data[1]?.created_time || ''}`}
                   </small>
                 </div>
-                <Link href={`/News/${data[1] ? data[1].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
-                    {data[1] ? data[1].title : ''}
+                <Link href={`/News/${data[1]?.id || ''}`}>
+                  <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">
+                    {data[1]?.title || ''}
                   </h3>
                 </Link>
-                <p className="mt-6 text-gray-700 text-justify">
-                  {data[1] ? data[1].sub_title : ''}
+                <p className="mt-2 text-gray-700 text-justify">
+                  {data[1]?.sub_title ? data[1]?.sub_title?.slice(0, 115) + ' ...': ''}
                 </p>
-                <div className="flex items-center justify-end -mr-12 -mb-5">
-                  <Link href={`/News/${data[1] ? data[1].id : ''}`}>
+                <div className="flex items-center justify-end -mr-12 -mb-2">
+                  <Link href={`/News/${data[1]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more&rarr; <br />.
+                      Read more &rarr; <br />.
                     </button>
                   </Link>
                 </div>
@@ -360,24 +360,24 @@ export function AllNews() {
                   ></span>
                 </h3>
               </div>
-              <div className="px-4 sm:px-8 pt-6 rounded-2xl w-full md:max-w-xl overflow-hidden">
+              <div className="px-4 sm:px-8 pt-1 rounded-2xl w-full md:max-w-xl overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between ">
                   <small className="text-sm text-gray-600 text-justify">
-                    {`${data[2] ? data[2].created_time : ''}`}
+                    {`${data[2]?.created_time || ''}`}
                   </small>
                 </div>
-                <Link href={`/News/${data[2] ? data[2].id : ''}`}>
-                  <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">
-                    {data[2] ? data[2].title : ''}
+                <Link href={`/News/${data[2]?.id || ''}`}>
+                  <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">
+                    {data[2]?.title || ''}
                   </h3>
                 </Link>
-                <p className="mt-6 text-gray-700 text-justify">
-                  {data[2] ? data[2].sub_title : ''}
+                <p className="mt-2 text-gray-700 text-justify">
+                  {data[2]?.sub_title ? data[2]?.sub_title?.slice(0, 115) + ' ...': ''}
                 </p>
-                <div className="flex items-center justify-end -mr-12 -mb-5">
-                  <Link href={`/News/${data[2] ? data[2].id : ''}`}>
+                <div className="flex items-center justify-end -mr-12 -mb-2">
+                  <Link href={`/News/${data[2]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more&rarr; <br />.
+                      Read more &rarr; <br />.
                     </button>
                   </Link>
                 </div>
@@ -387,6 +387,28 @@ export function AllNews() {
                     className="flex-grow bg-blue-200 rounded h-0.5"
                   ></span>
                 </h3>
+              </div>
+              <div className="px-4 sm:px-8 pt-1 rounded-2xl w-full md:max-w-xl overflow-hidden">
+                <div className="flex flex-col sm:flex-row justify-between ">
+                  <small className="text-sm text-gray-600 text-justify">
+                    {`${data[3]?.created_time || ''}`}
+                  </small>
+                </div>
+                <Link href={`/News/${data[3]?.id || ''}`}>
+                  <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">
+                    {data[3]?.title || ''}
+                  </h3>
+                </Link>
+                <p className="mt-2 text-gray-700 text-justify">
+                  {data[3]?.sub_title ? data[3]?.sub_title?.slice(0, 115) + ' ...': ''}
+                </p>
+                <div className="flex items-center justify-end -mr-12 -mb-5">
+                  <Link href={`/News/${data[3]?.id || ''}`}>
+                    <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
+                      Read more &rarr; <br />.
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -397,7 +419,7 @@ export function AllNews() {
                 className="flex-grow bg-blue-200 rounded h-0.5"
               ></span>
             </h3>
-            {data.map((param, index) => {
+            {data.slice(4).map((param, index) => {
               return (
                 <Link href={`/News/${param?.id}`} key={index}>
                   <div className="grid grid-cols-6">
@@ -407,12 +429,24 @@ export function AllNews() {
                         className="w-full rounded-lg"
                       />
                     </div>
-                    <div className="col-span-4 p-4 flex items-center">
+                    <div className="col-span-4 px-4 flex items-center">
                       <div>
-                        <p className="text-gray-700 font-bold">
+                        <p className=" flex text-sm text-gray-600 pb-2 text-justify">
+                          {`${param?.created_time || ''}`}
+                        </p>
+                        <p className="text-gray-700 font-bold text-justify">
                           {param?.title}
                         </p>
-                        <p className="text-gray-500 mt-4">{param?.sub_title}</p>
+                        <p className="text-gray-500 mt-4 text-justify">
+                          {param?.sub_title ? param?.sub_title?.slice(0, 200) + ' ...' : ''}
+                        </p>
+                        <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
+                          <Link href={`/News/${param?.id || ''}`}>
+                            <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
+                              Read more &rarr; <br/>
+                            </button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                     <h3 className="flex items-center my-2 w-full col-span-6">
