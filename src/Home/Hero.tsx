@@ -14,8 +14,8 @@ function Hero() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
               <img
-                alt="Party"
-                src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                alt="Hero Image"
+                src="https://lh4.googleusercontent.com/aTg6fHxb8fkrqOWqU3h9GWjVfqtPepJcwDXzVVJUXsaHOyNRCYQMJmD63WXADVkbb20UFkCF5HVSQ0kbETu50XvggFPk6L-e88GrSuEmpq8G6QWUyenGgnAaLxQ8PcvsQ4s-E9gv"
                 className="absolute inset-0 h-full w-full object-cover mask-hexagon mask"
               />
             </div>
@@ -25,9 +25,8 @@ function Hero() {
                 RF3i Lab
               </h2>
 
-              <p className="mt-4 text-gray-600">
-                RF3i Lab - Radio Frequency Instrumentation and Industrial
-                Informatics
+              <p className="mt-4 text-gray-600" style={{textAlign: "justify"}}>
+                RF3i stands for Radio Frequency Instrumentation and Industrial Informatics. Lab RF3i belongs to the Department of Instrumentation Engineering and Industrial Informatics - Institute of Electricity. Lab was established in 2014, by Dr. Le Minh Thuy is in charge of management and guidance.
                 <br />
               </p>
               <h3 className="flex items-center my-6">
@@ -36,7 +35,7 @@ function Hero() {
                   className="flex-grow bg-blue-200 rounded h-0.5"
                 ></span>
                 <span className="inline-block px-4 py-1 text-sm font-medium text-center text-gray-600  rounded-full">
-                  Research
+                  Main Research Direction
                 </span>
                 <span
                   aria-hidden="true"
@@ -45,7 +44,7 @@ function Hero() {
               </h3>
 
               <div className="grid grid-cols-2 w-full">
-                <p className="flex px-4">
+                <p className="flex px-4 py-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -60,9 +59,9 @@ function Hero() {
                       d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
                     />
                   </svg>
-                  Radio Frequency
+                  Antenna Design
                 </p>
-                <p className="flex px-4">
+                <p className="flex px-4 py-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -77,7 +76,41 @@ function Hero() {
                       d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
                     />
                   </svg>
-                  Embedded System
+                  RF Energy Harvesting
+                </p>
+                <p className="flex px-4 py-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 mx-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+                    />
+                  </svg>
+                  Wireless Sensor Network
+                </p>
+                <p className="flex px-4 py-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 mx-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+                    />
+                  </svg>
+                  Embedded & IOT System
                 </p>
               </div>
               <h3 className="flex items-center my-6">

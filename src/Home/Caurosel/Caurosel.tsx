@@ -32,19 +32,15 @@ export default function Caurosel() {
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-50"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-2xl flex flex-col justify-center items-center">
-            <p className="text-white text-5xl uppercase font-bold w-full inline min-w-screen">
-              welcome to our website
+            <p className="text-white text-5xl w-full inline min-w-screen">
+              Welcome to our Laboratory
             </p>
-            <p className="w-40 h-2 bg-white my-4"></p>
+            <p className="w-40 h-1 bg-white my-4"></p>
             <p className="mb-5 text-3xl font-semibold">
-              Radio Frequency - 3i Lab
-            </p>
-            <p className="mb-5 text-3xl font-semibold font-Alka">
-              {' '}
-              Asoc. Prof. Le Minh Thuy
+              Let's start a JOURNEY
             </p>
           </div>
         </div>
