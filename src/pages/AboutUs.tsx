@@ -18,7 +18,7 @@ export default function AboutUs() {
               <h1 className="text-5xl leading-tight font-bold bg-gradient-to-r from-blue-600 to-cyan-300 text-transparent bg-clip-text">
                 Hi! We are RF3i
               </h1>
-              <p className="mt-6 text-gray-600 text-xl leading-relaxed">
+              <p className="mt-6 text-gray-600 text-xl leading-relaxed text-justify">
                 Nhóm tập hợp những người đam mê điện tử, nhúng, truyền tin không
                 dây, xử lý tín hiệu và các lĩnh vực cao tần. Lab được sáng lập
                 bởi TS.Lê Minh Thùy, với các thành viên là các nghiên cứu sinh,
