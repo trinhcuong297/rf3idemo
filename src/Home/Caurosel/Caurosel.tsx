@@ -34,12 +34,12 @@ export default function Caurosel() {
       >
         <div className="hero-overlay bg-opacity-50"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-2xl flex flex-col justify-center items-center">
-            <p className="text-white text-5xl w-full inline min-w-screen">
+          <div className="max-w-5xl flex flex-col justify-center items-center">
+            <p className="text-white text-5xl uppercase font-bold w-full inline min-w-screen">
               Welcome to our Laboratory
             </p>
             <p className="w-40 h-1 bg-white my-4"></p>
-            <p className="mb-5 text-3xl font-semibold">
+            <p className="mb-5 text-3xl font-semibold font-Alka">
               Let's start a JOURNEY
             </p>
           </div>
