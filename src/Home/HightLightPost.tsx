@@ -106,7 +106,9 @@ export default function HightlightNews() {
                   }`}</h3>
                 </Link>
                 <p className="mt-5 text-gray-700 text-justify">{`${
-                  data[0]?.sub_title ? data[0]?.sub_title?.slice(0, 115) + ' ...' : ''
+                  data[0]?.sub_title
+                    ? `${data[0]?.sub_title?.slice(0, 115)} ...`
+                    : ''
                 }`}</p>
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[0] ? data[0].id : ''}`}>
@@ -130,7 +132,9 @@ export default function HightlightNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[1]?.sub_title ? data[1]?.sub_title?.slice(0, 115) + ' ...' : ''}
+                  {data[1]?.sub_title
+                    ? `${data[1]?.sub_title?.slice(0, 115)} ...`
+                    : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[1] ? data[1].id : ''}`}>
@@ -158,7 +162,9 @@ export default function HightlightNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[2]?.sub_title ? data[2]?.sub_title?.slice(0, 115) + ' ...' : ''}
+                  {data[2]?.sub_title
+                    ? `${data[2]?.sub_title?.slice(0, 115)} ...`
+                    : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[2]?.id || ''}`}>
@@ -186,7 +192,9 @@ export default function HightlightNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[3]?.sub_title ? data[3]?.sub_title?.slice(0, 115) + ' ...' : ''}
+                  {data[3]?.sub_title
+                    ? `${data[3]?.sub_title?.slice(0, 115)} ...`
+                    : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[3]?.id || ''}`}>
@@ -320,7 +328,9 @@ export function AllNews() {
                   }`}</h3>
                 </Link>
                 <p className="mt-5 text-gray-700 text-justify">{`${
-                  data[0]?.sub_title ? data[0]?.sub_title?.slice(0, 115) + ' ...' : ''
+                  data[0]?.sub_title
+                    ? `${data[0]?.sub_title?.slice(0, 115)} ...`
+                    : ''
                 }`}</p>
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-2">
                   <Link href={`/News/${data[0]?.id || ''}`}>
@@ -344,7 +354,9 @@ export function AllNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[1]?.sub_title ? data[1]?.sub_title?.slice(0, 115) + ' ...': ''}
+                  {data[1]?.sub_title
+                    ? `${data[1]?.sub_title?.slice(0, 115)} ...`
+                    : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-2">
                   <Link href={`/News/${data[1]?.id || ''}`}>
@@ -372,7 +384,9 @@ export function AllNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[2]?.sub_title ? data[2]?.sub_title?.slice(0, 115) + ' ...': ''}
+                  {data[2]?.sub_title
+                    ? `${data[2]?.sub_title?.slice(0, 115)} ...`
+                    : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-2">
                   <Link href={`/News/${data[2]?.id || ''}`}>
@@ -400,7 +414,9 @@ export function AllNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[3]?.sub_title ? data[3]?.sub_title?.slice(0, 115) + ' ...': ''}
+                  {data[3]?.sub_title
+                    ? `${data[3]?.sub_title?.slice(0, 115)} ...`
+                    : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[3]?.id || ''}`}>
@@ -419,7 +435,7 @@ export function AllNews() {
                 className="flex-grow bg-blue-200 rounded h-0.5"
               ></span>
             </h3>
-            {data.slice(4).map((param, index) => {
+            {data.map((param, index) => {
               return (
                 <Link href={`/News/${param?.id}`} key={index}>
                   <div className="grid grid-cols-6">
@@ -430,7 +446,7 @@ export function AllNews() {
                       />
                     </div>
                     <div className="col-span-4 px-4 flex items-center">
-                      <div>
+                      <div className="w-full">
                         <p className=" flex text-sm text-gray-600 pb-2 text-justify">
                           {`${param?.created_time || ''}`}
                         </p>
@@ -438,12 +454,14 @@ export function AllNews() {
                           {param?.title}
                         </p>
                         <p className="text-gray-500 mt-4 text-justify">
-                          {param?.sub_title ? param?.sub_title?.slice(0, 200) + ' ...' : ''}
+                          {param?.sub_title
+                            ? `${param?.sub_title?.slice(0, 200)} ...`
+                            : ''}
                         </p>
-                        <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
+                        <div className="flex pt-6 items-center justify-end">
                           <Link href={`/News/${param?.id || ''}`}>
                             <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                              Read more &rarr; <br/>
+                              Read more &rarr; <br />
                             </button>
                           </Link>
                         </div>
