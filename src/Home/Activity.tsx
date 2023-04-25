@@ -84,13 +84,6 @@ export default function Activ() {
         ></span>
       </h3>
       <section className="py-2 bg-gray-100 text-gray-50">
-        <div className="w-full flex flex-row-reverse text-indigo-600 items-center">
-          <ArrowLongRightIcon
-            className="mx-4 h-6 w-6 text-blue-600"
-            aria-hidden="true"
-          />
-          <Link href="/News">Show all</Link>
-        </div>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -126,6 +119,13 @@ export default function Activ() {
             })}
           </div>
         </Swiper>
+        <div className="w-full flex flex-row-reverse text-indigo-600 items-center">
+          <ArrowLongRightIcon
+            className="mx-4 h-6 w-6 text-blue-600"
+            aria-hidden="true"
+          />
+          <Link href="/News">Show all</Link>
+        </div>
       </section>
     </div>
   );
