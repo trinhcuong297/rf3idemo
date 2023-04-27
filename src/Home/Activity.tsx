@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -100,16 +98,18 @@ export default function Activ() {
               return (
                 <SwiperSlide key={index}>
                   <div className="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                  <img
-                    src={`${param ? param.image_url : ''}`}
-                    alt="Photo by RF3i"
-                    className={`w-full rounded shadow-xl hover:shadow-2xl ${
-                      index % 5 === 0 ? '' : ''
-                    }`}
-                  />
-                  <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100">
+                  <div className="w-full flex items-center justify-center">
+                    <img
+                      src={`${param ? param.image_url : ''}`}
+                      alt="Photo by RF3i"
+                      className={`w-full max-h-[80vh] rounded shadow-xl hover:shadow-2xl ${
+                        index % 5 === 0 ? '' : ''
+                      }`}
+                    />
+                  </div>
+                  <div className="absolute top-0 left-0 w-full h-full flex justify-center items-end opacity-0 hover:opacity-100 p-3">
                     <div className="flex-row text-center">
-                      <h1 className="text-gray-50 font-bold text-lg">
+                      <h1 className="text-gray-50 font-bold text-lg bg-black/50">
                         {param ? param.activity_name : ''}
                       </h1>
                     </div>
@@ -119,13 +119,13 @@ export default function Activ() {
             })}
           </div>
         </Swiper>
-        <div className="w-full flex flex-row-reverse text-indigo-600 items-center">
+        {/* <div className="w-full flex flex-row-reverse text-indigo-600 items-center">
           <ArrowLongRightIcon
             className="mx-4 h-6 w-6 text-blue-600"
             aria-hidden="true"
           />
           <Link href="/News">Show all</Link>
-        </div>
+        </div> */}
       </section>
     </div>
   );
