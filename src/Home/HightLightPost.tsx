@@ -435,7 +435,7 @@ export function AllNews() {
                 className="flex-grow bg-blue-200 rounded h-0.5"
               ></span>
             </h3>
-            {data.map((param, index) => {
+            {data.slice(4).map((param, index) => {
               return (
                 <Link href={`/News/${param?.id}`} key={index}>
                   <div className="grid grid-cols-6">
