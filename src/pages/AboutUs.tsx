@@ -11,7 +11,7 @@ export default function AboutUs() {
       <Head>
         <title>RF3i - Infomation</title>
       </Head>
-      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth pt-12">
+      <div className="space-y-12 text-gray-800 px-4 md:px-20 scroll-smooth py-12">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-12 px-4 text-center">
             <div className="w-full max-w-2xl text-left">
@@ -103,9 +103,20 @@ export default function AboutUs() {
         <section className=" " id="researchLeader">
           <ResearchLeader />
         </section>
-
-        <ActiveMember />
-        <Alumni />
+        <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+          <input type="checkbox" className="peer" />
+          <div className="collapse-title text-xl font-medium">Our members</div>
+          <div className="collapse-content ">
+            <ActiveMember />
+          </div>
+        </div>
+        <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+          <input type="checkbox" className="peer" />
+          <div className="collapse-title text-xl font-medium">Our alumni</div>
+          <div className="collapse-content ">
+            <Alumni />
+          </div>
+        </div>
       </div>
     </>
   );
