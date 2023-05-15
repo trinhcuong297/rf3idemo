@@ -102,9 +102,7 @@ export default function Activ() {
                     <img
                       src={`${param ? param.image_url : ''}`}
                       alt="Photo by RF3i"
-                      className={`w-full max-h-[80vh] rounded shadow-xl hover:shadow-2xl ${
-                        index % 5 === 0 ? '' : ''
-                      }`}
+                      className={`w-auto max-h-[80vh] rounded shadow-xl hover:shadow-2xl`}
                     />
                   </div>
                   <div className="absolute top-0 left-0 w-full h-full flex justify-center items-end opacity-0 hover:opacity-100 p-3">
