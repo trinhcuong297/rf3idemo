@@ -44,9 +44,11 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Antena
                 </h3>
-                <p className="text-gray-500 leading-relaxed"></p>
+                <p className="text-gray-500 leading-relaxed">
+                  Lĩnh vực nghiên cứu chính và cũng là thế mạnh của lab
+                </p>
               </div>
-              <div className="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0 md:border-l">
+              <div className="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0 md:">
                 <img
                   className="mx-auto mb-3 w-20"
                   src="https://img.icons8.com/clouds/2x/module.png"
@@ -55,11 +57,14 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Embedded
                 </h3>
-                <p className="text-gray-500 leading-relaxed"></p>
+                <p className="text-gray-500 leading-relaxed">
+                  Lĩnh vực nghiên cứu đang được lab tích cực phát triển và đã có
+                  nhiều bước phát triển
+                </p>
               </div>
             </div>
           </section>
-          <hr className="border border-gray-300" />
+          {/* <hr className="border border-gray-300" /> */}
           <section className="py-8 px-4">
             <div className="flex flex-wrap -mx-4 mb-6">
               <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center">
@@ -71,7 +76,9 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Hardware
                 </h3>
-                <p className="text-gray-500 leading-relaxed"></p>
+                <p className="text-gray-500 leading-relaxed">
+                  Bao gồm các lĩnh vực điện tử, sóng cao tần
+                </p>
               </div>
               <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center ">
                 <img
@@ -82,7 +89,9 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Firmware
                 </h3>
-                <p className="text-gray-500 leading-relaxed"></p>
+                <p className="text-gray-500 leading-relaxed">
+                  Lập trình cho vi điều khiển
+                </p>
               </div>
               <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center">
                 <img
@@ -93,7 +102,9 @@ export default function AboutUs() {
                 <h3 className="text-2xl mb-3 font-heading text-gray-800 font-medium">
                   Software
                 </h3>
-                <p className="text-gray-500 leading-relaxed"></p>
+                <p className="text-gray-500 leading-relaxed">
+                  Tạo các web, app cho các ứng dụng IoT
+                </p>
               </div>
             </div>
             <hr className="border border-gray-300" />

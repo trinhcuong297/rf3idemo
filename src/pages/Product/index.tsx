@@ -9,15 +9,15 @@ export default function Product() {
 
   interface Data {
     id?: String | null | undefined;
-    image_title_url?: String | null | undefined;
-    title?: String | null | undefined;
-    sub_title?: String | null | undefined;
-    created_time?: String | null | undefined;
+    product_image_url?: String | null | undefined;
+    product_name?: String | null | undefined;
+    product_type?: String | null | undefined;
+    product_description?: String | null | undefined;
   }
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/home/news/all?page=1&size=5`)
+    fetch(`${process.env.RF3i_API}/rf3i-api/product/all`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
@@ -55,51 +55,51 @@ export default function Product() {
       <Head>
         <title>RF3i - Product</title>
       </Head>
-      <div className="bg-gray-200">
-        <div className="mx-auto max-w-7xl px-4 md:px-12 lg:px-24">
-          <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-            <div className="w-full py-7 px-5">
-              {data.map((param, index) => {
-                return (
-                  <div
-                    className="w-full flex flex-col md:flex-row mb-8"
-                    key={index}
-                  >
-                    <div className="flex flex-col md:flex-row px-2 py-2 bg-gray-100 rounded-xl shadow-xl w-full overflow-hidden h-fit">
-                      <div className="flex-1 items-center mx-auto my-2">
-                        <img
-                          src={`${param ? param.image_title_url : ''}`}
-                          alt="Photo by charlesdeluvio on Unsplash"
-                          className="rounded-xl"
-                        />
-                      </div>
-                      <div className="flex-1 px-4 sm:px-4 pt-3 md:flex flex-col justify-center">
-                        <div className="flex flex-col sm:flex-row justify-between ">
-                          <small className="text-sm text-gray-500 text-justify">
-                            {`${param ? param.created_time : ''}`}
-                          </small>
-                        </div>
-                        <Link href={`/Product/${param ? param.id : ''}`}>
-                          <h3 className="cursor-pointer text-black text-xl sm:text-2xl font-bold mt-2">{`${
-                            param ? param.title : ''
-                          }`}</h3>
-                        </Link>
-                        <p className="mt-6 text-gray-700 text-justify">{`${
-                          param ? param.sub_title : ''
-                        }`}</p>
-                        <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
-                          <Link href={`/Product/${param ? param.id : ''}`}>
-                            <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                              Read more&rarr; <br />.
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+      <div className="bg-gray-200 lg:pt-12">
+        <div className="mx-auto px-4 md:px-12 lg:px-24 py-12">
+          <div className="grid grid-cols-3 gap-4 justify-items-center min-w-full">
+            {data.map((data, index) => {
+              return (
+                <div
+                  className="relative flex w-full h-fit max-w-[30rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg"
+                  key={index}
+                >
+                  <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                    <img
+                      src={`${data.product_image_url}`}
+                      alt="ui/ux review check"
+                    />
+                    <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
                   </div>
-                );
-              })}
-            </div>
+                  <div className="p-6">
+                    <div className="mb-3 flex flex-col items-center justify-between">
+                      <h5 className="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        {data.product_name}
+                      </h5>
+                      <p className="items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
+                        <div className="badge badge-neutral mx-1">
+                          <p>{data.product_type}</p>
+                        </div>
+                      </p>
+                    </div>
+                    <p className="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
+                      {data.product_description}
+                    </p>
+                  </div>
+                  <div className="p-6 pt-3">
+                    <Link href={`/Product/${data.id}`}>
+                      <button
+                        className="block w-full select-none rounded-lg bg-blue-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button"
+                        data-ripple-light="true"
+                      >
+                        More details
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
