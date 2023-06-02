@@ -17,14 +17,11 @@ const ContactUs: React.FC = () => (
     </Container> */}
 
     <div>
-      <section className="relative z-[0] overflow-hidden bg-white py-20 lg:py-[120px]">
+      <section className="relative z-[0] overflow-hidden bg-white py-20 lg:py-[120px] mt-4 lg:mt-12">
         <div className="container mx-auto">
           <div className="mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
               <div className="mb-12 max-w-[570px] lg:mb-0">
-                <span className="text-gray-700 mb-4 block text-base font-semibold">
-                  Contact Us
-                </span>
                 <h2 className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                   GET IN TOUCH WITH US
                 </h2>
@@ -36,7 +33,7 @@ const ContactUs: React.FC = () => (
                     ></span>
                   </h3>
                 </p>
-                <div className="mb-8 flex w-full max-w-[370px]">
+                <div className="mb-8 flex w-full max-w-[500px]">
                   <div className="bg-primary text-gray-700 mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
                     <img src="https://img.icons8.com/clouds/2x/map-pin.png" />
                   </div>
@@ -46,6 +43,8 @@ const ContactUs: React.FC = () => (
                     </h4>
                     <p className="text-gray-700 text-base">
                       Room 328 - Building C1
+                      <br />
+                      Room 713 - Ta Quang Buu Library
                       <br />
                       Hanoi University of Science and Technology
                     </p>
@@ -71,6 +70,10 @@ const ContactUs: React.FC = () => (
                       Email Address
                     </h4>
                     <p className="text-gray-700 text-base">labrf3i@gmail.com</p>
+                    <p className="text-gray-700 text-base">
+                      thuy.leminh@hust.edu.vn
+                    </p>
+                    <p className="text-gray-700 text-base">mtle.3i@gmail.com</p>
                   </div>
                 </div>
               </div>
