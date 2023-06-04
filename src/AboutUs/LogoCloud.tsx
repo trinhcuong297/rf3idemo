@@ -1,46 +1,43 @@
+import { useEffect, useState } from 'react';
+
 export default function LogoCloud() {
+  const [data, setData] = useState<Data[]>([]);
+
+  interface Data {
+    id?: String | null | undefined;
+    logo_company_url?: String | null | undefined;
+    activity_name?: String | null | undefined;
+  }
+
+  useEffect(() => {
+    fetch(`${process.env.RF3i_API}/rf3i-api/about-us/associated-company`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data.data);
+        console.log(data);
+      });
+  }, []);
   return (
-    <div className="bg-gray-100 py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
-          Trusted by the world most innovative teams
+        <h2 className="text-center text-2xl font-semibold leading-8 text-gray-900">
+          Trusted by many company
         </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
-            alt="Transistor"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
-            alt="Reform"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
-            alt="Tuple"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-            alt="SavvyCal"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-            alt="Statamic"
-            width={158}
-            height={48}
-          />
+        <div className="mx-auto mt-10 flex flex-wrap items-center justify-center">
+          {data.map((e, index) => {
+            return (
+              <>
+                <img
+                  className="w-1/5 object-contain px-5 mx-4"
+                  src={`${e.logo_company_url}`}
+                  alt="Transistor"
+                  width={100}
+                  height={50}
+                  key={index}
+                />
+              </>
+            );
+          })}
         </div>
       </div>
     </div>
