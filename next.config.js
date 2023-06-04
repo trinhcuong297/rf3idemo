@@ -15,6 +15,6 @@ module.exports = withBundleAnalyzer({
 
 module.exports = {
   env: {
-    RF3i_API: 'https://rf3i-api-uat.herokuapp.com',
+    RF3i_API: 'https://rf3i-api-uat.onrender.com',
   },
 };

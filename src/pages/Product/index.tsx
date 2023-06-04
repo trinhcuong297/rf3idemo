@@ -57,19 +57,19 @@ export default function Product() {
       </Head>
       <div className="bg-gray-200 lg:pt-12">
         <div className="mx-auto px-4 md:px-12 lg:px-24 py-12">
-          <div className="grid grid-cols-3 gap-4 justify-items-center min-w-full">
+          <div className="grid md:grid-cols-3 gap-4 justify-items-center min-w-full">
             {data.map((data, index) => {
               return (
                 <div
                   className="relative flex w-full h-fit max-w-[30rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg"
                   key={index}
                 >
-                  <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                  <div className="h-96 flex items-center relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
                       src={`${data.product_image_url}`}
                       alt="ui/ux review check"
+                      className="h-fit"
                     />
-                    <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
                   </div>
                   <div className="p-6">
                     <div className="mb-3 flex flex-col items-center justify-between">

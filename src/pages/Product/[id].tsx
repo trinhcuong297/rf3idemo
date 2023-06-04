@@ -33,7 +33,6 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
 export default function ProductDetail(context: any) {
   const { data } = context.data;
-  console.log(data);
   return (
     <>
       <Head>
@@ -41,12 +40,24 @@ export default function ProductDetail(context: any) {
       </Head>
       <div className="px-5 mx-auto sm:px-10 md:px-16">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-          <div className="grid gap-4 sm:gap-6 lg:gap-8">
-            <img
-              src={data.product_image_urls[0]}
-              alt=""
-              className="rounded-lg bg-gray-100 shadow-lg"
-            />
+          <div className="flex flex-col">
+            <div className="p-3 text-xs">
+              Press <kbd className="kbd">shift</kbd>+
+              <kbd className="kbd">Scroll</kbd> to slide image!
+            </div>
+            <div className="carousel rounded-box h-64 md:h-96">
+              {data.product_image_urls.map((e: any) => {
+                return (
+                  <div className="carousel-item" key={e}>
+                    <img
+                      src={`${e}`}
+                      alt="image 1"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div>
             <div className="badge">{data.product_type}</div>
