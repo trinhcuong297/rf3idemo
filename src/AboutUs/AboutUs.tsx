@@ -83,15 +83,21 @@ const ActiveMember = () => {
                     className="flex flex-col justify-center m-8 text-center"
                     key={index}
                   >
-                    <img
-                      alt=""
-                      className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full"
-                      src={`${
-                        param.avatar_url
-                          ? param.avatar_url
-                          : 'https://img.icons8.com/clouds/2x/test-account.png'
-                      }`}
-                    />
+                    <div className="flex flex-col items-start justify-center w-full m-auto sm:flex-row">
+                      <div className="flex mx-auto sm:m-0">
+                        <div className="items-center justify-center w-20 h-20 m-auto sm:w-32 sm:h-32">
+                          <img
+                            alt="profil"
+                            src={`${
+                              param.avatar_url
+                                ? param.avatar_url
+                                : 'https://img.icons8.com/clouds/2x/test-account.png'
+                            }`}
+                            className="object-cover w-20 h-20 mx-auto rounded-full sm:w-32 sm:h-32"
+                          />
+                        </div>
+                      </div>
+                    </div>
                     <p className="text-xl font-semibold leading-tight">
                       {param.full_name}
                     </p>
@@ -146,7 +152,7 @@ const ActiveMember = () => {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
         </h3>
-        <div className="container flex items-center justify-between px-4 mx-auto sm:px-10 ">
+        <div className="flex items-center justify-between px-4 mx-auto sm:px-10 ">
           <button
             className={`${
               show > 1 ? '' : 'btn-disabled'
@@ -170,26 +176,32 @@ const ActiveMember = () => {
               />
             </svg>
           </button>
-          <div className="flex flex-row flex-wrap-reverse justify-center">
+          <div className="flex flex-wrap">
             {data.map((param, index) => {
               return (
                 <div
-                  className="flex flex-col justify-center m-8 text-center"
+                  className="max-w-screen-md md:w-1/3 px-10 py-6 mx-4 md:mx-auto border-1 px-4 flex flex-col items-center"
                   key={index}
                 >
-                  <img
-                    alt=""
-                    className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full"
-                    src={`${
-                      param.avatar_url
-                        ? param.avatar_url
-                        : 'https://img.icons8.com/clouds/2x/test-account.png'
-                    }`}
-                  />
+                  <div className="flex flex-col items-start justify-center w-full m-auto sm:flex-row">
+                    <div className="flex mx-auto sm:m-0">
+                      <div className="items-center justify-center w-20 h-20 m-auto sm:w-32 sm:h-32">
+                        <img
+                          alt="profil"
+                          src={`${
+                            param.avatar_url
+                              ? param.avatar_url
+                              : 'https://img.icons8.com/clouds/2x/test-account.png'
+                          }`}
+                          className="object-cover w-20 h-20 mx-auto rounded-full sm:w-32 sm:h-32"
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <p className="text-xl font-semibold leading-tight">
                     {param.full_name}
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-center">
                     {param.class}-K{param.course_number}
                   </p>
                 </div>

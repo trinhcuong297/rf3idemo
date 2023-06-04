@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import ActiveMember from '../AboutUs/AboutUs';
 import Alumni from '../AboutUs/Alumni';
+import LogoCloud from '../AboutUs/LogoCloud';
 import ResearchLeader from '../AboutUs/ResearchLeader';
 
 export default function AboutUs() {
@@ -110,18 +111,20 @@ export default function AboutUs() {
             <hr className="border border-gray-300" />
           </section>
         </div>
-
+        <section>
+          <LogoCloud />
+        </section>
         <section className=" " id="researchLeader">
           <ResearchLeader />
         </section>
-        <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <div className="collapse collapse-arrow border border-base-300 border-x-0 bg-gray-100">
           <input type="checkbox" className="peer" />
           <div className="collapse-title text-xl font-medium">Our members</div>
           <div className="collapse-content ">
             <ActiveMember />
           </div>
         </div>
-        <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <div className="collapse collapse-arrow border border-base-300 border-x-0 bg-gray-100">
           <input type="checkbox" className="peer" />
           <div className="collapse-title text-xl font-medium">Our alumni</div>
           <div className="collapse-content ">
