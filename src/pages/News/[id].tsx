@@ -56,7 +56,12 @@ export default function NewsDetail(result: any) {
                 By {data.created_user} - {data.created_time}
               </p>
             </div>
-            <span className="text-gray-900">{data.html_content}</span>
+            <span className="text-gray-900">
+              <html
+                className="text-justify"
+                dangerouslySetInnerHTML={{ __html: data.html_content }}
+              />
+            </span>
           </div>
         </div>
       </div>

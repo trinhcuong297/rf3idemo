@@ -36,7 +36,7 @@ export default function AboutUs() {
           <hr className="border border-gray-300" />
           <section className="p-4">
             <div className="flex flex-wrap text-center">
-              <div className="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0">
+              <div className="w-full md:w-1/2 py-4 md:px-10 mb-4 md:mb-0">
                 <img
                   className="mx-auto mb-3 w-20"
                   src="https://img.icons8.com/clouds/2x/cellular-network.png"
@@ -49,7 +49,7 @@ export default function AboutUs() {
                   Lĩnh vực nghiên cứu chính và cũng là thế mạnh của lab
                 </p>
               </div>
-              <div className="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0 md:">
+              <div className="w-full md:w-1/2 py-4 md:px-10 mb-4 md:mb-0 md:">
                 <img
                   className="mx-auto mb-3 w-20"
                   src="https://img.icons8.com/clouds/2x/module.png"
@@ -68,7 +68,7 @@ export default function AboutUs() {
           {/* <hr className="border border-gray-300" /> */}
           <section className="py-8 px-4">
             <div className="flex flex-wrap -mx-4 mb-6">
-              <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center">
+              <div className="w-full lg:w-1/3 px-4 mb-6 flex flex-col items-center">
                 <img
                   className="w-20 mb-2"
                   src="https://img.icons8.com/clouds/2x/electronics.png"
@@ -81,7 +81,7 @@ export default function AboutUs() {
                   Bao gồm các lĩnh vực điện tử, sóng cao tần
                 </p>
               </div>
-              <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center ">
+              <div className="w-full lg:w-1/3 px-4 mb-6 flex flex-col items-center ">
                 <img
                   className="w-20 mb-2"
                   src="https://img.icons8.com/clouds/2x/code-fork.png"
@@ -94,7 +94,7 @@ export default function AboutUs() {
                   Lập trình cho vi điều khiển
                 </p>
               </div>
-              <div className="lg:w-1/3 px-4 mb-6 flex flex-col items-center">
+              <div className="w-full lg:w-1/3 px-4 mb-6 flex flex-col items-center">
                 <img
                   className="w-20 mb-2"
                   src="https://img.icons8.com/clouds/2x/code.png"

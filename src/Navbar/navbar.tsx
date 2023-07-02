@@ -42,7 +42,7 @@ export default function Navbar() {
                 setToggleNav(!toggleNav);
               }}
               id="nav-toggle"
-              className="flex items-center p-1 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+              className="flex items-center p-1 text-gray-600 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
             >
               <svg
                 className="fill-current h-6 w-6"
@@ -57,7 +57,7 @@ export default function Navbar() {
           <div
             className={`${
               toggleNav ? '' : 'hidden'
-            } w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20`}
+            } bg-white/75 w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20`}
             id="nav-content"
           >
             <ul className="lg:flex justify-end w-full items-center">
