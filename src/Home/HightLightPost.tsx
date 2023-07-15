@@ -106,9 +106,7 @@ export default function HightlightNews() {
                   }`}</h3>
                 </Link>
                 <p className="mt-5 text-gray-700 text-justify">{`${
-                  data[0]?.sub_title
-                    ? `${data[0]?.sub_title?.slice(0, 115)} ...`
-                    : ''
+                  data[0]?.sub_title ? data[0]?.sub_title : ''
                 }`}</p>
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[0] ? data[0].id : ''}`}>
@@ -132,9 +130,7 @@ export default function HightlightNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[1]?.sub_title
-                    ? `${data[1]?.sub_title?.slice(0, 115)} ...`
-                    : ''}
+                  {data[1]?.sub_title ? data[1]?.sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[1] ? data[1].id : ''}`}>
@@ -163,7 +159,7 @@ export default function HightlightNews() {
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
                   {data[2]?.sub_title
-                    ? `${data[2]?.sub_title?.slice(0, 115)} ...`
+                    ? data[2]?.sub_title
                     : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
@@ -193,7 +189,7 @@ export default function HightlightNews() {
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
                   {data[3]?.sub_title
-                    ? `${data[3]?.sub_title?.slice(0, 115)} ...`
+                    ? data[3]?.sub_title
                     : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
@@ -329,7 +325,7 @@ export function AllNews() {
                 </Link>
                 <p className="mt-5 text-gray-700 text-justify">{`${
                   data[0]?.sub_title
-                    ? `${data[0]?.sub_title?.slice(0, 115)} ...`
+                    ? data[0]?.sub_title
                     : ''
                 }`}</p>
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-2">
@@ -355,7 +351,7 @@ export function AllNews() {
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
                   {data[1]?.sub_title
-                    ? `${data[1]?.sub_title?.slice(0, 115)} ...`
+                    ? data[1]?.sub_title
                     : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-2">
@@ -385,7 +381,7 @@ export function AllNews() {
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
                   {data[2]?.sub_title
-                    ? `${data[2]?.sub_title?.slice(0, 115)} ...`
+                    ? data[2]?.sub_title
                     : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-2">
@@ -415,7 +411,7 @@ export function AllNews() {
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
                   {data[3]?.sub_title
-                    ? `${data[3]?.sub_title?.slice(0, 115)} ...`
+                    ? data[3]?.sub_title
                     : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
@@ -455,7 +451,7 @@ export function AllNews() {
                         </p>
                         <p className="text-gray-500 mt-4 text-justify">
                           {param?.sub_title
-                            ? `${param?.sub_title?.slice(0, 200)} ...`
+                            ? param?.sub_title
                             : ''}
                         </p>
                         <div className="flex pt-6 items-center justify-end">
