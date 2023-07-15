@@ -4,11 +4,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Logo } from '../Home/Logo';
+import { setLangEN, setLangVI } from '../Redux/feature/language';
+import { useAppSelector, useAppDispatch } from '../Redux/hooks';
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const router = useRouter().asPath;
   const [toggleNav, setToggleNav] = useState(false);
+
+  const langSet = useAppSelector((state) => state.language.lang);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const handleWindowScroll = () => {
@@ -68,7 +73,7 @@ export default function Navbar() {
                 <div className="w-full">
                   <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder={langSet === 'vi' ? 'Tìm kiếm...' : 'Search...'}
                     className="input w-full input-bordered bg-transparent outline-0 border-blue-200 focus:outline-none focus:border-gray-200 focus:shadow-md focus:bg-white w-full"
                   />
                 </div>
@@ -80,7 +85,7 @@ export default function Navbar() {
                       router === '/' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    Home
+                    {langSet === 'vi' ? 'Trang chủ' : 'Home'}
                   </p>
                 </Link>
               </li>
@@ -91,7 +96,7 @@ export default function Navbar() {
                       router === '/News' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    News
+                    {langSet === 'vi' ? 'Tin tức' : 'News'}
                   </p>
                 </Link>
               </li>
@@ -102,7 +107,7 @@ export default function Navbar() {
                       router === '/AboutUs' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    About us
+                    {langSet === 'vi' ? 'Về RF3I' : 'About us'}
                   </p>
                 </Link>
               </li>
@@ -113,7 +118,7 @@ export default function Navbar() {
                       router === '/Publication' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    Publication
+                    {langSet === 'vi' ? 'Báo khoa học' : 'Publication'}
                   </p>
                 </Link>
               </li>
@@ -124,7 +129,7 @@ export default function Navbar() {
                       router === '/Product' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline `}
                   >
-                    Product
+                    {langSet === 'vi' ? 'Sản phẩm' : 'Product'}
                   </p>
                 </Link>
               </li>
@@ -137,9 +142,35 @@ export default function Navbar() {
                         : ' bg-white text-black'
                     } mx-auto cursor-pointer lg:mx-0 text-md font-bold rounded-full mt-4 lg:mt-0 py-2 px-4 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out`}
                   >
-                    Contact us
+                    {langSet === 'vi' ? 'Liên hệ' : 'Contact us'}
                   </p>
                 </Link>
+              </li>
+              <li className="mr-3">
+                <div className="flex items-center">
+                  <button
+                    className="swap swap-rotate"
+                    onClick={() => {
+                      langSet === 'vi'
+                        ? dispatch(setLangEN())
+                        : dispatch(setLangVI());
+                    }}
+                  >
+                    <input type="checkbox" />
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/5373/5373330.png"
+                      className={`w-10 h-10 fill-current ${
+                        langSet === 'vi' ? '' : 'hidden'
+                      }`}
+                    />
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/5111/5111640.png"
+                      className={`w-10 h-10 fill-current ${
+                        langSet === 'en' ? '' : 'hidden'
+                      }`}
+                    />
+                  </button>
+                </div>
               </li>
             </ul>
           </div>

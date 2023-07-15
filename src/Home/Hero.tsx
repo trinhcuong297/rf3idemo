@@ -2,9 +2,11 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import { useAppSelector } from '../Redux/hooks';
 import Caurosel from './Caurosel/Caurosel';
 
 function Hero() {
+  const langSet = useAppSelector((state) => state.language.lang);
   return (
     <>
       <Caurosel />
@@ -29,11 +31,13 @@ function Hero() {
                 className="mt-4 text-gray-600"
                 style={{ textAlign: 'justify' }}
               >
-                RF3i stands for Radio Frequency Instrumentation and Industrial
+                {langSet === 'vi'
+                  ? `RF3i là ...`
+                  : `RF3i stands for Radio Frequency Instrumentation and Industrial
                 Informatics. Lab RF3i belongs to the Department of
                 Instrumentation Engineering and Industrial Informatics -
                 Institute of Electricity. Lab was established in 2014, by Dr. Le
-                Minh Thuy is in charge of management and guidance.
+                Minh Thuy is in charge of management and guidance.`}
                 <br />
               </p>
               <h3 className="flex items-center my-6">
