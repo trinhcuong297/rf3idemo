@@ -249,7 +249,7 @@ export function AllNews() {
         setData(data.data);
         setLoading(false);
       });
-  }, []);
+  }, [langSet]);
 
   if (isLoading)
     return (
