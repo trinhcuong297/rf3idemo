@@ -35,7 +35,7 @@ function Hero() {
                   ? `RF3i là viết tắt của Thiết bị đo tần số vô tuyến và công nghiệp
                  tin học. Phòng thí nghiệm RF3i trực thuộc Bộ môn
                  Kỹ thuật Thiết bị và Tin học Công nghiệp -
-                 Viện Điện lực. Phòng thí nghiệm được thành lập vào năm 2014, bởi Tiến sĩ Lê
+                 Viện Điện lực. Phòng thí nghiệm được thành lập vào năm 2014, bởi Phó giáo sư Lê
                  Minh Thủy chịu trách nhiệm quản lý và hướng dẫn.`
                   : `RF3i stands for Radio Frequency Instrumentation and Industrial
                 Informatics. Lab RF3i belongs to the Department of

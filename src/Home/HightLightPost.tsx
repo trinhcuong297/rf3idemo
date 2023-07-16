@@ -243,7 +243,9 @@ export function AllNews() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/home/news/all?page=1&size=5`)
+    fetch(
+      `${process.env.RF3i_API}/rf3i-api/home/news/all?page=1&size=5&lang=${langSet}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
