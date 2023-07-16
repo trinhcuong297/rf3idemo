@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+
+import { useAppSelector } from '../../Redux/hooks';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(`${process.env.RF3i_API}/rf3i-api/product/all`);
@@ -22,17 +24,35 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 export const getStaticProps: GetStaticProps = async (context: any) => {
   const { id } = context.params;
-  const res = await fetch(
-    `${process.env.RF3i_API}/rf3i-api/product/detail?product_id=${id}`
-  );
-  const data = await res.json();
   return {
-    props: { data },
+    props: { id },
   };
 };
 
-export default function ProductDetail(context: any) {
-  const { data } = context.data;
+export default function ProductDetail(id: any) {
+  interface Data {
+    product_image_urls?: String[] | any;
+    product_type?: string | undefined;
+    project_member?: string | undefined;
+    product_description?: string | undefined;
+    product_parameters?: String[] | any;
+    main_components?: String[] | any;
+    product_contribution?: any;
+    product_name?: string | undefined;
+    id?: String | null | undefined;
+    title?: String | undefined;
+  }
+  const [data, setData] = useState<Data>({});
+  const langSet = useAppSelector((state) => state.language.lang);
+  useEffect(() => {
+    fetch(
+      `${process.env.RF3i_API}/rf3i-api/product/detail?product_id=${id.id}&lang=${langSet}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res.data);
+      });
+  }, [langSet]);
   return (
     <>
       <Head>
@@ -46,17 +66,19 @@ export default function ProductDetail(context: any) {
               <kbd className="kbd">Scroll</kbd> to slide image!
             </div>
             <div className="carousel rounded-box h-64 md:h-96">
-              {data.product_image_urls.map((e: any) => {
-                return (
-                  <div className="carousel-item" key={e}>
-                    <img
-                      src={`${e}`}
-                      alt="image 1"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                );
-              })}
+              {data.product_image_urls
+                ? data.product_image_urls.map((e: any) => {
+                    return (
+                      <div className="carousel-item" key={e}>
+                        <img
+                          src={`${e}`}
+                          alt="image 1"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    );
+                  })
+                : ''}
             </div>
           </div>
           <div>
@@ -71,9 +93,11 @@ export default function ProductDetail(context: any) {
               <div className="border-t border-gray-200 pt-4">
                 <dt className="font-medium text-gray-900">Parameter</dt>
                 <dd className="mt-2 text-sm text-gray-500">
-                  {data.product_parameters.map((e: any) => (
-                    <p key={e}>{e}</p>
-                  ))}
+                  {data.product_parameters
+                    ? data.product_parameters.map((e: any) => (
+                        <p key={e}>{e}</p>
+                      ))
+                    : ''}
                 </dd>
               </div>
             </dl>
@@ -81,9 +105,9 @@ export default function ProductDetail(context: any) {
               <div className="border-t border-gray-200 pt-4">
                 <dt className="font-medium text-gray-900">Main components</dt>
                 <dd className="mt-2 text-sm text-gray-500">
-                  {data.main_components.map((e: any) => (
-                    <p key={e}>{e}</p>
-                  ))}
+                  {data.main_components
+                    ? data.main_components.map((e: any) => <p key={e}>{e}</p>)
+                    : ''}
                 </dd>
               </div>
             </dl>
@@ -91,9 +115,11 @@ export default function ProductDetail(context: any) {
               <div className="border-t border-gray-200 pt-4">
                 <dt className="font-medium text-gray-900">Contribution</dt>
                 <dd className="mt-2 text-sm text-gray-500">
-                  {data.product_contribution.map((e: any) => (
-                    <p key={e}>{e}</p>
-                  ))}
+                  {data.product_contribution
+                    ? data.product_contribution.map((e: any) => (
+                        <p key={e}>{e}</p>
+                      ))
+                    : ''}
                 </dd>
               </div>
             </dl>

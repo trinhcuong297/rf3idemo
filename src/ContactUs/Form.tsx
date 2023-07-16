@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { useAppSelector } from '../Redux/hooks';
+
 export default function ContactForm() {
   const [data, setData] = useState({
     name: '',
@@ -9,6 +11,7 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState(0);
   const [statusSubmit, setStatusSubmit] = useState(0);
+  const langSet = useAppSelector((state) => state.language.lang);
   // Handles the submit event on form submit.
   const handleSubmit = async (event: any) => {
     // Stop the form from submitting and refreshing the page.
@@ -63,7 +66,7 @@ export default function ContactForm() {
           required={true}
           value={data.name}
           type="text"
-          placeholder="Your Name"
+          placeholder={langSet === 'VN' ? 'Họ và tên' : 'Your Name'}
           onChange={(e) => {
             setData({ ...data, name: e.target.value });
           }}
@@ -75,7 +78,7 @@ export default function ContactForm() {
           required={true}
           value={data.email}
           type="email"
-          placeholder="Your Email"
+          placeholder={langSet === 'VN' ? 'Email của bạn' : 'Your Email'}
           onChange={(e) => {
             setData({ ...data, email: e.target.value });
           }}
@@ -87,7 +90,7 @@ export default function ContactForm() {
           required={true}
           value={data.phone_number}
           type="text"
-          placeholder="Your Phone"
+          placeholder={langSet === 'VN' ? 'Số điện thoại' : 'Your Phone'}
           onChange={(e) => {
             setData({ ...data, phone_number: e.target.value });
           }}
@@ -99,7 +102,7 @@ export default function ContactForm() {
           required={true}
           value={data.message}
           rows={6}
-          placeholder="Your Message"
+          placeholder={langSet === 'VN' ? 'Ý kiến phản hồi' : 'Your Message'}
           onChange={(e) => {
             setData({ ...data, message: e.target.value });
           }}
@@ -114,7 +117,11 @@ export default function ContactForm() {
           } duration-200 transition h-16 bg-gradient-to-l from-cyan-500 to-blue-500 border-primary w-full rounded border p-3 text-white transition hover:bg-opacity-90`}
         >
           {!statusSubmit ? (
-            'Send Message'
+            langSet === 'VN' ? (
+              'Gửi đến RF3I'
+            ) : (
+              'Send message'
+            )
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +158,11 @@ export default function ContactForm() {
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span>Success! Thank for your respond!</span>
+            <span>
+              {langSet === 'VN'
+                ? 'Thành công! Cảm ơn ý kiến phản hồi của bạn!'
+                : 'Success! Thank for your respond!'}
+            </span>
           </div>
         </div>
         <div
@@ -173,7 +184,11 @@ export default function ContactForm() {
                 d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span>Error!Please try again!</span>
+            <span>
+              {langSet === 'VN'
+                ? 'Lỗi! Hãy thử lại!'
+                : 'Error!Please try again!'}
+            </span>
           </div>
         </div>
       </div>

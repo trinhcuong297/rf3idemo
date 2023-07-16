@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
+import { useAppSelector } from '../Redux/hooks';
+
 export default function Timeline() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const langSet = useAppSelector((state) => state.language.lang);
 
   interface Data {
     id?: String | null | undefined;
@@ -15,13 +18,15 @@ export default function Timeline() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/home/event/main?limit=3`)
+    fetch(
+      `${process.env.RF3i_API}/rf3i-api/home/event/main?limit=10&lang=${langSet}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
         setLoading(false);
       });
-  }, []);
+  }, [langSet]);
 
   if (isLoading)
     return (
@@ -32,7 +37,7 @@ export default function Timeline() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Events
+            {langSet === 'VN' ? 'Sự kiện' : 'Events'}
           </span>
           <span
             aria-hidden="true"
@@ -60,7 +65,7 @@ export default function Timeline() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Events
+            {langSet === 'VN' ? 'Sự kiện' : 'Events'}
           </span>
           <span
             aria-hidden="true"
@@ -78,7 +83,7 @@ export default function Timeline() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Events
+            {langSet === 'VN' ? 'Sự kiện' : 'Events'}
           </span>
           <span
             aria-hidden="true"

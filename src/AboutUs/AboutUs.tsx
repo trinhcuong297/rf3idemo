@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
+import { useAppSelector } from '../Redux/hooks';
+
 const ActiveMember = () => {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
   const [show, setShow] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+  const langSet = useAppSelector((state) => state.language.lang);
+
   interface Data {
     id?: String | null | undefined;
     full_name?: String | null | undefined;
@@ -17,7 +21,7 @@ const ActiveMember = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `${process.env.RF3i_API}/rf3i-api/about-us/active-member?page=${show}&size=6`
+      `${process.env.RF3i_API}/rf3i-api/about-us/active-member?page=${show}&size=6&lang=${langSet}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -25,7 +29,7 @@ const ActiveMember = () => {
         setData(data.data.data);
         setLoading(false);
       });
-  }, [show]);
+  }, [show, langSet]);
 
   if (isLoading)
     return (
@@ -36,7 +40,7 @@ const ActiveMember = () => {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Our Member
+            {langSet === 'VN' ? 'Các thành viên lab RF3i' : 'Our Member'}
           </span>
           <span
             aria-hidden="true"
@@ -145,7 +149,7 @@ const ActiveMember = () => {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Our Member
+            {langSet === 'VN' ? 'Các thành viên lab RF3i' : 'Our Member'}
           </span>
           <span
             aria-hidden="true"

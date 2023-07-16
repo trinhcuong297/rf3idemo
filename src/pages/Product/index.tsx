@@ -2,10 +2,15 @@ import { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import { useAppSelector } from '../../Redux/hooks';
 
 export default function Product() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const langSet = useAppSelector((state) => state.language.lang);
+  const router = useRouter();
 
   interface Data {
     id?: String | null | undefined;
@@ -17,13 +22,13 @@ export default function Product() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/product/all`)
+    fetch(`${process.env.RF3i_API}/rf3i-api/product/all?lang=${langSet}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
         setLoading(false);
       });
-  }, []);
+  }, [langSet]);
 
   if (isLoading)
     return (
@@ -34,7 +39,7 @@ export default function Product() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Product
+            {langSet === 'VN' ? 'Sản phẩm' : 'Product'}
           </span>
           <span
             aria-hidden="true"
@@ -53,7 +58,7 @@ export default function Product() {
   return (
     <>
       <Head>
-        <title>RF3i - Product</title>
+        <title>RF3i - {langSet === 'VN' ? 'Sản phẩm' : 'Product'}</title>
       </Head>
       <div className="bg-gray-200 lg:pt-12">
         <div className="mx-auto px-4 md:px-12 lg:px-24 py-12">
@@ -61,12 +66,16 @@ export default function Product() {
             {data.map((data, index) => {
               return (
                 <div
-                  className="relative flex w-full h-fit max-w-[30rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg"
+                  className="relative flex w-full h-full justify-between max-w-[30rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg"
                   key={index}
                 >
                   <div className="h-96 flex items-center relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
-                      src={`${data.product_image_url}`}
+                      src={`${
+                        data.product_image_url
+                          ? data.product_image_url
+                          : `${router.basePath}/favicon.ico`
+                      }`}
                       alt="ui/ux review check"
                       className="h-fit"
                     />
@@ -82,7 +91,7 @@ export default function Product() {
                         </div>
                       </p>
                     </div>
-                    <p className="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
+                    <p className="truncate block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
                       {data.product_description}
                     </p>
                   </div>
@@ -93,7 +102,7 @@ export default function Product() {
                         type="button"
                         data-ripple-light="true"
                       >
-                        More details
+                        {langSet === 'VN' ? 'Xem chi tiết' : 'More detail'}
                       </button>
                     </Link>
                   </div>

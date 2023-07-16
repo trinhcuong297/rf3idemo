@@ -3,11 +3,15 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { useAppSelector } from '../Redux/hooks';
+
 export default function Publication() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
   const [show, setShow] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
+  const langSet = useAppSelector((state) => state.language.lang);
+
   // const [totalData, setTotalData] = useState(0);
 
   interface Data {
@@ -23,7 +27,7 @@ export default function Publication() {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `${process.env.RF3i_API}/rf3i-api/publication/all-publication?page=${show}&size=${size}`
+      `${process.env.RF3i_API}/rf3i-api/publication/all-publication?page=${show}&size=${size}&lang=${langSet}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -33,14 +37,16 @@ export default function Publication() {
         console.log(data);
         setLoading(false);
       });
-  }, [show]);
+  }, [show, langSet]);
 
   if (isLoading)
     return (
       <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
         <div className="flex items-center justify-center mt-6">
           <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-            RF3i Publication
+            {langSet === 'VN'
+              ? 'Các bài báo đã được công bố'
+              : 'RF3i Publication'}
           </h2>
         </div>
         <p className="w-full flex justify-center items-center">
@@ -57,7 +63,9 @@ export default function Publication() {
       <section id="ourMember" className=" bg-gray-200 rounded-2xl p-4 m-4">
         <div className="flex items-center justify-center mt-6">
           <h2 className="text-4xl font-extrabold pt-4 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-blue-400">
-            RF3i Publication
+            {langSet === 'VN'
+              ? 'Các bài báo đã được công bố'
+              : 'RF3i Publication'}
           </h2>
         </div>
       </section>
@@ -65,7 +73,7 @@ export default function Publication() {
   return (
     <>
       <Head>
-        <title>RF3i - Publication</title>
+        <title>RF3i - {langSet === 'VN' ? 'Các bài báo' : 'Publication'}</title>
       </Head>
       <div className="py-24 px-2">
         <div className="min-h-screen">
@@ -73,7 +81,9 @@ export default function Publication() {
             <div className="container mx-auto">
               <div className="flex items-center justify-between w-full px-4">
                 <div className="text-2xl font-bold text-blue-500">
-                  Publication
+                  {langSet === 'VN'
+                    ? 'Các bài báo đã được công bố'
+                    : 'RF3i Publication'}
                 </div>
                 <div className="px-2 py-2 text-white rounded-md">
                   <img
@@ -87,22 +97,22 @@ export default function Publication() {
                   <thead className="">
                     <tr className="text-base font-bold text-left bg-gray-50 grid grid-cols-24">
                       <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500 col-span-1">
-                        Id
+                        {langSet === 'VN' ? 'STT' : 'Id'}
                       </th>
                       <th className="text-gray-700 px-4 py-3 border-b-2 border-blue-500 col-span-8">
-                        Title
+                        {langSet === 'VN' ? 'Tiêu đề' : 'Title'}
                       </th>
                       <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-sky-500 sm:text-left col-span-6">
-                        Author
+                        {langSet === 'VN' ? 'Tác giả' : 'Author'}
                       </th>
                       <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-4">
-                        Published in
+                        {langSet === 'VN' ? 'Nơi xuất bản' : 'Published in'}
                       </th>
                       <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-3">
-                        Date
+                        {langSet === 'VN' ? 'Ngày' : 'Date'}
                       </th>
                       <th className="text-gray-700 px-4 py-3 text-center border-b-2 border-cyan-500 sm:text-left col-span-2">
-                        Link
+                        {langSet === 'VN' ? 'Link' : 'Link'}
                       </th>
                     </tr>
                   </thead>
@@ -151,9 +161,10 @@ export default function Publication() {
               </div>
               <div className="flex flex-col items-center w-full px-4 py-2 space-y-2 text-sm text-gray-500 sm:justify-between sm:space-y-0 sm:flex-row">
                 <p className="flex">
-                  Showing&nbsp;
+                  {langSet === 'VN' ? 'Đang hiển thị' : 'Showing'}&nbsp;
                   <span className="font-bold">
-                    page {show} of {totalPage}
+                    {langSet === 'VN' ? 'trang' : 'page'} {show}{' '}
+                    {langSet === 'VN' ? 'trên' : 'of'} {totalPage}
                     {/* {(show - 1) * 8 + 1} to {(show - 1) * 8 + 8}{' '} */}
                   </span>
                   {/* &nbsp;of */}
@@ -166,7 +177,7 @@ export default function Publication() {
                     }}
                     className="hover:text-gray-600"
                   >
-                    Previous
+                    {langSet === 'VN' ? 'Trang trước' : 'Previous'}
                   </button>
                   <button
                     onClick={() => {
@@ -174,7 +185,7 @@ export default function Publication() {
                     }}
                     className="hover:text-gray-600"
                   >
-                    Next
+                    {langSet === 'VN' ? 'Trang sau' : 'Next'}
                   </button>
                 </div>
               </div>

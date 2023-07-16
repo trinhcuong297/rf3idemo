@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
+import { useAppSelector } from '../Redux/hooks';
+
 const ResearchLeader = () => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
 
   const [data, setData] = useState<Data>();
   const [isLoading, setLoading] = useState(false);
+
+  const langSet = useAppSelector((state) => state.language.lang);
 
   interface Data {
     search_metadata?: {
@@ -54,7 +58,9 @@ const ResearchLeader = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/about-us/research-leader-infor`)
+    fetch(
+      `${process.env.RF3i_API}/rf3i-api/about-us/research-leader-infor?lang=EN`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
@@ -71,7 +77,7 @@ const ResearchLeader = () => {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Research Leader
+            {langSet === 'VN' ? 'Trưởng nhóm nghiên cứu' : 'Research Leader'}
           </span>
           <span
             aria-hidden="true"
@@ -99,7 +105,7 @@ const ResearchLeader = () => {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Research Leader
+            {langSet === 'VN' ? 'Trưởng nhóm nghiên cứu' : 'Research Leader'}
           </span>
           <span
             aria-hidden="true"
@@ -117,7 +123,7 @@ const ResearchLeader = () => {
           className="flex-grow bg-blue-200 rounded h-0.5"
         ></span>
         <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-          Research Leader
+          {langSet === 'VN' ? 'Trưởng nhóm nghiên cứu' : 'Research Leader'}
         </span>
         <span
           aria-hidden="true"
@@ -134,10 +140,14 @@ const ResearchLeader = () => {
             />
             <div>
               <h2 className="text-xl font-semibold">
-                Assoc. Prof. Le Minh Thuy
+                {langSet === 'VN'
+                  ? 'Phó giáo sư Lê Minh Thuỳ'
+                  : 'Assoc. Prof. Le Minh Thuy'}
               </h2>
               <span className="block pb-2 text-sm text-gray-700">
-                Hanoi University of Science and Technology (HUST)
+                {langSet === 'VN'
+                  ? 'Đại học Bách Khoa Hà Nội'
+                  : 'Hanoi University of Science and Technology (HUST)'}
               </span>
             </div>
           </div>
@@ -151,21 +161,23 @@ const ResearchLeader = () => {
         </div>
         <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
           <div className="pb-6">
-            <p className="text-sm leading-none text-gray-600">Assoc. Prof.</p>
+            <p className="text-sm leading-none text-gray-600">
+              {langSet === 'VN' ? 'Phó giáo sư' : 'Assoc. Prof.'}
+            </p>
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 mt-2">
               Le Minh Thuy
             </h1>
           </div>
           <div className="flex w-full">
-            <div className="grid flex-grow card p-4 place-items-center">
+            <div className="grid flex-grow card place-items-center">
               <Link href={`https://seee.hust.edu.vn/lmthuy`}>
                 <a target="_blank" rel="noopener noreferrer">
-                  <button className="text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
+                  <button className="pr-2 text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
                     <img
                       src="https://img.icons8.com/ios-glyphs/2x/university-campus.png"
-                      className="w-8"
+                      className="w-8 mx-2"
                     />
-                    Check in SEEE HUST
+                    SEEE HUST
                   </button>
                 </a>
               </Link>
@@ -173,12 +185,12 @@ const ResearchLeader = () => {
             <div className="grid flex-grow card place-items-center">
               <Link href={`${data.search_metadata?.google_scholar_author_url}`}>
                 <a target="_blank" rel="noopener noreferrer">
-                  <button className="text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
+                  <button className="pr-2 text-base flex items-center justify-center rounded-lg border-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 w-full py-4">
                     <img
                       src="https://img.icons8.com/material-outlined/2x/google-scholar.png"
-                      className="w-8"
+                      className="w-8 mx-2"
                     />
-                    Check in Google Schoolar
+                    Google Schoolar
                   </button>
                 </a>
               </Link>
@@ -187,7 +199,7 @@ const ResearchLeader = () => {
 
           <div>
             <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7">
-              Interests:
+              {langSet === 'VN' ? 'Lĩnh vực nghiên cứu' : 'Interests'}:
             </p>
             {data.author?.interests?.map((param, index) => {
               return (
@@ -228,7 +240,7 @@ const ResearchLeader = () => {
                 className="flex justify-between items-center cursor-pointer"
               >
                 <p className="text-base leading-4 text-gray-800">
-                  Introduction
+                  {langSet === 'VN' ? 'Giới thiệu' : 'Introduction'}
                 </p>
                 <button
                   className="
@@ -262,23 +274,37 @@ const ResearchLeader = () => {
                 }`}
                 id="sect"
               >
-                Dr. Le Minh Thuy is a lecture at department of Instrumentation
-                and Industrial Informatics, School of Electrical Engineering,
-                Hanoi University of Science and Technology. Her interesting
-                research fields are Intergrated Antenna & Antenna array; SIW,
-                mmWave and Metalmaterials; RF Energy harvesting & Wireless power
-                transfer; RF embedded system: RFID and DSRC, RF based
-                localization; Autonomous Wireless sensors, Wireless sensor
-                networks and IoT.
-                <br />
-                Dr. Le Minh Thuy is a reviewer for International Confrences and
-                Journal: IEEE International Conference on Communications and
-                Electronics (ICCE), IEEE Transaction on Antenna and Propagation,
-                IEEE Transaction on Vehicule Communications. She is the track
-                chair and session chair of IEEE Conference on Advanced
-                Technologies for Communications (ATC), IEEE International
-                Symposium on Antennas and Propagation (ISAP), IEEE International
-                Conference on Telecommunications (ICT).
+                {langSet === 'VN' ? (
+                  <>
+                    TS Lê Minh Thùy giảng dạy bộ môn Thiết bị đo đạc và Tin học
+                    Công nghiệp, Khoa Điện, Trường đại học khoa học và công nghệ
+                    Hà Nội. thú vị của cô ấy lĩnh vực nghiên cứu là Anten tích
+                    hợp & mảng Anten; SIW, mmWave và Vật liệu kim loại; Thu
+                    hoạch năng lượng RF & năng lượng không dây chuyển khoản; Hệ
+                    thống nhúng RF: RFID và DSRC, dựa trên RF bản địa hóa; Cảm
+                    biến không dây tự trị, Cảm biến không dây mạng và IoT.
+                  </>
+                ) : (
+                  <>
+                    Dr. Le Minh Thuy is a lecture at department of
+                    Instrumentation and Industrial Informatics, School of
+                    Electrical Engineering, Hanoi University of Science and
+                    Technology. Her interesting research fields are Intergrated
+                    Antenna & Antenna array; SIW, mmWave and Metalmaterials; RF
+                    Energy harvesting & Wireless power transfer; RF embedded
+                    system: RFID and DSRC, RF based localization; Autonomous
+                    Wireless sensors, Wireless sensor networks and IoT.
+                    <br />
+                    Dr. Le Minh Thuy is a reviewer for International Confrences
+                    and Journal: IEEE International Conference on Communications
+                    and Electronics (ICCE), IEEE Transaction on Antenna and
+                    Propagation, IEEE Transaction on Vehicule Communications.
+                    She is the track chair and session chair of IEEE Conference
+                    on Advanced Technologies for Communications (ATC), IEEE
+                    International Symposium on Antennas and Propagation (ISAP),
+                    IEEE International Conference on Telecommunications (ICT).
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -289,7 +315,7 @@ const ResearchLeader = () => {
                 className="flex justify-between items-center cursor-pointer"
               >
                 <p className="text-base leading-4 text-gray-800">
-                  More infomation
+                  {langSet === 'VN' ? 'Các thông tin khác' : 'More infomation'}
                 </p>
                 <button
                   className="

@@ -9,7 +9,7 @@ export interface LangState {
 
 // Define the initial state using that type
 const initialState: LangState = {
-  lang: 'vi',
+  lang: 'VN',
 };
 
 export const LangSlice = createSlice({
@@ -18,10 +18,10 @@ export const LangSlice = createSlice({
   initialState,
   reducers: {
     setLangEN: (state) => {
-      state.lang = 'en';
+      state.lang = 'EN';
     },
     setLangVI: (state) => {
-      state.lang = 'vi';
+      state.lang = 'VN';
     },
   },
 });

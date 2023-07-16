@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 import { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { useAppSelector } from '../Redux/hooks';
+
 export default function Activ() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const langSet = useAppSelector((state) => state.language.lang);
 
   interface Data {
     id?: String | null | undefined;
@@ -15,13 +18,15 @@ export default function Activ() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/home/activity/main?limit=5`)
+    fetch(
+      `${process.env.RF3i_API}/rf3i-api/home/activity/main?limit=10&lang=${langSet}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
         setLoading(false);
       });
-  }, []);
+  }, [langSet]);
 
   if (isLoading)
     return (
@@ -32,7 +37,7 @@ export default function Activ() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Activity
+            {langSet === 'VN' ? 'Hoạt động' : 'Activity'}
           </span>
           <span
             aria-hidden="true"
@@ -57,7 +62,7 @@ export default function Activ() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            Activity
+            {langSet === 'VN' ? 'Hoạt động' : 'Activity'}
           </span>
           <span
             aria-hidden="true"
@@ -74,7 +79,7 @@ export default function Activ() {
           className="flex-grow bg-blue-200 rounded h-0.5"
         ></span>
         <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-          Activity
+          {langSet === 'VN' ? 'Hoạt động' : 'Activity'}
         </span>
         <span
           aria-hidden="true"
@@ -117,13 +122,6 @@ export default function Activ() {
             })}
           </div>
         </Swiper>
-        {/* <div className="w-full flex flex-row-reverse text-indigo-600 items-center">
-          <ArrowLongRightIcon
-            className="mx-4 h-6 w-6 text-blue-600"
-            aria-hidden="true"
-          />
-          <Link href="/News">Show all</Link>
-        </div> */}
       </section>
     </div>
   );

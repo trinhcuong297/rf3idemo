@@ -73,7 +73,7 @@ export default function Navbar() {
                 <div className="w-full">
                   <input
                     type="text"
-                    placeholder={langSet === 'vi' ? 'Tìm kiếm...' : 'Search...'}
+                    placeholder={langSet === 'VN' ? 'Tìm kiếm...' : 'Search...'}
                     className="input w-full input-bordered bg-transparent outline-0 border-blue-200 focus:outline-none focus:border-gray-200 focus:shadow-md focus:bg-white w-full"
                   />
                 </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
                       router === '/' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    {langSet === 'vi' ? 'Trang chủ' : 'Home'}
+                    {langSet === 'VN' ? 'Trang chủ' : 'Home'}
                   </p>
                 </Link>
               </li>
@@ -96,7 +96,7 @@ export default function Navbar() {
                       router === '/News' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    {langSet === 'vi' ? 'Tin tức' : 'News'}
+                    {langSet === 'VN' ? 'Tin tức' : 'News'}
                   </p>
                 </Link>
               </li>
@@ -107,7 +107,7 @@ export default function Navbar() {
                       router === '/AboutUs' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    {langSet === 'vi' ? 'Về RF3I' : 'About us'}
+                    {langSet === 'VN' ? 'Về RF3I' : 'About us'}
                   </p>
                 </Link>
               </li>
@@ -118,7 +118,7 @@ export default function Navbar() {
                       router === '/Publication' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline`}
                   >
-                    {langSet === 'vi' ? 'Báo khoa học' : 'Publication'}
+                    {langSet === 'VN' ? 'Báo khoa học' : 'Publication'}
                   </p>
                 </Link>
               </li>
@@ -129,7 +129,7 @@ export default function Navbar() {
                       router === '/Product' ? 'underline' : ''
                     } cursor-pointer inline-block py-2 px-4 text-md underline-offset-4 duration-300 hover:underline-offset-8 hover:text-black font-medium hover:underline `}
                   >
-                    {langSet === 'vi' ? 'Sản phẩm' : 'Product'}
+                    {langSet === 'VN' ? 'Sản phẩm' : 'Product'}
                   </p>
                 </Link>
               </li>
@@ -142,7 +142,7 @@ export default function Navbar() {
                         : ' bg-white text-black'
                     } mx-auto cursor-pointer lg:mx-0 text-md font-bold rounded-full mt-4 lg:mt-0 py-2 px-4 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out`}
                   >
-                    {langSet === 'vi' ? 'Liên hệ' : 'Contact us'}
+                    {langSet === 'VN' ? 'Liên hệ' : 'Contact us'}
                   </p>
                 </Link>
               </li>
@@ -151,7 +151,7 @@ export default function Navbar() {
                   <button
                     className="swap swap-rotate"
                     onClick={() => {
-                      langSet === 'vi'
+                      langSet === 'VN'
                         ? dispatch(setLangEN())
                         : dispatch(setLangVI());
                     }}
@@ -160,13 +160,13 @@ export default function Navbar() {
                     <img
                       src="https://cdn-icons-png.flaticon.com/128/5373/5373330.png"
                       className={`w-10 h-10 fill-current ${
-                        langSet === 'vi' ? '' : 'hidden'
+                        langSet === 'VN' ? '' : 'hidden'
                       }`}
                     />
                     <img
                       src="https://cdn-icons-png.flaticon.com/128/5111/5111640.png"
                       className={`w-10 h-10 fill-current ${
-                        langSet === 'en' ? '' : 'hidden'
+                        langSet === 'EN' ? '' : 'hidden'
                       }`}
                     />
                   </button>

@@ -24,14 +24,14 @@ function Hero() {
 
             <div className="lg:py-24">
               <h2 className="text-3xl font-bold sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r to-cyan-500 from-blue-600">
-                RF3i Lab
+                {langSet === 'VN' ? 'Nhóm nghiên cứu RF3i' : 'RF3i Lab'}
               </h2>
 
               <p
                 className="mt-4 text-gray-600"
                 style={{ textAlign: 'justify' }}
               >
-                {langSet === 'vi'
+                {langSet === 'VN'
                   ? `RF3i là ...`
                   : `RF3i stands for Radio Frequency Instrumentation and Industrial
                 Informatics. Lab RF3i belongs to the Department of
@@ -46,7 +46,9 @@ function Hero() {
                   className="flex-grow bg-blue-200 rounded h-0.5"
                 ></span>
                 <span className="inline-block px-4 py-1 text-sm font-medium text-center text-gray-600  rounded-full">
-                  Main Research Direction
+                  {langSet === 'VN'
+                    ? 'Các hướng nghiên cứu chính'
+                    : 'Main Research Direction'}
                 </span>
                 <span
                   aria-hidden="true"
@@ -70,7 +72,7 @@ function Hero() {
                       d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
                     />
                   </svg>
-                  Antenna Design
+                  {langSet === 'VN' ? 'Thiết kế Anten' : 'Antenna Design'}
                 </p>
                 <p className="flex px-4 py-4">
                   <svg
@@ -87,7 +89,9 @@ function Hero() {
                       d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
                     />
                   </svg>
-                  RF Energy Harvesting
+                  {langSet === 'VN'
+                    ? 'Thu hoạch năng lượng cao tần'
+                    : 'RF Energy Harvesting'}
                 </p>
                 <p className="flex px-4 py-4">
                   <svg
@@ -104,7 +108,9 @@ function Hero() {
                       d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
                     />
                   </svg>
-                  Wireless Sensor Network
+                  {langSet === 'VN'
+                    ? 'Mạng cảm biến'
+                    : 'Wireless Sensor Network'}
                 </p>
                 <p className="flex px-4 py-4">
                   <svg
@@ -121,7 +127,9 @@ function Hero() {
                       d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
                     />
                   </svg>
-                  Embedded & IOT System
+                  {langSet === 'VN'
+                    ? 'Hệ thống nhúng'
+                    : 'Embedded & IOT System'}
                 </p>
               </div>
               <h3 className="flex items-center my-6">

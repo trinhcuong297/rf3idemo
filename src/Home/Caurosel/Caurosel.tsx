@@ -25,13 +25,13 @@ export default function Caurosel() {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-5xl flex flex-col justify-center items-center">
             <p className="text-white text-5xl uppercase font-bold w-full inline min-w-screen">
-              {langSet === 'vi'
+              {langSet === 'VN'
                 ? 'Chào mừng đến với RF3I lab'
                 : 'Welcome to our Laboratory'}
             </p>
             <p className="w-40 h-1 bg-white my-4"></p>
             <p className="mb-5 text-3xl font-semibold font-Alka">
-              {langSet === 'vi'
+              {langSet === 'VN'
                 ? 'Kéo xuống dưới để xem thêm'
                 : 'Let`s start a JOURNEY'}
             </p>

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 
-import Head from 'next/head';
+import { useAppSelector } from '../Redux/hooks';
 
 export default function Alumni() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
   const [show, setShow] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+  const langSet = useAppSelector((state) => state.language.lang);
+
   interface Data {
     id?: String | null | undefined;
     full_name?: String | null | undefined;
@@ -20,7 +22,7 @@ export default function Alumni() {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `${process.env.RF3i_API}/rf3i-api/about-us/alumni?page=${show}&size=6`
+      `${process.env.RF3i_API}/rf3i-api/about-us/alumni?page=${show}&size=6&lang=${langSet}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -28,7 +30,7 @@ export default function Alumni() {
         setData(data.data.data);
         setLoading(false);
       });
-  }, [show]);
+  }, [show, langSet]);
   if (isLoading)
     return (
       <div className="space-y-12 text-gray-800 scroll-smooth">
@@ -40,7 +42,7 @@ export default function Alumni() {
                 className="flex-grow bg-blue-200 rounded h-0.5"
               ></span>
               <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-                Alumni
+                {langSet === 'VN' ? 'Cựu sinh viên lab RF3i' : 'Our Alumni'}
               </span>
               <span
                 aria-hidden="true"
@@ -162,9 +164,6 @@ export default function Alumni() {
   //   );
   return (
     <>
-      <Head>
-        <title>RF3i - Alumni</title>
-      </Head>
       <div className="space-y-12 text-gray-800 scroll-smooth">
         <div className="px-12 mx-auto bg-gray-100">
           <section className="py-4 text-center">
@@ -174,7 +173,7 @@ export default function Alumni() {
                 className="flex-grow bg-blue-200 rounded h-0.5"
               ></span>
               <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-                Alumni
+                {langSet === 'VN' ? 'Cựu sinh viên lab RF3i' : 'Our Alumni'}
               </span>
               <span
                 aria-hidden="true"

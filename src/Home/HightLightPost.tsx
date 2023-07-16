@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+import { useAppSelector } from '../Redux/hooks';
+
 export default function HightlightNews() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const langSet = useAppSelector((state) => state.language.lang);
 
   interface Data {
     id?: String | null | undefined;
@@ -17,13 +20,15 @@ export default function HightlightNews() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.RF3i_API}/rf3i-api/home/news/main?limit=4`)
+    fetch(
+      `${process.env.RF3i_API}/rf3i-api/home/news/main?limit=4&lang=${langSet}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
         setLoading(false);
       });
-  }, []);
+  }, [langSet]);
 
   if (isLoading)
     return (
@@ -34,7 +39,7 @@ export default function HightlightNews() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            News
+            {langSet === 'VN' ? 'Tin tức' : 'News'}
           </span>
           <span
             aria-hidden="true"
@@ -59,7 +64,7 @@ export default function HightlightNews() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            News
+            {langSet === 'VN' ? 'Tin tức' : 'News'}
           </span>
           <span
             aria-hidden="true"
@@ -78,7 +83,7 @@ export default function HightlightNews() {
               className="flex-grow bg-blue-200 rounded h-0.5"
             ></span>
             <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-              News
+              {langSet === 'VN' ? 'Tin tức' : 'News'}
             </span>
             <span
               aria-hidden="true"
@@ -111,7 +116,8 @@ export default function HightlightNews() {
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[0] ? data[0].id : ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -135,7 +141,8 @@ export default function HightlightNews() {
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[1] ? data[1].id : ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -158,14 +165,13 @@ export default function HightlightNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[2]?.sub_title
-                    ? data[2]?.sub_title
-                    : ''}
+                  {data[2]?.sub_title ? data[2]?.sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[2]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -188,14 +194,13 @@ export default function HightlightNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[3]?.sub_title
-                    ? data[3]?.sub_title
-                    : ''}
+                  {data[3]?.sub_title ? data[3]?.sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[3]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -213,7 +218,9 @@ export default function HightlightNews() {
               className="mx-4 h-6 w-6 text-gray-600"
               aria-hidden="true"
             />
-            <Link href="/News">Show all</Link>
+            <Link href="/News">
+              {langSet === 'VN' ? 'Xem tất cả' : 'Show all'}
+            </Link>
           </div>
         </div>
       </div>
@@ -224,6 +231,7 @@ export default function HightlightNews() {
 export function AllNews() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
+  const langSet = useAppSelector((state) => state.language.lang);
 
   interface Data {
     id?: String | null | undefined;
@@ -252,7 +260,7 @@ export function AllNews() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            News
+            {langSet === 'VN' ? 'Tin tức' : 'News'}
           </span>
           <span
             aria-hidden="true"
@@ -277,7 +285,7 @@ export function AllNews() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
           <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-            News
+            {langSet === 'VN' ? 'Tin tức' : 'News'}
           </span>
           <span
             aria-hidden="true"
@@ -296,7 +304,7 @@ export function AllNews() {
               className="flex-grow bg-blue-200 rounded h-0.5"
             ></span>
             <span className="inline-block px-4 py-1 text-5xl font-bold text-center text-blue-500  rounded-full">
-              News
+              {langSet === 'VN' ? 'Tin tức' : 'News'}
             </span>
             <span
               aria-hidden="true"
@@ -324,14 +332,13 @@ export function AllNews() {
                   }`}</h3>
                 </Link>
                 <p className="mt-5 text-gray-700 text-justify">{`${
-                  data[0]?.sub_title
-                    ? data[0]?.sub_title
-                    : ''
+                  data[0]?.sub_title ? data[0]?.sub_title : ''
                 }`}</p>
                 <div className="flex pt-6 items-center justify-end -mr-12 -mb-2">
                   <Link href={`/News/${data[0]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -350,14 +357,13 @@ export function AllNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[1]?.sub_title
-                    ? data[1]?.sub_title
-                    : ''}
+                  {data[1]?.sub_title ? data[1]?.sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-2">
                   <Link href={`/News/${data[1]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -380,14 +386,13 @@ export function AllNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[2]?.sub_title
-                    ? data[2]?.sub_title
-                    : ''}
+                  {data[2]?.sub_title ? data[2]?.sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-2">
                   <Link href={`/News/${data[2]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -410,14 +415,13 @@ export function AllNews() {
                   </h3>
                 </Link>
                 <p className="mt-2 text-gray-700 text-justify">
-                  {data[3]?.sub_title
-                    ? data[3]?.sub_title
-                    : ''}
+                  {data[3]?.sub_title ? data[3]?.sub_title : ''}
                 </p>
                 <div className="flex items-center justify-end -mr-12 -mb-5">
                   <Link href={`/News/${data[3]?.id || ''}`}>
                     <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                      Read more &rarr; <br />.
+                      {langSet === 'VN' ? 'Xem thêm' : 'Read more'} &rarr;{' '}
+                      <br />.
                     </button>
                   </Link>
                 </div>
@@ -450,14 +454,13 @@ export function AllNews() {
                           {param?.title}
                         </p>
                         <p className="text-gray-500 mt-4 text-justify">
-                          {param?.sub_title
-                            ? param?.sub_title
-                            : ''}
+                          {param?.sub_title ? param?.sub_title : ''}
                         </p>
                         <div className="flex pt-6 items-center justify-end">
                           <Link href={`/News/${param?.id || ''}`}>
                             <button className="text-sm pr-10 pl-4 py-2 text-gray-600 hover:text-gray-700 rounded-tl-xl font-semibold">
-                              Read more &rarr; <br />
+                              {langSet === 'VN' ? 'Xem thêm' : 'Read more'}{' '}
+                              &rarr; <br />.
                             </button>
                           </Link>
                         </div>

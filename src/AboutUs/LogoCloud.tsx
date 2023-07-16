@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import { useAppSelector } from '../Redux/hooks';
+
 export default function LogoCloud() {
   const [data, setData] = useState<Data[]>([]);
+  const langSet = useAppSelector((state) => state.language.lang);
 
   interface Data {
     id?: String | null | undefined;
@@ -18,10 +21,10 @@ export default function LogoCloud() {
       });
   }, []);
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-gray-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-2xl font-semibold leading-8 text-gray-900">
-          Trusted by many company
+          {langSet === 'VN' ? 'Đối tác của RF3i' : 'Trusted by many company'}
         </h2>
         <div className="mx-auto mt-10 flex flex-wrap items-center justify-center">
           {data.map((e, index) => {
