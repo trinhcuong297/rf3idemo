@@ -24,7 +24,7 @@ function Hero() {
 
             <div className="lg:py-24">
               <h2 className="text-3xl font-bold sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r to-cyan-500 from-blue-600">
-                {langSet === 'VN' ? 'Nhóm nghiên cứu RF3i' : 'RF3i Lab'}
+                {langSet === 'VN' ? 'Phòng thí nghiệm RF3i' : 'RF3i Lab'}
               </h2>
 
               <p
@@ -32,11 +32,7 @@ function Hero() {
                 style={{ textAlign: 'justify' }}
               >
                 {langSet === 'VN'
-                  ? `RF3i là viết tắt của Thiết bị đo tần số vô tuyến và công nghiệp
-                 tin học. Phòng thí nghiệm RF3i trực thuộc Bộ môn
-                 Kỹ thuật Thiết bị và Tin học Công nghiệp -
-                 Viện Điện lực. Phòng thí nghiệm được thành lập vào năm 2014, bởi Phó giáo sư Lê
-                 Minh Thủy chịu trách nhiệm quản lý và hướng dẫn.`
+                  ? `RF3i là viết tắt của Radio Frequency Instrumentation and Industrial Informatics. Phòng thí nghiệm RF3i thuộc Bộ môn Kỹ thuật đo và Tin học công nghiệp - Viện Điện (nay thuộc khoa Tự động hóa, Trường Điện – Điện tử, Đại học Bách Khoa Hà Nội). Phòng thí nghiệm được thành lập năm 2014, do TS Lê Minh Thủy phụ trách quản lý và hướng dẫn.`
                   : `RF3i stands for Radio Frequency Instrumentation and Industrial
                 Informatics. Lab RF3i belongs to the Department of
                 Instrumentation Engineering and Industrial Informatics -
