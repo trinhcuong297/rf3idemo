@@ -7,6 +7,8 @@ import Navbar from '../Navbar/navbar';
 import '../styles/global.css';
 import store from '../Redux/store';
 
+import 'react-quill/dist/quill.snow.css'
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>

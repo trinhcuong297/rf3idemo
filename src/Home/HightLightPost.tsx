@@ -4,6 +4,8 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 import { useAppSelector } from '../Redux/hooks';
+import 'react-quill/dist/quill.snow.css'
+import dynamic from 'next/dynamic';
 
 export default function HightlightNews() {
   const [data, setData] = useState<Data[]>([]);
@@ -232,7 +234,57 @@ export function AllNews() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
   const langSet = useAppSelector((state) => state.language.lang);
+  const loginSet = useAppSelector((state) => state.loginState.login);
+  const QuillNoSSRWrapper = dynamic(import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
+})
 
+const modules = {
+  toolbar: [
+    [{ header: '1' }, { header: '2' }, { font: [] }],
+    [{ size: [] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [
+      { list: 'ordered' },
+      { list: 'bullet' },
+      { indent: '-1' },
+      { indent: '+1' },
+    ],
+    ['link', 'image', 'video'],
+    ['clean'],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  },
+}
+/*
+ * Quill editor formats
+ * See https://quilljs.com/docs/formats/
+ */
+const formats = [
+  'header',
+  'font',
+  'size',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'blockquote',
+  'list',
+  'bullet',
+  'indent',
+  'link',
+  'image',
+  'video',
+]
+  const [post, setPost] = useState({
+    title: '',
+    date: '',
+    createby: '',
+    content: '',
+  });
   interface Data {
     id?: String | null | undefined;
     image_title_url?: String | null | undefined;
@@ -269,6 +321,7 @@ export function AllNews() {
             className="flex-grow bg-blue-200 rounded h-0.5"
           ></span>
         </h3>
+
         <p className="w-full flex justify-center items-center">
           <div className="relative w-20 h-20 animate-pulse rounded-full bg-gradient-to-r from-purple-400 via-blue-500 to-red-400 ">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-gray-200 rounded-full border-2 border-white">
@@ -313,6 +366,48 @@ export function AllNews() {
               className="flex-grow bg-blue-200 rounded h-0.5"
             ></span>
           </h3>
+          <div>
+            {loginSet ? <>
+              <div className="">
+                <textarea
+                  required={true}
+                  value={post.title}
+                  rows={1}
+                  placeholder={"Post title"}
+                  onChange={(e) => {
+                    setPost({ ...post, title: e.target.value });
+                  }}
+                  className="text-gray-700 input input-bordered bg-gray-100/0 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                ></textarea>
+              </div>
+              <div className="">
+                <textarea
+                  required={true}
+                  value={post.date}
+                  rows={1}
+                  placeholder={"Created time: DD-MM-YYYY"}
+                  onChange={(e) => {
+                    setPost({ ...post, date: e.target.value });
+                  }}
+                  className="text-gray-700 input input-bordered bg-gray-100/0 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                ></textarea>
+              </div>
+              <div className="">
+                <textarea
+                  required={true}
+                  value={post.createby}
+                  rows={1}
+                  placeholder={"Author"}
+                  onChange={(e) => {
+                    setPost({ ...post, createby: e.target.value });
+                  }}
+                  className="text-gray-700 input input-bordered bg-gray-100/0 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                ></textarea>
+              </div>
+              <QuillNoSSRWrapper modules={modules} placeholder='copy/paste here' value={post.content} onChange={(e) => setPost({ ...post, content: e })} formats={formats} theme="snow" />
+              <button className="btn btn-outline btn-success w-full mt-2">Post</button>
+            </>:<></>}
+      </div>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mx-8 sm:mx-4 xl:mx-auto justify-center mt-8">
             <div className="flex flex-col px-2 pt-2 bg-gray-100 rounded-xl shadow-xl w-full md:max-w-xl overflow-hidden h-fit">
               <div className="flex-1 items-center mx-auto mt-2">
@@ -327,6 +422,11 @@ export function AllNews() {
                   <small className="text-sm text-gray-500 text-justify">
                     {`${data[0]?.created_time || ''}`}
                   </small>
+                  
+                  {loginSet ? 
+                    <>
+                      <button className="badge badge-secondary badge-outline">Delete</button>
+                    </> : <></>}
                 </div>
                 <Link href={`/News/${data[0] ? data[0].id : ''}`}>
                   <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">{`${
@@ -352,6 +452,10 @@ export function AllNews() {
                   <small className="text-sm text-gray-600 text-justify">
                     {`${data[1]?.created_time || ''}`}
                   </small>
+                  {loginSet ? 
+                    <>
+                      <button className="badge badge-secondary badge-outline">Delete</button>
+                    </> : <></>}
                 </div>
                 <Link href={`/News/${data[1]?.id || ''}`}>
                   <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">
@@ -381,6 +485,10 @@ export function AllNews() {
                   <small className="text-sm text-gray-600 text-justify">
                     {`${data[2]?.created_time || ''}`}
                   </small>
+                  {loginSet ? 
+                    <>
+                      <button className="badge badge-secondary badge-outline">Delete</button>
+                    </> : <></>}
                 </div>
                 <Link href={`/News/${data[2]?.id || ''}`}>
                   <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">
@@ -410,6 +518,10 @@ export function AllNews() {
                   <small className="text-sm text-gray-600 text-justify">
                     {`${data[3]?.created_time || ''}`}
                   </small>
+                  {loginSet ? 
+                    <>
+                      <button className="badge badge-secondary badge-outline">Delete</button>
+                    </> : <></>}
                 </div>
                 <Link href={`/News/${data[3]?.id || ''}`}>
                   <h3 className="cursor-pointer text-black font-bold mt-2 text-justify">
@@ -451,6 +563,10 @@ export function AllNews() {
                       <div className="w-full">
                         <p className=" flex text-sm text-gray-600 pb-2 text-justify">
                           {`${param?.created_time || ''}`}
+                          {loginSet ? 
+                    <>
+                      <button className="badge badge-secondary badge-outline mx-5">Delete</button>
+                    </> : <></>}
                         </p>
                         <p className="text-gray-700 font-bold text-justify">
                           {param?.title}

@@ -10,6 +10,7 @@ export default function Product() {
   const [data, setData] = useState<Data[]>([]);
   const [isLoading, setLoading] = useState(false);
   const langSet = useAppSelector((state) => state.language.lang);
+  const loginSet = useAppSelector((state) => state.loginState.login);
   const router = useRouter();
 
   interface Data {
@@ -19,6 +20,18 @@ export default function Product() {
     product_type?: String | null | undefined;
     product_description?: String | null | undefined;
   }
+
+  const [post, setPost] = useState({
+    product_name:"",
+    title:"",
+    product_type:"",
+    project_member:"",
+    product_description:"",
+    product_parameters:"",
+    main_components:"",
+    product_contribution:"",
+    product_image_urls:"",
+  });
 
   useEffect(() => {
     setLoading(true);
@@ -60,6 +73,118 @@ export default function Product() {
       <Head>
         <title>RF3i - {langSet === 'VN' ? 'Sản phẩm' : 'Product'}</title>
       </Head>
+      {loginSet ? <div className='mx-5 md:mx-12 lg:mt-24'>
+        <h1>Add Product</h1>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.product_name}
+            rows={1}
+            placeholder={"product_name"}
+            onChange={(e) => {
+              setPost({ ...post, product_name: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.title}
+            rows={1}
+            placeholder={"title"}
+            onChange={(e) => {
+              setPost({ ...post, title: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.product_type}
+            rows={1}
+            placeholder={"product_type"}
+            onChange={(e) => {
+              setPost({ ...post, product_type: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.project_member}
+            rows={1}
+            placeholder={"Author"}
+            onChange={(e) => {
+              setPost({ ...post, project_member: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.product_description}
+            rows={1}
+            placeholder={"product_description"}
+            onChange={(e) => {
+              setPost({ ...post, product_description: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.product_parameters}
+            rows={1}
+            placeholder={"product_parameters"}
+            onChange={(e) => {
+              setPost({ ...post, product_parameters: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.main_components}
+            rows={1}
+            placeholder={"main_components"}
+            onChange={(e) => {
+              setPost({ ...post, main_components: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.product_contribution}
+            rows={1}
+            placeholder={"product_contribution"}
+            onChange={(e) => {
+              setPost({ ...post, product_contribution: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.product_image_urls}
+            rows={1}
+            placeholder={"product_image_urls"}
+            onChange={(e) => {
+              setPost({ ...post, product_image_urls: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <button className="btn btn-outline btn-success w-full mt-2 mb-4">Post</button>
+      </div> : <></>}
       <div className="bg-gray-200 lg:pt-12">
         <div className="mx-auto px-4 md:px-12 lg:px-24 py-12">
           <div className="grid md:grid-cols-3 gap-4 justify-items-center min-w-full">
@@ -106,6 +231,17 @@ export default function Product() {
                       </button>
                     </Link>
                   </div>
+                  {loginSet ? <div className="p-6 pt-3">
+                    <Link href={`/Product/${data.id}`}>
+                      <button
+                        className="block w-full select-none rounded-lg bg-red-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button"
+                        data-ripple-light="true"
+                      >
+                        Delete
+                      </button>
+                    </Link>
+                  </div> : <></>}
                 </div>
               );
             })}

@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import languageReducer from './feature/language';
+import loginReducer from './feature/login';
 // ...
 
 const store = configureStore({
   reducer: {
     language: languageReducer,
+    loginState: loginReducer,
   },
 });
 

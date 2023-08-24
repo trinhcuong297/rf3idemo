@@ -11,7 +11,14 @@ export default function Publication() {
   const [show, setShow] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   const langSet = useAppSelector((state) => state.language.lang);
-
+  const loginSet = useAppSelector((state) => state.loginState.login);
+  const [post, setPost] = useState({
+    title: '',
+    author: '',
+    published_in: '',
+    date: '',
+    link:'',
+  });
   // const [totalData, setTotalData] = useState(0);
 
   interface Data {
@@ -75,6 +82,7 @@ export default function Publication() {
       <Head>
         <title>RF3i - {langSet === 'VN' ? 'Các bài báo' : 'Publication'}</title>
       </Head>
+      
       <div className="py-24 px-2">
         <div className="min-h-screen">
           <div className="items-center w-full py-4 mx-auto bg-white rounded-lg shadow-lg px-4">
@@ -193,6 +201,70 @@ export default function Publication() {
           </div>
         </div>
       </div>
+      {loginSet ? <div className='mx-5 md:mx-12'>
+        <h1>Add publication</h1>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.title}
+            rows={1}
+            placeholder={"Title"}
+            onChange={(e) => {
+              setPost({ ...post, title: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.author}
+            rows={1}
+            placeholder={"Author"}
+            onChange={(e) => {
+              setPost({ ...post, author: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.published_in}
+            rows={1}
+            placeholder={"Published in"}
+            onChange={(e) => {
+              setPost({ ...post, published_in: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.date}
+            rows={1}
+            placeholder={"Date: YYYY-MM-DD"}
+            onChange={(e) => {
+              setPost({ ...post, date: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <div className="">
+          <textarea
+            required={true}
+            value={post.link}
+            rows={1}
+            placeholder={"Link"}
+            onChange={(e) => {
+              setPost({ ...post, link: e.target.value });
+            }}
+            className="text-gray-700 input input-bordered bg-gray-100 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+          ></textarea>
+        </div>
+        <button className="btn btn-outline btn-success w-full mt-2 mb-4">Post</button>
+      </div> : <></>}
     </>
   );
 }
