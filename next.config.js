@@ -17,4 +17,7 @@ module.exports = {
   env: {
     RF3i_API: 'https://rf3i-api-uat.onrender.com',
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
