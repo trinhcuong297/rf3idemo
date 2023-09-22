@@ -8,7 +8,6 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale}>
         <Head />
-        <meta name="google-site-verification" content="K_pPeGKApk94IcoK4yBsUlZo2qbRkuDENbxfu6WOVp4" />
         <body>
           <Main />
           <NextScript />
