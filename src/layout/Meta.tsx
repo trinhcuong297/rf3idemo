@@ -46,6 +46,7 @@ const Meta = (props: IMetaProps) => {
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
+        <meta name="google-site-verification" content="K_pPeGKApk94IcoK4yBsUlZo2qbRkuDENbxfu6WOVp4" />
       </Head>
       <NextSeo
         title={props.title}
