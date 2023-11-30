@@ -13,19 +13,21 @@ const Footer = () => {
           <Logo xl />
           {langSet === 'VN' ? (
             <p>
-              RF3i Lab
+              Nhóm nghiên cứu RF3i
               <br />
-              Bộ môn Kĩ thuật đo và tin học công nghiệp
+              PTN nghiên cứu Cảm biến thông minh
               <br />
-              Khoa Tự động hoá
+              Trường Điện - Điện tử
               <br />
-              Trường đại học Bách Khoa Hà Nội
+              Đại học Bách Khoa Hà Nội
             </p>
           ) : (
             <p>
               RF3i Lab
+<br/>
+Smart sensor research laboratory
               <br />
-              Industrial Informatics and Instrumentation Engineering
+              Electronic School
               <br />
               Ha Noi University of Science and Technology
             </p>
@@ -37,7 +39,7 @@ const Footer = () => {
           </span>
           <div className="link link-hover">
             <Link href="/RFteam">
-              {langSet === 'VN' ? 'Cao tần' : 'Radio Frequency'}
+              {langSet === 'VN' ? 'Cao tần' : 'Radio frequency'}
             </Link>
           </div>
           <div className="link link-hover">
