@@ -24,7 +24,7 @@ function Hero() {
 
             <div className="lg:py-24">
               <h2 className="text-3xl font-bold sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r to-cyan-500 from-blue-600">
-                {langSet === 'VN' ? 'Phòng thí nghiệm RF3i' : 'RF3i Lab'}
+                {langSet === 'VN' ? 'Nhóm nghiên cứu RF3i' : 'RF3i Lab'}
               </h2>
 
               <p
