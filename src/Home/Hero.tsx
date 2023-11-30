@@ -32,7 +32,7 @@ function Hero() {
                 style={{ textAlign: 'justify' }}
               >
                 {langSet === 'VN'
-                  ? `RF3i là viết tắt của Radio Frequency Instrumentation and Industrial Informatics. Phòng thí nghiệm RF3i thuộc Bộ môn Kỹ thuật đo và Tin học công nghiệp - Viện Điện (nay thuộc khoa Tự động hóa, Trường Điện – Điện tử, Đại học Bách Khoa Hà Nội). Phòng thí nghiệm được thành lập năm 2014, do TS Lê Minh Thùy phụ trách quản lý và hướng dẫn.`
+                  ? `RF3i là viết tắt của Radio Frequency Instrumentation and Industrial Informatics. Phòng thí nghiệm RF3i thuộc Bộ môn Kỹ thuật đo và Tin học công nghiệp - Viện Điện (nay thuộc khoa Tự động hóa, Trường Điện – Điện tử, Đại học Bách Khoa Hà Nội). Phòng thí nghiệm được thành lập năm 2014, do PGS. Lê Minh Thùy phụ trách quản lý và hướng dẫn.`
                   : `RF3i stands for Radio Frequency Instrumentation and Industrial
                 Informatics. Lab RF3i belongs to the Department of
                 Instrumentation Engineering and Industrial Informatics -
@@ -90,8 +90,8 @@ function Hero() {
                     />
                   </svg>
                   {langSet === 'VN'
-                    ? 'Thu hoạch năng lượng cao tần'
-                    : 'RF Energy Harvesting'}
+                    ? 'Thu hoạch năng lượng bền vững'
+                    : 'Sustainable energy harvesting'}
                 </p>
                 <p className="flex px-4 py-4">
                   <svg
@@ -109,7 +109,7 @@ function Hero() {
                     />
                   </svg>
                   {langSet === 'VN'
-                    ? 'Mạng cảm biến'
+                    ? 'Mạng cảm biến không dây'
                     : 'Wireless Sensor Network'}
                 </p>
                 <p className="flex px-4 py-4">
